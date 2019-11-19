@@ -25,21 +25,24 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(77, 33);
+            this.buttonLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonLogin.Location = new System.Drawing.Point(137, 51);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(159, 51);
+            this.buttonLogin.Size = new System.Drawing.Size(283, 79);
             this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "Login";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Text = "Login To Facebook";
+            this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1422, 697);
             this.Controls.Add(this.buttonLogin);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
