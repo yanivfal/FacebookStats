@@ -28,7 +28,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void loginAndInit()
         {
-            LoginResult result = FacebookWrapper.FacebookService.Login("2731122040258680", "email");
+            LoginResult result = FacebookService.Login("2731122040258680", "name", "albums");
             if (!string.IsNullOrEmpty(result.AccessToken))
             {
                 m_LoggedInUser = result.LoggedInUser;
