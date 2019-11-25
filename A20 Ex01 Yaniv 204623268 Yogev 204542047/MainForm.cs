@@ -1,42 +1,35 @@
-﻿using FacebookWrapper;
-using Facebook;
+﻿using FacebookWrapper.ObjectModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public partial class MainForm : Form
     {
         User m_LoggedInUser;
-        public MainForm()
+
+        public MainForm(User i_LoggedInUser)
         {
+            m_LoggedInUser = i_LoggedInUser;
+
             InitializeComponent();
+            fetchUserData();
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private void fetchUserData()
         {
-            loginAndInit();
+            this.profilePicture.Image = m_LoggedInUser.ImageNormal;
+            this.userName.Text = m_LoggedInUser.Name;
         }
 
-        private void loginAndInit()
+        private void likeStatisticsButton_Click(object sender, EventArgs e)
         {
-            LoginResult result = FacebookService.Login("2731122040258680", "name", "albums");
-            if (!string.IsNullOrEmpty(result.AccessToken))
-            {
-                m_LoggedInUser = result.LoggedInUser;
-            }
-            else
-            {
-                MessageBox.Show(result.ErrorMessage);
-            }
+            
+        }
+
+        private void uploadStatisticsButton_Click(object sender, EventArgs e)
+        {
+            new UploadsStats().Show();
         }
     }
 }
