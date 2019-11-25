@@ -11,6 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         #region Windows Form Designer generated code
 
@@ -20,55 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.mainLabel = new System.Windows.Forms.Label();
-            this.subLabel = new System.Windows.Forms.Label();
+            this.coverPhoto = new System.Windows.Forms.PictureBox();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
+            this.userName = new System.Windows.Forms.Label();
+            this.likeStatisticsButton = new System.Windows.Forms.Button();
+            this.uploadStatisticsButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.coverPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonLogin
+            // coverPhoto
             // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonLogin.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonLogin.Location = new System.Drawing.Point(657, 266);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(504, 179);
-            this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "Login To Facebook";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.coverPhoto.Location = new System.Drawing.Point(0, 0);
+            this.coverPhoto.Name = "coverPhoto";
+            this.coverPhoto.Size = new System.Drawing.Size(1683, 412);
+            this.coverPhoto.TabIndex = 1;
+            this.coverPhoto.TabStop = false;
             // 
-            // mainLabel
+            // profilePicture
             // 
-            this.mainLabel.AutoSize = true;
-            this.mainLabel.Font = new System.Drawing.Font("Levenim MT", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.mainLabel.Location = new System.Drawing.Point(2, 9);
-            this.mainLabel.Name = "mainLabel";
-            this.mainLabel.Size = new System.Drawing.Size(1419, 177);
-            this.mainLabel.TabIndex = 1;
-            this.mainLabel.Text = "Welcome to LIKEUSH";
+            this.profilePicture.Location = new System.Drawing.Point(82, 279);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(257, 287);
+            this.profilePicture.TabIndex = 2;
+            this.profilePicture.TabStop = false;
             // 
-            // subLabel
+            // userName
             // 
-            this.subLabel.AutoSize = true;
-            this.subLabel.Font = new System.Drawing.Font("Levenim MT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.subLabel.Location = new System.Drawing.Point(280, 324);
-            this.subLabel.Name = "subLabel";
-            this.subLabel.Size = new System.Drawing.Size(369, 62);
-            this.subLabel.TabIndex = 2;
-            this.subLabel.Text = "To start, please";
+            this.userName.AutoSize = true;
+            this.userName.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.userName.Location = new System.Drawing.Point(373, 429);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(353, 80);
+            this.userName.TabIndex = 3;
+            this.userName.Text = "User Name";
+            // 
+            // likeStatisticsButton
+            // 
+            this.likeStatisticsButton.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.likeStatisticsButton.Location = new System.Drawing.Point(506, 644);
+            this.likeStatisticsButton.Name = "likeStatisticsButton";
+            this.likeStatisticsButton.Size = new System.Drawing.Size(447, 168);
+            this.likeStatisticsButton.TabIndex = 4;
+            this.likeStatisticsButton.Text = "Who like me at most?";
+            this.likeStatisticsButton.UseVisualStyleBackColor = true;
+            this.likeStatisticsButton.Click += new System.EventHandler(this.likeStatisticsButton_Click);
+            // 
+            // uploadStatisticsButton
+            // 
+            this.uploadStatisticsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.uploadStatisticsButton.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.uploadStatisticsButton.Location = new System.Drawing.Point(1053, 644);
+            this.uploadStatisticsButton.Name = "uploadStatisticsButton";
+            this.uploadStatisticsButton.Size = new System.Drawing.Size(447, 168);
+            this.uploadStatisticsButton.TabIndex = 5;
+            this.uploadStatisticsButton.Text = "When should I upload photos?";
+            this.uploadStatisticsButton.UseVisualStyleBackColor = false;
+            this.uploadStatisticsButton.Click += new System.EventHandler(this.uploadStatisticsButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 697);
-            this.Controls.Add(this.subLabel);
-            this.Controls.Add(this.mainLabel);
-            this.Controls.Add(this.buttonLogin);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.ClientSize = new System.Drawing.Size(1682, 841);
+            this.Controls.Add(this.uploadStatisticsButton);
+            this.Controls.Add(this.likeStatisticsButton);
+            this.Controls.Add(this.userName);
+            this.Controls.Add(this.profilePicture);
+            this.Controls.Add(this.coverPhoto);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "UploadStatisticsForm";
+            ((System.ComponentModel.ISupportInitialize)(this.coverPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,9 +107,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Label mainLabel;
-        private System.Windows.Forms.Label subLabel;
+        private System.Windows.Forms.PictureBox coverPhoto;
+        private System.Windows.Forms.PictureBox profilePicture;
+        private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Button likeStatisticsButton;
+        private System.Windows.Forms.Button uploadStatisticsButton;
     }
 }
-
