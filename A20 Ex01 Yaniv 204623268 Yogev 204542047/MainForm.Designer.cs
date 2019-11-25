@@ -57,7 +57,7 @@
             // 
             this.userName.AutoSize = true;
             this.userName.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.userName.Location = new System.Drawing.Point(363, 486);
+            this.userName.Location = new System.Drawing.Point(373, 429);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(353, 80);
             this.userName.TabIndex = 3;
