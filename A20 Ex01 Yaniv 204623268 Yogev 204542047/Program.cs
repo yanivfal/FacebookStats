@@ -16,7 +16,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new UploadsStats());
         }
     }
 }
