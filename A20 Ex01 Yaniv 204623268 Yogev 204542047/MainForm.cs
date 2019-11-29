@@ -43,9 +43,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void uploadStatisticsButton_Click(object sender, EventArgs e)
         {
             UIRunner.HideCurrentForm();
-            UIRunner.OpenUploadsStatsForm();
+            UIRunner.OpenForm<UploadsStats>();
             //After previous screen is closed
-            UIRunner.OpenMainForm();
+            UIRunner.OpenForm<MainForm>();
         }
 
         private void OnClosed(object sender, FormClosedEventArgs e)
@@ -74,7 +74,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             AppSettings.Instance.LastAccessToken = null;
             AppSettings.Instance.SaveToFile();
             UIRunner.HideCurrentForm();
-            UIRunner.OpenLoginForm();
+            UIRunner.OpenForm<LoginForm>();
+        }
+
+        private void likeStatisticsButton_Click(object sender, EventArgs e)
+        {
+            UIRunner.HideCurrentForm();
+            UIRunner.OpenForm<LikesStatisticsForm>();
+            //After previous screen is closed
+            UIRunner.OpenForm<MainForm>();
         }
     }
 }

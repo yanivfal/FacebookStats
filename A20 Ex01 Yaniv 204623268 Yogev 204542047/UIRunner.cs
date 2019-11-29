@@ -34,28 +34,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             AppSettings.Instance.SaveToFile();
         }
 
-        internal static void OpenUploadsStatsForm()
+        public static void OpenForm<T>() where T : new()
         {
-            CurrentForm = new UploadsStats();
+            CurrentForm = new T() as Form;
             CurrentForm.ShowDialog();
         }
 
-        public static void OpenMainForm()
-        {
-            CurrentForm = new MainForm();
-            CurrentForm.ShowDialog();
-        }
-
-        public static void OpenLoginForm()
-        {       
-            CurrentForm = new LoginForm();
-            CurrentForm.ShowDialog();
-        }
-        
         public static void HideCurrentForm()
         {
             CurrentForm.Hide();
         }
-
     }
 }
