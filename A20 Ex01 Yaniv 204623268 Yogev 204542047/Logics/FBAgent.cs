@@ -11,9 +11,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 {
     public static class FBAgent
     {
-        public static void GetUserPhotos(User i_LoggedInUser)
-        {
-
-        }
+        internal static User LoggedInUser { get; set; }
     }
 }

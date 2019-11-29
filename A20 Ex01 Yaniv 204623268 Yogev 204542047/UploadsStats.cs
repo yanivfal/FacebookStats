@@ -15,9 +15,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     public partial class UploadsStats : Form
     {
         Post[] m_UserPhotos;
-        public UploadsStats(User i_LoggedInUser)
+        public UploadsStats()
         {
-            m_UserPhotos = i_LoggedInUser.Posts.ToArray();
+            m_UserPhotos = FBAgent.LoggedInUser.Posts.ToArray();
             InitializeComponent();
         }
 
