@@ -16,6 +16,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     public partial class LoginForm : Form
     {
         User m_LoggedInUser;
+        LoginResult m_Result;
         internal User LoggedInUser { get; }
 
 
@@ -31,17 +32,37 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void loginAndInit()
         {
-            
-            //LoginResult result = FacebookService.Login("2731122040258680", "name", "albums");
-            LoginResult result = FacebookService.Connect("EAAmz8OcMQHgBAAMynLZAQGRj8qK3dqPBebntpHQxvuuuRp4MFB5BvTTUuQk5SFd3TaBKjZArNcEThzoJ1IT2l2pBwJB5WEDWwmjc4oI4ZB0jvDPM3LaFlU0mMWTRgD3rHK2317JUkpi2vihPGeMsaVKfG5rEvX0C5xzNZACZAugZDZD");
-            if (!string.IsNullOrEmpty(result.AccessToken))
+            //m_Result = FacebookService.Login("2731122040258680", "name", "albums");
+            m_Result = FacebookService.Connect("EAAmz8OcMQHgBAJA7GgV4m0lu67x3XgoMdHkTtKKzUtS2FSE2aZBPI9EKQyjef2zY56P5BZCvBsHnGe8ftWZCwE90ZBw93aXNUU1nrd9VVcW9lvjO1NDNd6t9ZAoN4fjT5bzeVRDZBcFginNMpYzaHmZC9Y2eTBYyReLyFWrbZBAZAbPmoXb0aNrXMoyj2blizBJw0CGktS6ZBFkwZDZD");
+            if (!string.IsNullOrEmpty(m_Result.AccessToken))
             {
-                m_LoggedInUser = result.LoggedInUser;
-                new MainForm(m_LoggedInUser).Show();
+                m_LoggedInUser = m_Result.LoggedInUser;
+                OpenMainForm();
+                setRememberMeChoise();
             }
             else
             {
-                MessageBox.Show(result.ErrorMessage);
+                MessageBox.Show(m_Result.ErrorMessage);
+            }   
+        }
+
+        private void OpenMainForm()
+        {
+            this.Hide();
+            new MainForm(m_LoggedInUser).ShowDialog();
+        }
+
+        private void setRememberMeChoise()
+        {
+            if (checkBoxStayLogged.Checked)
+            {
+                AppSettings.Instance.RememberUser = true;
+                AppSettings.Instance.LastAccessToken = m_Result.AccessToken;
+            }
+            else
+            {
+                AppSettings.Instance.RememberUser = false;
+                AppSettings.Instance.LastAccessToken = null;
             }
         }
     }
