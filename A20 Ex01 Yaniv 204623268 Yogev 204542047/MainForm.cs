@@ -17,21 +17,46 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void fetchPhotos()
         {
-            int position = likeStatisticsButton.Bottom + 10;
+            
+            int position = topCover.Bottom + 100;
             FacebookObjectCollection<Photo> wallPictures = FBAgent.LoggedInUser.PhotosTaggedIn;
-            Size pictureSize = new Size(300, 300);
+
             foreach (Photo photo in wallPictures)
             {
-                PictureBox picture = new PictureBox();
-                picture.BackgroundImage = photo.ImageNormal;
-                picture.Left = (this.Left + this.Right) / 2 - (picture.Width / 2);
-                picture.Top = position;
-                picture.Size = pictureSize;
-
-                picture.BackgroundImageLayout = ImageLayout.Stretch;
+                PictureBox picture = setPictureSizeAndPosition(photo, position);
+                Label pictureDetails = setPictureDetails(photo);
+                picture.Image = photo.ImageNormal;
+                pictureDetails.Top = picture.Top + 10;
+                pictureDetails.Left = picture.Left;
                 position = picture.Bottom + 50;
                 this.Controls.Add(picture);
             }
+        }
+
+        private Label setPictureDetails(Photo i_Photo)
+        {
+            Label photoDetails = new Label();
+            photoDetails.Text = string.Format("Date: {0}, Likes by: {1} people",
+                i_Photo.UpdateTime.ToString(), i_Photo.LikedBy.Count);
+
+            return photoDetails;
+        }
+
+        private PictureBox setPictureSizeAndPosition(Photo photo, int i_Position)
+        {
+            int pictureWidth = 400;
+            PictureBox picture = new PictureBox();
+            float imageRatio;
+
+            imageRatio = photo.Height / (float)photo.Width;
+            picture.Image = photo.ImageNormal;
+            picture.Left = (this.Left + this.Right) / 2 - pictureWidth / 2;
+            picture.Top = i_Position;
+            picture.Width = pictureWidth;
+            picture.Height = (int)(pictureWidth * imageRatio);
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            return picture;
         }
 
         private void fetchUserData()
@@ -46,26 +71,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenUploadsStatsForm();
             //After previous screen is closed
             UIRunner.OpenMainForm();
-        }
-
-        private void OnClosed(object sender, FormClosedEventArgs e)
-        {
-            if (AppSettings.Instance.RememberUser)
-            {
-                AppSettings.Instance.WindowPosition = this.Location;
-                AppSettings.Instance.WindowSize = this.Size;
-                AppSettings.Instance.SaveToFile();
-            }
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (AppSettings.Instance.RememberUser)
-            {
-                AppSettings.Instance.WindowPosition = this.Location;
-                AppSettings.Instance.WindowSize = this.Size;
-                AppSettings.Instance.SaveToFile();
-            }
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

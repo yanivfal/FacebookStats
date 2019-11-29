@@ -61,6 +61,11 @@
     <Compile Include="logoutComponent.Designer.cs">
       <DependentUpon>logoutComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="LikesStatisticsForm.cs">
       <SubType>Form</SubType>
@@ -90,6 +95,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WallPhoto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WallPhoto.Designer.cs">
+      <DependentUpon>WallPhoto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,12 +110,16 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadsStats.resx">
       <DependentUpon>UploadsStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WallPhoto.resx">
+      <DependentUpon>WallPhoto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,8 +138,9 @@
   <ItemGroup>
     <Content Include="dlls\Facebook.dll" />
     <Content Include="dlls\FbGraphApiWrapper.dll" />
-    <None Include="Resources\logout1.png" />
-    <None Include="Resources\logOut.png" />
+    <None Include="Resources\FBlogin2.png" />
+    <None Include="Resources\logout %281%29.png" />
+    <None Include="Resources\facebookLogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
