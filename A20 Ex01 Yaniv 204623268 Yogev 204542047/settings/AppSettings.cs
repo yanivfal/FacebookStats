@@ -12,16 +12,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public class AppSettings
     {
-        public Point WindowPosition { get; set; }
-        public Size WindowSize { get; set; }
         public bool RememberUser { get; set; }
         public string LastAccessToken { get; set; }
 
         public static AppSettings Instance = new AppSettings();
         private AppSettings()
         {          
-            WindowPosition = new Point(0, 0);
-            WindowSize = new Size(960, 1000);
             RememberUser = false;
             LastAccessToken = null;
         }

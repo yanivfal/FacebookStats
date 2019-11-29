@@ -31,7 +31,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void loginAndInit()
         {
             //m_Result = FacebookService.Login("2731122040258680", "name", "albums");
-            m_Result = FacebookService.Connect("EAAmz8OcMQHgBAPTo7UZCfxSc6mMeYBt8gNnJzMdWIskVOpayGk8hmPJi1t01jNc3wboEB22MvUvLe2s2mGiKIOusl0WhmRn8zRT0gCd4hHK3EZCmviEcfPyE8WtRnweWFckiUZCzfmZAyQp7ZClvxvzgg9mvBVrnUZCAtwPVXiYglInZCXzOd9ZB5USqRdbsX2iTfQYboNLseAZDZD");
+            m_Result = FacebookService.Connect("EAAmz8OcMQHgBAGXfUC2lNN7aTYzkurCRoZA4hgNxHstJHmZAD7mQvaxlIOi3egFPJnsssVingLlokbEYpkPHgPhD3vXXoFR96nSZCJOgblroKlFEiaE0GMs73n20kh7qUMDOWK4uyprll0qCjNb1ROcreNXS6Iz0OWUmKnoxZA0dOJAZBd2njG7sRCvAf8qgJNiexXWPjRQZDZD");
             if (!string.IsNullOrEmpty(m_Result.AccessToken))
             {
                 FBAgent.LoggedInUser = m_Result.LoggedInUser;
@@ -57,6 +57,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 AppSettings.Instance.RememberUser = false;
                 AppSettings.Instance.LastAccessToken = null;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            loginAndInit();
         }
     }
 }
