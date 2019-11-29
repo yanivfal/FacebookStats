@@ -1,5 +1,6 @@
 ﻿using FacebookWrapper.ObjectModel;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
@@ -13,14 +14,26 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             m_LoggedInUser = i_LoggedInUser;
             InitializeComponent();
             fetchUserData();
-            fetchPost();
+            fetchPhotos();
         }
 
-        private void fetchPost()
+        private void fetchPhotos()
         {
-            TextBox textBox = new TextBox();
-            textBox.Text = m_LoggedInUser.Posts.ToString();
-            this.Controls.Add(textBox);
+            int position = likeStatisticsButton.Bottom + 10;
+            FacebookObjectCollection<Photo> wallPictures = m_LoggedInUser.PhotosTaggedIn;
+            Size pictureSize = new Size(300, 300);
+            foreach (Photo photo in wallPictures)
+            {
+                PictureBox picture = new PictureBox();
+                picture.BackgroundImage = photo.ImageNormal;
+                picture.Left = (this.Left + this.Right)/2 - (picture.Width/2);
+                picture.Top = position;
+                picture.Size = pictureSize;
+           
+                picture.BackgroundImageLayout = ImageLayout.Stretch;
+                position = picture.Bottom + 50;
+                this.Controls.Add(picture);
+            }
         }
 
         private void fetchUserData()
