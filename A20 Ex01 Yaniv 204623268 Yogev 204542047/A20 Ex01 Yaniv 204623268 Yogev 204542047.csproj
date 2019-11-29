@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="logoutComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="logoutComponent.Designer.cs">
+      <DependentUpon>logoutComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="LikesStatisticsForm.cs">
       <SubType>Form</SubType>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logoutComponent.resx">
+      <DependentUpon>logoutComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

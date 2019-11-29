@@ -28,7 +28,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public void SaveToFile()
         {
-            using (Stream stream = new FileStream(@"D:\appSettings.xml", FileMode.Create))
+            using (Stream stream = new FileStream(@"appSettings.xml", FileMode.Create))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
                 serializer.Serialize(stream, this);
@@ -37,7 +37,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public static void LoadFile()
         {
-            string xmlPath = @"D:\appSettings.xml";
+            string xmlPath = @"appSettings.xml";
 
             try
             {
