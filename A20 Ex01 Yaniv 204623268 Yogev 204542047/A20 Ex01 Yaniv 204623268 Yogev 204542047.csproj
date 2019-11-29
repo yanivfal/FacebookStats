@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinkesStatisticsForm.cs">
+    <Compile Include="LikesStatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LinkesStatisticsForm.Designer.cs">
-      <DependentUpon>LinkesStatisticsForm.cs</DependentUpon>
+    <Compile Include="LikesStatisticsForm.Designer.cs">
+      <DependentUpon>LikesStatisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
