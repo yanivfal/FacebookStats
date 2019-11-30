@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.settings;
 using Facebook;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -21,7 +22,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             o_AccessToken = null;
 
             // loginResult = FacebookService.Login("2731122040258680", "name", "albums");
-            loginResult = FacebookService.Connect("EAAmz8OcMQHgBAGXfUC2lNN7aTYzkurCRoZA4hgNxHstJHmZAD7mQvaxlIOi3egFPJnsssVingLlokbEYpkPHgPhD3vXXoFR96nSZCJOgblroKlFEiaE0GMs73n20kh7qUMDOWK4uyprll0qCjNb1ROcreNXS6Iz0OWUmKnoxZA0dOJAZBd2njG7sRCvAf8qgJNiexXWPjRQZDZD");
+            loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
                 o_AccessToken = loginResult.AccessToken;

@@ -135,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 1076);
+            this.ClientSize = new System.Drawing.Size(947, 1046);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.uploadStatisticsButton);
@@ -143,13 +143,13 @@
             this.Controls.Add(this.userName);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.topCover);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UploadStatisticsForm";
+            this.Text = "LikeWhosh";
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
