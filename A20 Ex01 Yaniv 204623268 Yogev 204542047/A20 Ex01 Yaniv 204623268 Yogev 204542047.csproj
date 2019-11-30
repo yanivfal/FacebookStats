@@ -138,6 +138,10 @@
   <ItemGroup>
     <Content Include="dlls\Facebook.dll" />
     <Content Include="dlls\FbGraphApiWrapper.dll" />
+    <None Include="Resources\LocationLogo2.png" />
+    <None Include="Resources\LocationLogo.png" />
+    <None Include="Resources\likesLogo.png" />
+    <None Include="Resources\DateLogo2.png" />
     <None Include="Resources\logOutWhite2.png" />
     <None Include="Resources\logo_transparent.png" />
     <None Include="Resources\FBlogin2.png" />

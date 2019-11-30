@@ -52,6 +52,7 @@
             this.likeStatisticsButton.TabIndex = 4;
             this.likeStatisticsButton.Text = "Who like me at most?";
             this.likeStatisticsButton.UseVisualStyleBackColor = false;
+            this.likeStatisticsButton.Click += new System.EventHandler(this.likeStatisticsButton_Click_1);
             // 
             // uploadStatisticsButton
             // 

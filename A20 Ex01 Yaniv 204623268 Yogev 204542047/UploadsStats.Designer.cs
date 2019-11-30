@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelMorning = new System.Windows.Forms.Label();
-            this.labelNoon = new System.Windows.Forms.Label();
-            this.labelAfterNoon = new System.Windows.Forms.Label();
             this.labelEvening = new System.Windows.Forms.Label();
+            this.labelAfterNoon = new System.Windows.Forms.Label();
+            this.labelNoon = new System.Windows.Forms.Label();
+            this.labelMorning = new System.Windows.Forms.Label();
             this.labelSundat = new System.Windows.Forms.Label();
             this.labelMonday = new System.Windows.Forms.Label();
             this.labelTuesday = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.90419F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Controls.Add(this.labelEvening, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelAfterNoon, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelNoon, 2, 0);
@@ -76,6 +76,42 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 627);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // labelEvening
+            // 
+            this.labelEvening.AutoSize = true;
+            this.labelEvening.Enabled = false;
+            this.labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEvening.Location = new System.Drawing.Point(786, 0);
+            this.labelEvening.Name = "labelEvening";
+            this.labelEvening.Size = new System.Drawing.Size(116, 36);
+            this.labelEvening.TabIndex = 6;
+            this.labelEvening.Text = "Evening";
+            this.labelEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelAfterNoon
+            // 
+            this.labelAfterNoon.AutoSize = true;
+            this.labelAfterNoon.Enabled = false;
+            this.labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAfterNoon.Location = new System.Drawing.Point(570, 0);
+            this.labelAfterNoon.Name = "labelAfterNoon";
+            this.labelAfterNoon.Size = new System.Drawing.Size(140, 36);
+            this.labelAfterNoon.TabIndex = 5;
+            this.labelAfterNoon.Text = "Afternoon";
+            this.labelAfterNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNoon
+            // 
+            this.labelNoon.AutoSize = true;
+            this.labelNoon.Enabled = false;
+            this.labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoon.Location = new System.Drawing.Point(411, 0);
+            this.labelNoon.Name = "labelNoon";
+            this.labelNoon.Size = new System.Drawing.Size(84, 36);
+            this.labelNoon.TabIndex = 4;
+            this.labelNoon.Text = "Noon";
+            this.labelNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelMorning
             // 
             this.labelMorning.AutoSize = true;
@@ -87,42 +123,6 @@
             this.labelMorning.TabIndex = 3;
             this.labelMorning.Text = "Morning";
             this.labelMorning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelNoon
-            // 
-            this.labelNoon.AutoSize = true;
-            this.labelNoon.Enabled = false;
-            this.labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoon.Location = new System.Drawing.Point(412, 0);
-            this.labelNoon.Name = "labelNoon";
-            this.labelNoon.Size = new System.Drawing.Size(84, 36);
-            this.labelNoon.TabIndex = 4;
-            this.labelNoon.Text = "Noon";
-            this.labelNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelAfterNoon
-            // 
-            this.labelAfterNoon.AutoSize = true;
-            this.labelAfterNoon.Enabled = false;
-            this.labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAfterNoon.Location = new System.Drawing.Point(571, 0);
-            this.labelAfterNoon.Name = "labelAfterNoon";
-            this.labelAfterNoon.Size = new System.Drawing.Size(140, 36);
-            this.labelAfterNoon.TabIndex = 5;
-            this.labelAfterNoon.Text = "Afternoon";
-            this.labelAfterNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelEvening
-            // 
-            this.labelEvening.AutoSize = true;
-            this.labelEvening.Enabled = false;
-            this.labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvening.Location = new System.Drawing.Point(787, 0);
-            this.labelEvening.Name = "labelEvening";
-            this.labelEvening.Size = new System.Drawing.Size(116, 36);
-            this.labelEvening.TabIndex = 6;
-            this.labelEvening.Text = "Evening";
-            this.labelEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSundat
             // 
@@ -214,7 +214,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 844);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "UploadsStats";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UploadsStats";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
