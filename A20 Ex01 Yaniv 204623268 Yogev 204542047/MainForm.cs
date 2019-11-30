@@ -47,7 +47,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 WallPhoto photoComponent = new WallPhoto(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
-                photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
+                photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 count++;
                 if (count >= 3)
