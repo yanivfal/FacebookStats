@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logics\eDayParts.cs" />
+    <Compile Include="Logics\PhotosGroupInfo.cs" />
+    <Compile Include="Logics\UploadsStatistics.cs" />
     <Compile Include="logoutComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +98,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logics\Utils.cs" />
     <Compile Include="WallPhoto.cs">
       <SubType>UserControl</SubType>
     </Compile>

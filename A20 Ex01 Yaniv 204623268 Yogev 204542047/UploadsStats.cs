@@ -15,10 +15,21 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     public partial class UploadsStats : Form
     {
         Post[] m_UserPhotos;
+        private Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> m_UserAmountOfLikesStatistics;
+
         public UploadsStats()
         {
             m_UserPhotos = FBAgent.LoggedInUser.Posts.ToArray();
+            m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+            
             InitializeComponent();
+
+            setTableInfo();
+        }
+
+        private void setTableInfo()
+        {
+            this.uploadStatsTable.GetControlFromPosition(3, 3).Text = "Hello";
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

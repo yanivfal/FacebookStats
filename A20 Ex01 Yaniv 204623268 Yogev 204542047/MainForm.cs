@@ -82,7 +82,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenForm<LoginForm>();
         }
 
-        private void likeStatisticsButton_Click(object sender, EventArgs e)
+        private void likeStatisticsButton_Click_1(object sender, EventArgs e)
         {
             UIRunner.HideCurrentForm();
             UIRunner.OpenForm<LikesStatisticsForm>();

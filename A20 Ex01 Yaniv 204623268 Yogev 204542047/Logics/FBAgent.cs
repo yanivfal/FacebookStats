@@ -21,7 +21,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             o_AccessToken = null;
 
             // loginResult = FacebookService.Login("2731122040258680", "name", "albums");
-            loginResult = FacebookService.Connect("EAAmz8OcMQHgBAGXfUC2lNN7aTYzkurCRoZA4hgNxHstJHmZAD7mQvaxlIOi3egFPJnsssVingLlokbEYpkPHgPhD3vXXoFR96nSZCJOgblroKlFEiaE0GMs73n20kh7qUMDOWK4uyprll0qCjNb1ROcreNXS6Iz0OWUmKnoxZA0dOJAZBd2njG7sRCvAf8qgJNiexXWPjRQZDZD");
+            loginResult = FacebookService.Connect("EAAmz8OcMQHgBAN1VM2Kccomr3ftEr8Ftr9WAp2yXkQ6gBoSKLc3KimP8I1cdVAhRREBZC31b2BZA7MhYUyk9wPaAZB1H3Ud9viIulWXar5LE1puY8jNl4wwtyFEshFfAGGHJ5iu4yyp6yzlPAUR6lVJJROHjbIihRRlWh60ZBA1yowI6EhA86BXgRcBZCEVcZD");
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
                 o_AccessToken = loginResult.AccessToken;
