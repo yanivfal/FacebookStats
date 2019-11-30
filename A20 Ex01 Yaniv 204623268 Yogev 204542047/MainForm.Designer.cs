@@ -28,39 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.topCover = new System.Windows.Forms.PictureBox();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.likeStatisticsButton = new System.Windows.Forms.Button();
             this.uploadStatisticsButton = new System.Windows.Forms.Button();
             this.userName = new System.Windows.Forms.Label();
-            this.logoutButton = new System.Windows.Forms.PictureBox();
             this.logoutLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
+            this.logoutButton = new System.Windows.Forms.PictureBox();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
+            this.topCover = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
             this.SuspendLayout();
-            // 
-            // topCover
-            // 
-            this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
-            this.topCover.Location = new System.Drawing.Point(0, -2);
-            this.topCover.Margin = new System.Windows.Forms.Padding(2);
-            this.topCover.Name = "topCover";
-            this.topCover.Size = new System.Drawing.Size(2012, 191);
-            this.topCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.topCover.TabIndex = 1;
-            this.topCover.TabStop = false;
-            // 
-            // profilePicture
-            // 
-            this.profilePicture.Location = new System.Drawing.Point(35, 20);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(109, 142);
-            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.profilePicture.TabIndex = 2;
-            this.profilePicture.TabStop = false;
             // 
             // likeStatisticsButton
             // 
@@ -102,39 +80,61 @@
             this.userName.TabIndex = 3;
             this.userName.Text = "User Name";
             // 
-            // logoutButton
-            // 
-            this.logoutButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.logoutButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logoutButton.BackgroundImage")));
-            this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutButton.Location = new System.Drawing.Point(841, 15);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(2);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(84, 97);
-            this.logoutButton.TabIndex = 8;
-            this.logoutButton.TabStop = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
             // logoutLabel
             // 
             this.logoutLabel.AutoSize = true;
             this.logoutLabel.BackColor = System.Drawing.Color.RoyalBlue;
             this.logoutLabel.Font = new System.Drawing.Font("Levenim MT", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.logoutLabel.ForeColor = System.Drawing.Color.White;
-            this.logoutLabel.Location = new System.Drawing.Point(847, 114);
+            this.logoutLabel.Location = new System.Drawing.Point(852, 103);
             this.logoutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.logoutLabel.Name = "logoutLabel";
             this.logoutLabel.Size = new System.Drawing.Size(78, 27);
             this.logoutLabel.TabIndex = 9;
             this.logoutLabel.Text = "Logout";
             // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.logoutButton.BackgroundImage = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.logOutWhite2;
+            this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutButton.InitialImage = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.logout__1_;
+            this.logoutButton.Location = new System.Drawing.Point(852, 20);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(80, 80);
+            this.logoutButton.TabIndex = 8;
+            this.logoutButton.TabStop = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // profilePicture
+            // 
+            this.profilePicture.Location = new System.Drawing.Point(35, 20);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(109, 142);
+            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.profilePicture.TabIndex = 2;
+            this.profilePicture.TabStop = false;
+            // 
+            // topCover
+            // 
+            this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
+            this.topCover.Location = new System.Drawing.Point(0, -2);
+            this.topCover.Margin = new System.Windows.Forms.Padding(2);
+            this.topCover.Name = "topCover";
+            this.topCover.Size = new System.Drawing.Size(2012, 191);
+            this.topCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.topCover.TabIndex = 1;
+            this.topCover.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 1050);
+            this.ClientSize = new System.Drawing.Size(947, 1076);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.uploadStatisticsButton);
@@ -149,9 +149,9 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UploadStatisticsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
