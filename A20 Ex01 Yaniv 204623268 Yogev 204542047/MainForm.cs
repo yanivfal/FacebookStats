@@ -20,16 +20,19 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             
             int position = topCover.Bottom + 100;
             FacebookObjectCollection<Photo> wallPictures = FBAgent.LoggedInUser.PhotosTaggedIn;
-
+            int count = 0;
             foreach (Photo photo in wallPictures)
             {
-                PictureBox picture = setPictureSizeAndPosition(photo, position);
-                Label pictureDetails = setPictureDetails(photo);
-                picture.Image = photo.ImageNormal;
-                pictureDetails.Top = picture.Top + 10;
-                pictureDetails.Left = picture.Left;
-                position = picture.Bottom + 50;
-                this.Controls.Add(picture);
+                WallPhoto photoComponent = new WallPhoto(photo);
+                photoComponent.Top = position;
+                position = photoComponent.Bottom + 30;
+                photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
+                this.Controls.Add(photoComponent);
+                count++;
+                if (count >= 3)
+                {
+                    break;
+                } 
             }
         }
 

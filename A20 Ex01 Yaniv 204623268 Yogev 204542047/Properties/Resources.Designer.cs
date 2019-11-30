@@ -63,6 +63,16 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DateLogo2 {
+            get {
+                object obj = ResourceManager.GetObject("DateLogo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap facebookLogin {
             get {
                 object obj = ResourceManager.GetObject("facebookLogin", resourceCulture);
@@ -76,6 +86,36 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         internal static System.Drawing.Bitmap FBlogin2 {
             get {
                 object obj = ResourceManager.GetObject("FBlogin2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap likesLogo {
+            get {
+                object obj = ResourceManager.GetObject("likesLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LocationLogo {
+            get {
+                object obj = ResourceManager.GetObject("LocationLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LocationLogo2 {
+            get {
+                object obj = ResourceManager.GetObject("LocationLogo2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
