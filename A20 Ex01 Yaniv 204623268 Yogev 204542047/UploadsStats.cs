@@ -19,8 +19,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public UploadsStats()
         {
-            m_UserPhotos = FBAgent.LoggedInUser.Posts.ToArray();
-            m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+            //m_UserPhotos = FBAgent.LoggedInUser.Posts.ToArray();
+            //m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
             
             InitializeComponent();
 
@@ -29,8 +29,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void setTableInfo()
         {
-            Control p = this.uploadStatsTable.GetControlFromPosition(0, 0);
-            p.Text = "Hello";
+            Control p = this.uploadStatsTable.GetControlFromPosition(1, 1);
+            p.BackColor = Color.Red;
+            uploadStatsTable.Controls.Add(new Label() { Text = " sadsd", Font = new Font("Arial", 11) }, 0, 0);
+
+            p.Text = "asd";
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
