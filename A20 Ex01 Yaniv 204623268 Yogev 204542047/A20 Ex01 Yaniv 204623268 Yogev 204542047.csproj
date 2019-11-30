@@ -57,7 +57,6 @@
   <ItemGroup>
     <Compile Include="Logics\eDayParts.cs" />
     <Compile Include="Logics\PhotosGroupInfo.cs" />
-    <Compile Include="Logics\UploadsStatistics.cs" />
     <Compile Include="logoutComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RelativeUserDetails.cs" />
     <Compile Include="settings\AccessTokenForTest.cs" />
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="LikesStatisticsForm.cs">

@@ -18,7 +18,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AppSettings.LoadFile();
-            /*if (!AppSettings.Instance.RememberUser || 
+            if (!AppSettings.Instance.RememberUser || 
                 string.IsNullOrEmpty(AppSettings.Instance.LastAccessToken))
             {
                 CurrentForm = new LoginForm();
@@ -28,8 +28,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 LoginResult result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
                 FBAgent.LoggedInUser = result.LoggedInUser;
                 CurrentForm = new MainForm();
-            }*/
-            CurrentForm = new UploadsStats();
+            }
+            //CurrentForm = new UploadsStats();
             CurrentForm.ShowDialog();
             AppSettings.Instance.SaveToFile();
         }

@@ -14,14 +14,16 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public partial class UploadsStats : Form
     {
-        Post[] m_UserPhotos;
         private Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> m_UserAmountOfLikesStatistics;
+        private int m_UserMinLikes;
+        private int m_UserMaxLikes;
 
         public UploadsStats()
         {
-            //m_UserPhotos = FBAgent.LoggedInUser.Posts.ToArray();
-            //m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
-            
+            m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+            m_UserMinLikes = 0;
+            m_UserMaxLikes = 200;
+
             InitializeComponent();
 
             setTableInfo();
@@ -29,24 +31,51 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void setTableInfo()
         {
-            Control p = this.uploadStatsTable.GetControlFromPosition(1, 1);
-            p.BackColor = Color.Red;
-            uploadStatsTable.Controls.Add(new Label() { Text = " sadsd", Font = new Font("Arial", 11) }, 0, 0);
-
-            p.Text = "asd";
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (Post photo in m_UserPhotos)
+            Random rnd = new Random();
+            foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
             {
-                //teTime uploadTime = photo.UpdateTime;
+                foreach (eDayParts dayPart in Enum.GetValues(typeof(eDayParts)))
+                {
+                    Label cellLabel = new Label() { Text = "-", Font = new Font("Levenim MT", 14) };
+
+                    if (m_UserAmountOfLikesStatistics.ContainsKey(day) && m_UserAmountOfLikesStatistics[day].ContainsKey(dayPart))
+                    {
+                        float likesAvg = m_UserAmountOfLikesStatistics[day][dayPart].LikesAmount / (float)m_UserAmountOfLikesStatistics[day][dayPart].PhotosAmount;
+                        if(likesAvg == 0)
+                        {
+                            likesAvg = rnd.Next(m_UserMinLikes, m_UserMaxLikes);
+                        }
+
+                        cellLabel.Text = string.Format("= {0}", likesAvg);
+                        cellLabel.BackColor = getColorByLikesAmount(likesAvg);
+                    }
+
+                    uploadStatsTable.Controls.Add(cellLabel, (int) dayPart + 1, (int)day + 1);
+                }
             }
         }
 
-        private void uploadStatsTable_Paint(object sender, PaintEventArgs e)
+        private Color getColorByLikesAmount(float i_LikesAverage)
         {
+            Color color;
+            int range = m_UserMaxLikes - m_UserMinLikes;
 
+            switch (i_LikesAverage)
+            {
+                case float likesAverage when (m_UserMinLikes <= likesAverage && likesAverage < m_UserMinLikes + (range / 3) * 1):
+                    color = Color.Red;
+                    break;
+                case float likesAverage when (m_UserMinLikes + (range / 3) * 1 <= likesAverage && likesAverage < m_UserMinLikes + (range / 3) * 2):
+                    color = Color.Yellow;
+                    break;
+                //case float likesAverage when (m_UserMinLikes + (range / 3) * 2 <= likesAverage && likesAverage < m_UserMinLikes + m_UserMaxLikes:
+                default:
+                    color = Color.Green;
+                    break;
+
+            }
+
+            return color;
         }
     }
 }
