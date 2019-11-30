@@ -21,7 +21,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void checkLikesButton_Click(object sender, EventArgs e)
         {
-            List<Photo> photos = getPhotosBetweenDates(this.likesFromDate.Value, this.likesToDate.Value);
+            List<Photo> photos = Utils.GetPhotosBetweenDates(this.likesFromDate.Value, this.likesToDate.Value);
             photos.Sort((i_Image1, i_Image2) => (i_Image1.LikedBy.Count).CompareTo(i_Image2.LikedBy.Count));
             int yPos = 350;
             foreach (Photo photo in photos)
@@ -43,24 +43,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
                 yPos += 205;
             }
-        }
-
-        private List<Photo> getPhotosBetweenDates(DateTime i_DateFrom, DateTime i_DateTo)
-        {
-            List<Photo> photos = new List<Photo>();
-
-            foreach (Album album in FBAgent.LoggedInUser.Albums)
-            {
-                foreach (Photo photo in album.Photos)
-                {
-                    if (i_DateFrom <= photo.CreatedTime && photo.CreatedTime <= i_DateTo)
-                    {
-                        photos.Add(photo);
-                    }
-                }
-            }
-
-            return photos;
         }
     }
 }
