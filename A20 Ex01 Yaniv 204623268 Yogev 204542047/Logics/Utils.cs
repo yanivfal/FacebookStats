@@ -28,6 +28,36 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             return photos;
         }
 
+        internal static List<RelativeUserDetails> GetUsersLikesInPhotos(List<Photo> i_Photos)
+        {
+            List<RelativeUserDetails> relativeUserLikes = new List<RelativeUserDetails>();
+            Dictionary<string, RelativeUserDetails> relativeUsersDetails = new Dictionary<string, RelativeUserDetails>();
+
+            foreach (Photo photo in i_Photos)
+            {
+                //foreach (User user in photo.LikedBy)
+                for(int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
+                {
+                    User user = FBAgent.LoggedInUser.Friends[i];
+                    if(!relativeUsersDetails.ContainsKey(user.Id))
+                    {
+                        relativeUsersDetails[user.Id] = new RelativeUserDetails(user);
+                    }
+
+                    relativeUsersDetails[user.Id].Likes++;
+                }
+            }
+
+            foreach (KeyValuePair<string, RelativeUserDetails> relatedUser in relativeUsersDetails)
+            { 
+                relativeUserLikes.Add(relatedUser.Value);
+            }
+
+            relativeUserLikes.Sort((i_User1, i_User2) => (i_User1.Likes).CompareTo(i_User2.Likes));
+
+            return relativeUserLikes;
+        }
+
         internal static Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> GetUserLikesAmountByDayAndDayPart()
         {
             Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> daysLikes = new Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>>();
@@ -35,7 +65,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             //foreach (Album album in FBAgent.LoggedInUser.Albums)
             {
                 //foreach (Photo photo in album.Photos)
-                for(var i=0; i<5; i++)
+                for(var i=0; i<5 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
                 {
                     Photo photo = FBAgent.LoggedInUser.PhotosTaggedIn[i];
                     DayOfWeek currentDay = photo.CreatedTime.Value.DayOfWeek;

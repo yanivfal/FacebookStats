@@ -21,8 +21,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             bool isLoginSucceeded = true;
             o_AccessToken = null;
 
-            // loginResult = FacebookService.Login("2731122040258680", "name", "albums");
-            loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
+            loginResult = FacebookService.Login("2731122040258680", "name", "albums");
+            //loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
                 o_AccessToken = loginResult.AccessToken;
