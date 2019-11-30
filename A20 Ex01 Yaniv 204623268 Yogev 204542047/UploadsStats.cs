@@ -25,8 +25,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             m_UserMaxLikes = 200;
 
             InitializeComponent();
+            InitializeLocationAndSize();
 
             setTableInfo();
+        }
+
+        private void InitializeLocationAndSize()
+        {
+            this.Width = StatsTable.Width + 50;
+            this.Height = StatsTable.Height + 50;
         }
 
         private void setTableInfo()
@@ -46,11 +53,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                             likesAvg = rnd.Next(m_UserMinLikes, m_UserMaxLikes);
                         }
 
-                        cellLabel.Text = string.Format("= {0}", likesAvg);
-                        cellLabel.BackColor = getColorByLikesAmount(likesAvg);
+                        cellLabel.Text = string.Format(likesAvg.ToString());
+                        cellLabel.ForeColor = getColorByLikesAmount(likesAvg);
                     }
 
-                    uploadStatsTable.Controls.Add(cellLabel, (int) dayPart + 1, (int)day + 1);
+                    StatsTable.Controls.Add(cellLabel, (int) dayPart + 1, (int)day + 1);
                 }
             }
         }
@@ -63,10 +70,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             switch (i_LikesAverage)
             {
                 case float likesAverage when (m_UserMinLikes <= likesAverage && likesAverage < m_UserMinLikes + (range / 3) * 1):
-                    color = Color.Red;
+                    color = Color.Firebrick;
                     break;
                 case float likesAverage when (m_UserMinLikes + (range / 3) * 1 <= likesAverage && likesAverage < m_UserMinLikes + (range / 3) * 2):
-                    color = Color.Yellow;
+                    color = Color.DarkOrange;
                     break;
                 //case float likesAverage when (m_UserMinLikes + (range / 3) * 2 <= likesAverage && likesAverage < m_UserMinLikes + m_UserMaxLikes:
                 default:
