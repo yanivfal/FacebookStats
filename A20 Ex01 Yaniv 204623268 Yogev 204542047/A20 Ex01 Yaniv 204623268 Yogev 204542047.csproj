@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="settings\AccessTokenForTest.cs" />
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="LikesStatisticsForm.cs">
       <SubType>Form</SubType>
