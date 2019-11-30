@@ -1,6 +1,7 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,14 +9,31 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public partial class MainForm : Form
     {
+        private List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
+
         public MainForm()
         {
             InitializeComponent();
             initializeWindowLocation();
             fetchUserData();
-            fetchAlbumsNameInComboBox();  
-            //fetchSelcetedAlbum();
-            
+            fetchAlbumsNameInComboBox();              
+        }
+
+        private void initializeWindowLocation()
+        {
+            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
+            int width = screen.Width / 2 + 20;
+            int height = screen.Height - 20;
+            this.Size = new Size(width, height);
+            logoutButton.Left = this.Right - logoutButton.Width - 50;
+            logoutLabel.Left = this.Right - logoutButton.Width - 50;
+            topCover.Width = this.Width - 20;
+        }
+
+        private void fetchUserData()
+        {
+            this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
+            this.userName.Text = FBAgent.LoggedInUser.Name;
         }
 
         private void fetchAlbumsNameInComboBox()
@@ -26,22 +44,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             }
         }
 
-        private void initializeWindowLocation()
-        {
-            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
-            int width = screen.Width / 2 + 20;
-            int height = screen.Height - 20;
-            this.Size = new Size(width, height);
-            logoutButton.Left = this.Right - logoutButton.Width - 30;
-            logoutLabel.Left = this.Right - logoutButton.Width - 30;
-            topCover.Width = this.Width - 20;
-        }
-
         private void fetchSelcetedAlbum(string i_AlbumName)
         {
             int position = topCover.Bottom + 100;
-            FacebookObjectCollection<Photo> wallPictures = getAlbumPhotosByName(i_AlbumName);
             int count = 0;
+            FacebookObjectCollection<Photo> wallPictures = getAlbumPhotosByName(i_AlbumName);
+
             foreach (Photo photo in wallPictures)
             {
                 WallPhoto photoComponent = new WallPhoto(photo);
@@ -50,44 +58,13 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 //photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
                 photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
+                m_CurrentPhotoOnWall.Add(photoComponent);
                 count++;
                 if (count >= 3)
                 {
                     break;
-                } 
+                }
             }
-        }
-
-        private Label setPictureDetails(Photo i_Photo)
-        {
-            Label photoDetails = new Label();
-            photoDetails.Text = string.Format("Date: {0}, Likes by: {1} people",
-                i_Photo.UpdateTime.ToString(), i_Photo.LikedBy.Count);
-
-            return photoDetails;
-        }
-
-        private PictureBox setPictureSizeAndPosition(Photo photo, int i_Position)
-        {
-            int pictureWidth = 400;
-            PictureBox picture = new PictureBox();
-            float imageRatio;
-
-            imageRatio = photo.Height / (float)photo.Width;
-            picture.Image = photo.ImageNormal;
-            picture.Left = (this.Left + this.Right) / 2 - pictureWidth / 2;
-            picture.Top = i_Position;
-            picture.Width = pictureWidth;
-            picture.Height = (int)(pictureWidth * imageRatio);
-            picture.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            return picture;
-        }
-
-        private void fetchUserData()
-        {
-            this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
-            this.userName.Text = FBAgent.LoggedInUser.Name;
         }
 
         private void uploadStatisticsButton_Click(object sender, EventArgs e)
@@ -115,12 +92,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenForm<MainForm>();
         }
 
-        private void comboBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cleanWall();
-            fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
-        }
-
         private FacebookObjectCollection<Photo> getAlbumPhotosByName(string i_AlbumName)
         {
             FacebookObjectCollection<Photo> photos = null;
@@ -137,15 +108,20 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             return photos;
         }
 
-        private void cleanWall()
+        private void clearWall()
         {
-            foreach (Control control in this.Controls)
+            foreach (WallPhoto photo in m_CurrentPhotoOnWall)
             {
-                if (control is WallPhoto)
-                {
-                    this.Controls.Remove(control);
-                }
+                this.Controls.Remove(photo);
             }
+
+            m_CurrentPhotoOnWall.Clear();
+        }
+
+        private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            clearWall();
+            fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
         }
     }
 }

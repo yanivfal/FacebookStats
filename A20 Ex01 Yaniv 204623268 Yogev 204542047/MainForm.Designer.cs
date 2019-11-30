@@ -133,14 +133,17 @@
             // 
             // comboBoxAlbums
             // 
+            this.comboBoxAlbums.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBoxAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBoxAlbums.FormattingEnabled = true;
-            this.comboBoxAlbums.Location = new System.Drawing.Point(376, 301);
+            this.comboBoxAlbums.Location = new System.Drawing.Point(365, 294);
             this.comboBoxAlbums.Name = "comboBoxAlbums";
-            this.comboBoxAlbums.Size = new System.Drawing.Size(161, 29);
+            this.comboBoxAlbums.Size = new System.Drawing.Size(214, 29);
             this.comboBoxAlbums.TabIndex = 10;
-            this.comboBoxAlbums.Text = "Select album";
-            this.comboBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbums_SelectedIndexChanged);
+            this.comboBoxAlbums.Text = "Select Album";
+            this.comboBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbums_SelectedIndexChanged_1);
             // 
             // MainForm
             // 

@@ -33,7 +33,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void InitializeLocationAndSize()
         {
             this.Width = StatsTable.Width + 50;
-            this.Height = StatsTable.Height + 50;
+            this.Height = StatsTable.Height + 200;
+            labelTitle.Left = (this.Width) / 2 - (labelTitle.Width / 2);
         }
 
         private void setTableInfo()

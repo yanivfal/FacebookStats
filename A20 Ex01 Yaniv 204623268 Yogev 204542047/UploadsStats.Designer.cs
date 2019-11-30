@@ -40,6 +40,10 @@
             this.labelFriday = new System.Windows.Forms.Label();
             this.labelSaturday = new System.Windows.Forms.Label();
             this.labelMorning = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelHigh = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.StatsTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             this.StatsTable.Controls.Add(this.labelFriday, 0, 6);
             this.StatsTable.Controls.Add(this.labelSaturday, 0, 7);
             this.StatsTable.Controls.Add(this.labelMorning, 1, 0);
-            this.StatsTable.Location = new System.Drawing.Point(26, 28);
+            this.StatsTable.Location = new System.Drawing.Point(32, 144);
             this.StatsTable.Name = "StatsTable";
             this.StatsTable.RowCount = 8;
             this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.1746F));
@@ -208,11 +212,62 @@
             this.labelMorning.Text = "Morning";
             this.labelMorning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelTitle.Location = new System.Drawing.Point(91, 20);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(804, 27);
+            this.labelTitle.TabIndex = 1;
+            this.labelTitle.Text = "This feature calculate the average amount of likes depends on the upload time";
+            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelHigh
+            // 
+            this.labelHigh.AutoSize = true;
+            this.labelHigh.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelHigh.ForeColor = System.Drawing.Color.Green;
+            this.labelHigh.Location = new System.Drawing.Point(298, 70);
+            this.labelHigh.Name = "labelHigh";
+            this.labelHigh.Size = new System.Drawing.Size(56, 27);
+            this.labelHigh.TabIndex = 2;
+            this.labelHigh.Text = "High";
+            this.labelHigh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(485, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 27);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Medium";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(677, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 27);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Low";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UploadsStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 677);
+            this.ClientSize = new System.Drawing.Size(978, 783);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelHigh);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.StatsTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "UploadsStats";
@@ -221,6 +276,7 @@
             this.StatsTable.ResumeLayout(false);
             this.StatsTable.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,5 +294,9 @@
         private System.Windows.Forms.Label labelThursday;
         private System.Windows.Forms.Label labelFriday;
         private System.Windows.Forms.Label labelSaturday;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelHigh;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

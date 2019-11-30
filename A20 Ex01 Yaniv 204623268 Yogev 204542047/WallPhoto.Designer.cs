@@ -56,7 +56,7 @@
             // 
             this.LikesLogo.BackColor = System.Drawing.Color.Transparent;
             this.LikesLogo.Image = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.likesLogo;
-            this.LikesLogo.Location = new System.Drawing.Point(238, 0);
+            this.LikesLogo.Location = new System.Drawing.Point(238, -3);
             this.LikesLogo.Name = "LikesLogo";
             this.LikesLogo.Size = new System.Drawing.Size(45, 45);
             this.LikesLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
