@@ -11,7 +11,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public MainForm()
         {
             InitializeComponent();
-            initializeLocation();
+            initializeWindowLocation();
             fetchUserData();
             fetchAlbumsNameInComboBox();  
             //fetchSelcetedAlbum();
@@ -26,7 +26,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             }
         }
 
-        private void initializeLocation()
+        private void initializeWindowLocation()
         {
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             int width = screen.Width / 2 + 20;
@@ -47,7 +47,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 WallPhoto photoComponent = new WallPhoto(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
-                photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
+                //photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
+                photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 count++;
                 if (count >= 3)
@@ -116,6 +117,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void comboBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cleanWall();
             fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
         }
 
@@ -133,6 +135,17 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             }
 
             return photos;
+        }
+
+        private void cleanWall()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is WallPhoto)
+                {
+                    this.Controls.Remove(control);
+                }
+            }
         }
     }
 }
