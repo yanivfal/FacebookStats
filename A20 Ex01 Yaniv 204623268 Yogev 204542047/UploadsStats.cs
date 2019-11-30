@@ -29,7 +29,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void setTableInfo()
         {
-            this.uploadStatsTable.GetControlFromPosition(3, 3).Text = "Hello";
+            Control p = this.uploadStatsTable.GetControlFromPosition(0, 0);
+            p.Text = "Hello";
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -38,6 +39,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             {
                 //teTime uploadTime = photo.UpdateTime;
             }
+        }
+
+        private void uploadStatsTable_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

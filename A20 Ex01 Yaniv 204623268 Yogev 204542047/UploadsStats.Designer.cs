@@ -40,6 +40,10 @@
             this.labelThursday = new System.Windows.Forms.Label();
             this.labelFriday = new System.Windows.Forms.Label();
             this.labelSaturday = new System.Windows.Forms.Label();
+            this.sundayMorning = new System.Windows.Forms.Label();
+            this.sundayNoon = new System.Windows.Forms.Label();
+            this.sundayAfternoon = new System.Windows.Forms.Label();
+            this.sundayEvening = new System.Windows.Forms.Label();
             this.uploadStatsTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,11 +54,10 @@
             this.uploadStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.90419F));
             this.uploadStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
             this.uploadStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
-            this.uploadStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
+            this.uploadStatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 242F));
             this.uploadStatsTable.Controls.Add(this.labelEvening, 4, 0);
             this.uploadStatsTable.Controls.Add(this.labelAfterNoon, 3, 0);
             this.uploadStatsTable.Controls.Add(this.labelNoon, 2, 0);
-            this.uploadStatsTable.Controls.Add(this.labelMorning, 1, 0);
             this.uploadStatsTable.Controls.Add(this.labelSundat, 0, 1);
             this.uploadStatsTable.Controls.Add(this.labelMonday, 0, 2);
             this.uploadStatsTable.Controls.Add(this.labelTuesday, 0, 3);
@@ -62,6 +65,11 @@
             this.uploadStatsTable.Controls.Add(this.labelThursday, 0, 5);
             this.uploadStatsTable.Controls.Add(this.labelFriday, 0, 6);
             this.uploadStatsTable.Controls.Add(this.labelSaturday, 0, 7);
+            this.uploadStatsTable.Controls.Add(this.labelMorning, 1, 0);
+            this.uploadStatsTable.Controls.Add(this.sundayMorning, 1, 1);
+            this.uploadStatsTable.Controls.Add(this.sundayNoon, 2, 1);
+            this.uploadStatsTable.Controls.Add(this.sundayAfternoon, 3, 1);
+            this.uploadStatsTable.Controls.Add(this.sundayEvening, 4, 1);
             this.uploadStatsTable.Location = new System.Drawing.Point(46, 43);
             this.uploadStatsTable.Margin = new System.Windows.Forms.Padding(5);
             this.uploadStatsTable.Name = "uploadStatsTable";
@@ -76,13 +84,14 @@
             this.uploadStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.uploadStatsTable.Size = new System.Drawing.Size(1634, 972);
             this.uploadStatsTable.TabIndex = 0;
+            this.uploadStatsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.uploadStatsTable_Paint);
             // 
             // labelEvening
             // 
             this.labelEvening.AutoSize = true;
             this.labelEvening.Enabled = false;
             this.labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvening.Location = new System.Drawing.Point(1397, 0);
+            this.labelEvening.Location = new System.Drawing.Point(1396, 0);
             this.labelEvening.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelEvening.Name = "labelEvening";
             this.labelEvening.Size = new System.Drawing.Size(193, 60);
@@ -95,7 +104,7 @@
             this.labelAfterNoon.AutoSize = true;
             this.labelAfterNoon.Enabled = false;
             this.labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAfterNoon.Location = new System.Drawing.Point(1013, 0);
+            this.labelAfterNoon.Location = new System.Drawing.Point(1012, 0);
             this.labelAfterNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelAfterNoon.Name = "labelAfterNoon";
             this.labelAfterNoon.Size = new System.Drawing.Size(233, 60);
@@ -108,7 +117,7 @@
             this.labelNoon.AutoSize = true;
             this.labelNoon.Enabled = false;
             this.labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoon.Location = new System.Drawing.Point(730, 0);
+            this.labelNoon.Location = new System.Drawing.Point(729, 0);
             this.labelNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelNoon.Name = "labelNoon";
             this.labelNoon.Size = new System.Drawing.Size(140, 60);
@@ -121,7 +130,7 @@
             this.labelMorning.AutoSize = true;
             this.labelMorning.Enabled = false;
             this.labelMorning.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMorning.Location = new System.Drawing.Point(383, 0);
+            this.labelMorning.Location = new System.Drawing.Point(382, 0);
             this.labelMorning.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelMorning.Name = "labelMorning";
             this.labelMorning.Size = new System.Drawing.Size(199, 60);
@@ -220,6 +229,58 @@
             this.labelSaturday.Text = "Saturday";
             this.labelSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // sundayMorning
+            // 
+            this.sundayMorning.AutoSize = true;
+            this.sundayMorning.Enabled = false;
+            this.sundayMorning.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundayMorning.Location = new System.Drawing.Point(382, 137);
+            this.sundayMorning.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.sundayMorning.Name = "sundayMorning";
+            this.sundayMorning.Size = new System.Drawing.Size(51, 60);
+            this.sundayMorning.TabIndex = 14;
+            this.sundayMorning.Text = "0";
+            this.sundayMorning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sundayNoon
+            // 
+            this.sundayNoon.AutoSize = true;
+            this.sundayNoon.Enabled = false;
+            this.sundayNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundayNoon.Location = new System.Drawing.Point(729, 137);
+            this.sundayNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.sundayNoon.Name = "sundayNoon";
+            this.sundayNoon.Size = new System.Drawing.Size(51, 60);
+            this.sundayNoon.TabIndex = 15;
+            this.sundayNoon.Text = "0";
+            this.sundayNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sundayAfternoon
+            // 
+            this.sundayAfternoon.AutoSize = true;
+            this.sundayAfternoon.Enabled = false;
+            this.sundayAfternoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundayAfternoon.Location = new System.Drawing.Point(1012, 137);
+            this.sundayAfternoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.sundayAfternoon.Name = "sundayAfternoon";
+            this.sundayAfternoon.Size = new System.Drawing.Size(51, 60);
+            this.sundayAfternoon.TabIndex = 16;
+            this.sundayAfternoon.Text = "0";
+            this.sundayAfternoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sundayEvening
+            // 
+            this.sundayEvening.AutoSize = true;
+            this.sundayEvening.Enabled = false;
+            this.sundayEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sundayEvening.Location = new System.Drawing.Point(1396, 137);
+            this.sundayEvening.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.sundayEvening.Name = "sundayEvening";
+            this.sundayEvening.Size = new System.Drawing.Size(51, 60);
+            this.sundayEvening.TabIndex = 17;
+            this.sundayEvening.Text = "0";
+            this.sundayEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UploadsStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -249,5 +310,9 @@
         private System.Windows.Forms.Label labelThursday;
         private System.Windows.Forms.Label labelFriday;
         private System.Windows.Forms.Label labelSaturday;
+        private System.Windows.Forms.Label sundayMorning;
+        private System.Windows.Forms.Label sundayNoon;
+        private System.Windows.Forms.Label sundayAfternoon;
+        private System.Windows.Forms.Label sundayEvening;
     }
 }
