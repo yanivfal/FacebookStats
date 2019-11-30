@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2117, 916);
+            this.ClientSize = new System.Drawing.Size(2183, 1006);
             this.Controls.Add(this.checkLikesButton);
             this.Controls.Add(this.likesToDate);
             this.Controls.Add(this.toLabel);

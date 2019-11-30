@@ -76,7 +76,6 @@
             this.uploadStatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.uploadStatsTable.Size = new System.Drawing.Size(1634, 972);
             this.uploadStatsTable.TabIndex = 0;
-            this.uploadStatsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.uploadStatsTable_Paint);
             // 
             // labelEvening
             // 

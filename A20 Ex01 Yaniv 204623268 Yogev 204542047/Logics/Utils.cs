@@ -33,10 +33,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> daysLikes = new Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>>();
 
             //foreach (Album album in FBAgent.LoggedInUser.Albums)
-            Album album = FBAgent.LoggedInUser.Albums[0];
             {
-                foreach (Photo photo in album.Photos)
+                //foreach (Photo photo in album.Photos)
+                for(var i=0; i<5; i++)
                 {
+                    Photo photo = FBAgent.LoggedInUser.PhotosTaggedIn[i];
                     DayOfWeek currentDay = photo.CreatedTime.Value.DayOfWeek;
                     eDayParts currentDayPart = getCurrentDayPart(photo.CreatedTime.Value.Hour);
 

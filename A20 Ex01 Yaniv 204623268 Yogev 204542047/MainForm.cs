@@ -12,10 +12,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             InitializeComponent();
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
-            int w = Width >= screen.Width ? screen.Width : (screen.Width + Width) / 2;
-            int h = Height >= screen.Height ? screen.Height : (screen.Height + Height) / 2;
-            this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
-            this.Size = new Size(w, h);
+            int width = screen.Width / 2 + 20;
+            int height = screen.Height - 20;
+            this.Size = new Size(width, height);
+
+
             fetchUserData();
             fetchPhotos();
         }
