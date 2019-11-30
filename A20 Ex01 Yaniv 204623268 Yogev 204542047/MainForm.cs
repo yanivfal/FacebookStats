@@ -11,21 +11,36 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public MainForm()
         {
             InitializeComponent();
+            initializeLocation();
+            fetchUserData();
+            fetchAlbumsNameInComboBox();  
+            //fetchSelcetedAlbum();
+            
+        }
+
+        private void fetchAlbumsNameInComboBox()
+        {
+            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                comboBoxAlbums.Items.Add(album.Name);
+            }
+        }
+
+        private void initializeLocation()
+        {
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             int width = screen.Width / 2 + 20;
             int height = screen.Height - 20;
             this.Size = new Size(width, height);
-
-
-            fetchUserData();
-            fetchPhotos();
+            logoutButton.Left = this.Right - logoutButton.Width - 30;
+            logoutLabel.Left = this.Right - logoutButton.Width - 30;
+            topCover.Width = this.Width - 20;
         }
 
-        private void fetchPhotos()
+        private void fetchSelcetedAlbum(string i_AlbumName)
         {
-            
             int position = topCover.Bottom + 100;
-            FacebookObjectCollection<Photo> wallPictures = FBAgent.LoggedInUser.PhotosTaggedIn;
+            FacebookObjectCollection<Photo> wallPictures = getAlbumPhotosByName(i_AlbumName);
             int count = 0;
             foreach (Photo photo in wallPictures)
             {
@@ -97,6 +112,27 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenForm<LikesStatisticsForm>();
             //After previous screen is closed
             UIRunner.OpenForm<MainForm>();
+        }
+
+        private void comboBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+        }
+
+        private FacebookObjectCollection<Photo> getAlbumPhotosByName(string i_AlbumName)
+        {
+            FacebookObjectCollection<Photo> photos = null;
+
+            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                if (i_AlbumName.Equals(album.Name))
+                {
+                    photos = album.Photos;
+                    break;
+                }
+            }
+
+            return photos;
         }
     }
 }

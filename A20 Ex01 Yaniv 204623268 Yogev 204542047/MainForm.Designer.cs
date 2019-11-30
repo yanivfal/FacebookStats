@@ -35,6 +35,7 @@
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.topCover = new System.Windows.Forms.PictureBox();
+            this.comboBoxAlbums = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
@@ -122,13 +123,24 @@
             // topCover
             // 
             this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
-            this.topCover.Location = new System.Drawing.Point(0, -2);
+            this.topCover.Location = new System.Drawing.Point(-1, -1);
             this.topCover.Margin = new System.Windows.Forms.Padding(2);
             this.topCover.Name = "topCover";
-            this.topCover.Size = new System.Drawing.Size(2012, 191);
+            this.topCover.Size = new System.Drawing.Size(953, 191);
             this.topCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.topCover.TabIndex = 1;
             this.topCover.TabStop = false;
+            // 
+            // comboBoxAlbums
+            // 
+            this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.comboBoxAlbums.FormattingEnabled = true;
+            this.comboBoxAlbums.Location = new System.Drawing.Point(376, 301);
+            this.comboBoxAlbums.Name = "comboBoxAlbums";
+            this.comboBoxAlbums.Size = new System.Drawing.Size(161, 29);
+            this.comboBoxAlbums.TabIndex = 10;
+            this.comboBoxAlbums.Text = "Select album";
+            this.comboBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbums_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -136,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(947, 1046);
+            this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.uploadStatisticsButton);
@@ -167,5 +180,6 @@
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.PictureBox logoutButton;
         private System.Windows.Forms.Label logoutLabel;
+        private System.Windows.Forms.ComboBox comboBoxAlbums;
     }
 }

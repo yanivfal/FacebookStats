@@ -14,18 +14,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     {
         public bool RememberUser { get; set; }
         public string LastAccessToken { get; set; }
-        public readonly int m_WindowWidth;
-        public readonly int m_ScrollWindowHeight;
-        public readonly int m_RegularWindowHeight;
 
         public static AppSettings Instance = new AppSettings();
         private AppSettings()
         {          
             RememberUser = false;
             LastAccessToken = null;
-            m_WindowWidth = 960;
-            m_ScrollWindowHeight = 2000;
-            m_RegularWindowHeight = 960;
         }
 
         public void SaveToFile()

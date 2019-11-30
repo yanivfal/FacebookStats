@@ -54,9 +54,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         //Insert demmy data
         private void setPictureDetails(Photo i_Photo)
         {
-            //labelDate.Text = i_Photo.UpdateTime.Value.ToString();
-
-            labelDate.Text = "18/01/1993";
+            labelDate.Text = i_Photo.CreatedTime.Value.ToString("MMMM dd");
 
             // labelLikes.Text = i_Photo.LikedBy.Count().ToString();
 
