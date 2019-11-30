@@ -11,12 +11,20 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public MainForm()
         {
             InitializeComponent();
+            initializeLocation();
+            fetchUserData();
+            fetchPhotos();
+        }
+
+        private void initializeLocation()
+        {
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             int width = screen.Width / 2 + 20;
             int height = screen.Height - 20;
             this.Size = new Size(width, height);
-            fetchUserData();
-            fetchPhotos();
+            logoutButton.Left = this.Right - logoutButton.Width - 30;
+            logoutLabel.Left = this.Right - logoutButton.Width - 30;
+            topCover.Width = this.Width - 20;
         }
 
         private void fetchPhotos()

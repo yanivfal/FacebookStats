@@ -122,10 +122,10 @@
             // topCover
             // 
             this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
-            this.topCover.Location = new System.Drawing.Point(0, -2);
+            this.topCover.Location = new System.Drawing.Point(-1, -1);
             this.topCover.Margin = new System.Windows.Forms.Padding(2);
             this.topCover.Name = "topCover";
-            this.topCover.Size = new System.Drawing.Size(2012, 191);
+            this.topCover.Size = new System.Drawing.Size(953, 191);
             this.topCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.topCover.TabIndex = 1;
             this.topCover.TabStop = false;
