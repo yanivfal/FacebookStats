@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxHoroscope = new System.Windows.Forms.PictureBox();
             this.labelHoroscopeTitle = new System.Windows.Forms.Label();
             this.buttonHoroscopeResolve = new System.Windows.Forms.Button();
+            this.pictureBoxHoroscope = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoroscope)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxHoroscope
-            // 
-            this.pictureBoxHoroscope.Image = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.horoscopesLogo;
-            this.pictureBoxHoroscope.Location = new System.Drawing.Point(231, 84);
-            this.pictureBoxHoroscope.Name = "pictureBoxHoroscope";
-            this.pictureBoxHoroscope.Size = new System.Drawing.Size(300, 300);
-            this.pictureBoxHoroscope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxHoroscope.TabIndex = 0;
-            this.pictureBoxHoroscope.TabStop = false;
             // 
             // labelHoroscopeTitle
             // 
@@ -63,6 +53,17 @@
             this.buttonHoroscopeResolve.TabIndex = 2;
             this.buttonHoroscopeResolve.Text = "Click here to get your horoscope";
             this.buttonHoroscopeResolve.UseVisualStyleBackColor = true;
+            this.buttonHoroscopeResolve.Click += new System.EventHandler(this.buttonHoroscopeResolve_Click);
+            // 
+            // pictureBoxHoroscope
+            // 
+            this.pictureBoxHoroscope.Image = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.horoscopesLogo;
+            this.pictureBoxHoroscope.Location = new System.Drawing.Point(231, 84);
+            this.pictureBoxHoroscope.Name = "pictureBoxHoroscope";
+            this.pictureBoxHoroscope.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxHoroscope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHoroscope.TabIndex = 0;
+            this.pictureBoxHoroscope.TabStop = false;
             // 
             // HoroscopeForm
             // 

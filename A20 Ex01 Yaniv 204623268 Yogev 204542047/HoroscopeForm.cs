@@ -13,6 +13,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public partial class HoroscopeForm : Form
     {
+        string M_Horoscope;
+
         public HoroscopeForm()
         {
             InitializeComponent();
@@ -35,6 +37,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             // Move all the controls to the center
             this.labelHoroscopeTitle.Left = (this.Width) / 2 - (labelHoroscopeTitle.Width / 2);
 
+        }
+
+        private void buttonHoroscopeResolve_Click(object sender, EventArgs e)
+        {
+            fetchHoroscope();
+        }
+
+        private void fetchHoroscope()
+        {
+            this.pictureBoxHoroscope.Size = new Size(100, 100);
+            if (string.IsNullOrEmpty(M_Horoscope))
+            {
+                Label horscopeText = new Label();
+                horscopeText.Text = M_Horoscope;
+                horscopeText.Top = pictureBoxHoroscope.Bottom + 30;
+                horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
+            }           
         }
     }
 }
