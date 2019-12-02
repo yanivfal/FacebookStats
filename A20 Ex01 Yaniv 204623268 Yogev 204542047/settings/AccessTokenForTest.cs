@@ -8,7 +8,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.settings
 {
     public static class AccessTokenForTest
     {
-        public static string Access_Token = "EAAmz8OcMQHgBAHadmMKUv7uqJmOL1e6Y0Q4MojvVDRgpSfDUZAbmNyZAM83D7GrSZCDarwMjXN9Em1sanq4qAkcsAk8F80XBOVoTar1NU60IlNDGLmToFx138Eqn9SRSZCNdnsNwcyIVYiv8XbZA9Db5X6AS7ZCclSZBPG5fGAUchrdQEDgYhm0qwaJ1YGwfRy3tPrQZB1mEbQZDZD";
+        public static string Access_Token = "EAAmz8OcMQHgBAEA175u7q8be1GvOjTM3nKvtbIoguaT8eNR1ZBHgZAOEUD4Xvav7YyfcdXER6nyw75ov10K0A9OorGaEyZAFMyUgcFeZBOq6GwLPyxxKTCfxL1rFtS4oHMiQ14XMwMO7f3KRn0ZAQPixeMk8JdvjtZAAW8r8LiZBXJQCMoluNtepsKPj7C4dBkZD";
         //bla bla
     }
 }

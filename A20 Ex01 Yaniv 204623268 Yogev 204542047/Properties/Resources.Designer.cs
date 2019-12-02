@@ -63,6 +63,46 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aquarius_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Aquarius_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aries_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Aries_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cancer_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Cancer_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap capricorn_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("capricorn_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DateLogo2 {
             get {
                 object obj = ResourceManager.GetObject("DateLogo2", resourceCulture);
@@ -73,9 +113,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap facebookLogin {
+        internal static System.Drawing.Bitmap FBlogin2 {
             get {
-                object obj = ResourceManager.GetObject("facebookLogin", resourceCulture);
+                object obj = ResourceManager.GetObject("FBlogin2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +123,39 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FBlogin2 {
+        internal static System.Drawing.Bitmap Gemini_Astrology_Img {
             get {
-                object obj = ResourceManager.GetObject("FBlogin2", resourceCulture);
+                object obj = ResourceManager.GetObject("Gemini_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap horoscopesLogo {
+            get {
+                object obj = ResourceManager.GetObject("horoscopesLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leo_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Leo_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Libra_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Libra_Astrology_Img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +203,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout__1_ {
+        internal static System.Drawing.Bitmap logOutWhite2 {
             get {
-                object obj = ResourceManager.GetObject("logout (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("logOutWhite2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +213,49 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logOutWhite2 {
+        internal static System.Drawing.Bitmap Pisces_Astrology_Img {
             get {
-                object obj = ResourceManager.GetObject("logOutWhite2", resourceCulture);
+                object obj = ResourceManager.GetObject("Pisces_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sagittarius_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("sagittarius_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scorpio_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Scorpio_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Taurus_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Taurus_Astrology_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Virgo_Astrology_Img {
+            get {
+                object obj = ResourceManager.GetObject("Virgo_Astrology_Img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
