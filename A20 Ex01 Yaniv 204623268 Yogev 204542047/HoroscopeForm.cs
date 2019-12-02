@@ -29,7 +29,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             //labelHoroscopeTitle.Text = "You Are Lion!";
             labelHoroscopeTitle.Text = string.Format("You Are {0}!", zodiacName.ToString());
-            //pictureBoxHoroscope.Image = ZodiacAgent.getZodiacImage(dateOfBirth);
+            pictureBoxHoroscope.Image = HoroscopeAgent.GetZodiacImage(zodiacName);
         }
 
         private void LocateAllControls()

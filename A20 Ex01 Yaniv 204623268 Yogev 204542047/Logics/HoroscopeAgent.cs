@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -157,6 +158,53 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             return zodiac;
         }
 
+        internal static Image GetZodiacImage(eZodiacs zodiacName)
+        {
+            Image image = null;
+            
+            switch (zodiacName)
+            {
+                case eZodiacs.Aquarius:
+                    image = Properties.Resources.Aquarius_Astrology_Img;
+                    break;
+                case eZodiacs.Aries:
+                    image = Properties.Resources.Aries_Astrology_Img;
+                    break;
+                case eZodiacs.Cancer:
+                    image = Properties.Resources.Cancer_Astrology_Img;
+                    break;
+                case eZodiacs.Capricorn:
+                    image = Properties.Resources.capricorn_Astrology_Img;
+                    break;
+                case eZodiacs.Gemini:
+                    image = Properties.Resources.Gemini_Astrology_Img;
+                    break;
+                case eZodiacs.Leo:
+                    image = Properties.Resources.Leo_Astrology_Img;
+                    break;
+                case eZodiacs.Libra:
+                    image = Properties.Resources.Libra_Astrology_Img;
+                    break;
+                case eZodiacs.Pisces:
+                    image = Properties.Resources.Pisces_Astrology_Img;
+                    break;
+                case eZodiacs.Sagittarius:
+                    image = Properties.Resources.sagittarius_Astrology_Img;
+                    break;
+                case eZodiacs.Scorpio:
+                    image = Properties.Resources.Scorpio_Astrology_Img;
+                    break;
+                case eZodiacs.Taurus:
+                    image = Properties.Resources.Taurus_Astrology_Img;
+                    break;
+                case eZodiacs.Virgo:
+                    image = Properties.Resources.Virgo_Astrology_Img;
+                    break;
+
+            }
+
+            return image;
+        }
 
         public static string HttpGetRequest(string i_URL)
         {
