@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.likeStatisticsButton = new System.Windows.Forms.Button();
+            this.horoscopeButton = new System.Windows.Forms.Button();
             this.uploadStatisticsButton = new System.Windows.Forms.Button();
             this.userName = new System.Windows.Forms.Label();
             this.logoutLabel = new System.Windows.Forms.Label();
@@ -41,19 +41,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
             this.SuspendLayout();
             // 
-            // likeStatisticsButton
+            // horoscopeButton
             // 
-            this.likeStatisticsButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.likeStatisticsButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.likeStatisticsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.likeStatisticsButton.Location = new System.Drawing.Point(35, 221);
-            this.likeStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.likeStatisticsButton.Name = "likeStatisticsButton";
-            this.likeStatisticsButton.Size = new System.Drawing.Size(398, 41);
-            this.likeStatisticsButton.TabIndex = 4;
-            this.likeStatisticsButton.Text = "Who like me at most?";
-            this.likeStatisticsButton.UseVisualStyleBackColor = false;
-            this.likeStatisticsButton.Click += new System.EventHandler(this.likeStatisticsButton_Click_1);
+            this.horoscopeButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.horoscopeButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.horoscopeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.horoscopeButton.Location = new System.Drawing.Point(35, 221);
+            this.horoscopeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.horoscopeButton.Name = "horoscopeButton";
+            this.horoscopeButton.Size = new System.Drawing.Size(398, 41);
+            this.horoscopeButton.TabIndex = 4;
+            this.horoscopeButton.Text = "Get your horoscope!";
+            this.horoscopeButton.UseVisualStyleBackColor = false;
+            this.horoscopeButton.Click += new System.EventHandler(this.horoscopeButton_Click);
             // 
             // uploadStatisticsButton
             // 
@@ -154,7 +154,7 @@
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.uploadStatisticsButton);
-            this.Controls.Add(this.likeStatisticsButton);
+            this.Controls.Add(this.horoscopeButton);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.topCover);
@@ -177,7 +177,7 @@
 
         private System.Windows.Forms.PictureBox topCover;
         private System.Windows.Forms.PictureBox profilePicture;
-        private System.Windows.Forms.Button likeStatisticsButton;
+        private System.Windows.Forms.Button horoscopeButton;
         private System.Windows.Forms.Button uploadStatisticsButton;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.PictureBox logoutButton;

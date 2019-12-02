@@ -16,7 +16,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             InitializeComponent();
             initializeWindowLocation();
             fetchUserData();
-            fetchAlbumsNamesInComboBox();              
+            fetchAlbumsNamesInComboBox();
+            fetchSelcetedAlbum(FBAgent.LoggedInUser.Albums[0].Name);
         }
 
         private void initializeWindowLocation()
@@ -86,7 +87,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenForm<LoginForm>();
         }
 
-        private void likeStatisticsButton_Click_1(object sender, EventArgs e)
+        private void horoscopeButton_Click(object sender, EventArgs e)
         {
             UIRunner.HideCurrentForm();
             UIRunner.OpenForm<HoroscopeForm>();

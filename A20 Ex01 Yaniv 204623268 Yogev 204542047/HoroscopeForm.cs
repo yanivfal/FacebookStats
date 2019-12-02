@@ -28,7 +28,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             DateTime userDOB = DateTime.ParseExact(dateOfBirth, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             
             m_ZodiacName = HoroscopeAgent.GetZodiacName(userDOB);
-
+            pictureBoxHoroscope.Image = HoroscopeAgent.GetZodiacImage(m_ZodiacName);
             labelHoroscopeTitle.Text = string.Format("You Are {0}!", m_ZodiacName.ToString());
         }
 
@@ -45,16 +45,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         }
 
         private void fetchHoroscope()
-        {
+        {    
             this.pictureBoxHoroscope.Size = new Size(100, 100);
             pictureBoxHoroscope.Left = (this.Width) / 2 - (pictureBoxHoroscope.Width / 2);
+            this.Controls.Remove(buttonHoroscopeResolve);
+            initializeHoroscopeLabel();
+        }
+
+        private void initializeHoroscopeLabel()
+        {
             Label horscopeText = new Label();
+
+            horscopeText.Font = new Font("Levenim MT", 10);
             horscopeText.Height = 300;
             horscopeText.Width = this.Width - 50;
             horscopeText.Text = HoroscopeAgent.GetHoroscope(m_ZodiacName);
-            horscopeText.Top = pictureBoxHoroscope.Bottom + 30;
+            horscopeText.Top = pictureBoxHoroscope.Bottom + 10;
             horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
-            this.Controls.Remove(buttonHoroscopeResolve);
             this.Controls.Add(horscopeText);
         }
     }

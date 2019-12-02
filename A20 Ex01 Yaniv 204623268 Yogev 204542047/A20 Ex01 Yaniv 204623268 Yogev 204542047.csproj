@@ -68,12 +68,6 @@
     <Compile Include="RelativeUserDetails.cs" />
     <Compile Include="settings\AccessTokenForTest.cs" />
     <Compile Include="settings\AppSettings.cs" />
-    <Compile Include="LikesStatisticsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LikesStatisticsForm.Designer.cs">
-      <DependentUpon>LikesStatisticsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logics\FBAgent.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -109,9 +103,6 @@
     <Compile Include="WallPhoto.Designer.cs">
       <DependentUpon>WallPhoto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LikesStatisticsForm.resx">
-      <DependentUpon>LikesStatisticsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
