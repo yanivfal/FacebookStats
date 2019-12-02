@@ -25,7 +25,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             return horoscope;
         }
 
-        public static eZodiacs GetZodiac(DateTime i_DateOfBirth)
+        public static eZodiacs GetZodiacName(DateTime i_DateOfBirth)
         {
             //Set defualt
             eZodiacs zodiac = eZodiacs.Capricorn;

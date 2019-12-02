@@ -13,7 +13,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     public partial class HoroscopeForm : Form
     {
-        string M_Horoscope;
+        eZodiacs m_ZodiacName;
 
         public HoroscopeForm()
         {
@@ -27,11 +27,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             string dateOfBirth = FBAgent.LoggedInUser.Birthday;
             DateTime userDOB = DateTime.ParseExact(dateOfBirth, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             
-            eZodiacs zodiacName = HoroscopeAgent.GetZodiac(userDOB);
+            m_ZodiacName = HoroscopeAgent.GetZodiacName(userDOB);
 
-            //labelHoroscopeTitle.Text = "You Are Lion!";
-            labelHoroscopeTitle.Text = string.Format("You Are {0}!", zodiacName.ToString());
-            //pictureBoxHoroscope.Image = ZodiacAgent.getZodiacImage(dateOfBirth);
+            labelHoroscopeTitle.Text = string.Format("You Are {0}!", m_ZodiacName.ToString());
         }
 
         private void LocateAllControls()
@@ -49,13 +47,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchHoroscope()
         {
             this.pictureBoxHoroscope.Size = new Size(100, 100);
-            if (string.IsNullOrEmpty(M_Horoscope))
-            {
-                Label horscopeText = new Label();
-                horscopeText.Text = M_Horoscope;
-                horscopeText.Top = pictureBoxHoroscope.Bottom + 30;
-                horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
-            }           
+            pictureBoxHoroscope.Left = (this.Width) / 2 - (pictureBoxHoroscope.Width / 2);
+            Label horscopeText = new Label();
+            horscopeText.Height = 300;
+            horscopeText.Width = this.Width - 50;
+            horscopeText.Text = HoroscopeAgent.GetHoroscope(m_ZodiacName);
+            horscopeText.Top = pictureBoxHoroscope.Bottom + 30;
+            horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
+            this.Controls.Remove(buttonHoroscopeResolve);
+            this.Controls.Add(horscopeText);
         }
     }
 }
