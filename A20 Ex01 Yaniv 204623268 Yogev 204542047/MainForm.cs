@@ -14,21 +14,29 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public MainForm()
         {
             InitializeComponent();
-            initializeWindowLocation();
+            initializeWindowSettings();
             fetchUserData();
             fetchAlbumsNamesInComboBox();
-            fetchSelcetedAlbum(FBAgent.LoggedInUser.Albums[0].Name);
+            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
         }
 
-        private void initializeWindowLocation()
+        private void initializeWindowSettings()
         {
+            // Set the window size
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             int width = screen.Width / 2 + 20;
             int height = screen.Height - 20;
             this.Size = new Size(width, height);
+            // Logo button location
             logoutButton.Left = this.Right - logoutButton.Width - 50;
             logoutLabel.Left = this.Right - logoutButton.Width - 50;
+            // Top cover size
             topCover.Width = this.Width - 20;
+            // Buttons size and location
+            horoscopeButton.Left = this.Left + 30;
+            uploadStatisticsButton.Left = this.Right - uploadStatisticsButton.Width
+                - 30;
+
         }
 
         private void fetchUserData()
