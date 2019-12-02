@@ -16,7 +16,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             InitializeComponent();
             initializeWindowLocation();
             fetchUserData();
-            fetchAlbumsNameInComboBox();              
+            fetchAlbumsNamesInComboBox();              
         }
 
         private void initializeWindowLocation()
@@ -36,11 +36,14 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             this.userName.Text = FBAgent.LoggedInUser.Name;
         }
 
-        private void fetchAlbumsNameInComboBox()
+        private void fetchAlbumsNamesInComboBox()
         {
             foreach (Album album in FBAgent.LoggedInUser.Albums)
             {
-                comboBoxAlbums.Items.Add(album.Name);
+                if (album.Photos.Count != 0)
+                {
+                    comboBoxAlbums.Items.Add(album.Name);
+                } 
             }
         }
 
@@ -55,7 +58,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 WallPhoto photoComponent = new WallPhoto(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
-                //photoComponent.Left = (this.Left + this.Right) / 2 - (photoComponent.Width / 2);
                 photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 m_CurrentPhotoOnWall.Add(photoComponent);
@@ -87,7 +89,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void likeStatisticsButton_Click_1(object sender, EventArgs e)
         {
             UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<LikesStatisticsForm>();
+            UIRunner.OpenForm<HoroscopeForm>();
             //After previous screen is closed
             UIRunner.OpenForm<MainForm>();
         }

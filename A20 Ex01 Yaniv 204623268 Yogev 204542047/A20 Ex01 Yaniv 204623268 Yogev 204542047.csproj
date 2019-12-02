@@ -57,12 +57,6 @@
   <ItemGroup>
     <Compile Include="Logics\eDayParts.cs" />
     <Compile Include="Logics\PhotosGroupInfo.cs" />
-    <Compile Include="logoutComponent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="logoutComponent.Designer.cs">
-      <DependentUpon>logoutComponent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +94,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logics\Utils.cs" />
+    <Compile Include="HoroscopeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoroscopeForm.Designer.cs">
+      <DependentUpon>HoroscopeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WallPhoto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,9 +112,6 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="logoutComponent.resx">
-      <DependentUpon>logoutComponent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoroscopeForm.resx">
+      <DependentUpon>HoroscopeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WallPhoto.resx">
       <DependentUpon>WallPhoto.cs</DependentUpon>
@@ -146,6 +146,19 @@
   <ItemGroup>
     <Content Include="dlls\Facebook.dll" />
     <Content Include="dlls\FbGraphApiWrapper.dll" />
+    <None Include="Resources\Taurus_Astrology_Img.png" />
+    <None Include="Resources\Aries_Astrology_Img.png" />
+    <None Include="Resources\Gemini_Astrology_Img.png" />
+    <None Include="Resources\Cancer_Astrology_Img.png" />
+    <None Include="Resources\Leo_Astrology_Img.png" />
+    <None Include="Resources\Virgo_Astrology_Img.png" />
+    <None Include="Resources\Libra_Astrology_Img.png" />
+    <None Include="Resources\Scorpio_Astrology_Img.png" />
+    <None Include="Resources\sagittarius_Astrology_Img.png" />
+    <None Include="Resources\capricorn_Astrology_Img.png" />
+    <None Include="Resources\Aquarius_Astrology_Img.png" />
+    <None Include="Resources\Pisces_Astrology_Img.png" />
+    <None Include="Resources\horoscopesLogo.png" />
     <None Include="Resources\LocationLogo2.png" />
     <None Include="Resources\LocationLogo.png" />
     <None Include="Resources\likesLogo.png" />
