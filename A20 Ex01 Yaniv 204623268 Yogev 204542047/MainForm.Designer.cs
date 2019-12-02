@@ -101,7 +101,6 @@
             this.logoutButton.BackgroundImage = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.logOutWhite2;
             this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutButton.InitialImage = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.logout__1_;
             this.logoutButton.Location = new System.Drawing.Point(852, 20);
             this.logoutButton.Margin = new System.Windows.Forms.Padding(2);
             this.logoutButton.Name = "logoutButton";

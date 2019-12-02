@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logics\eDayParts.cs" />
+    <Compile Include="Logics\eZodiacs.cs" />
+    <Compile Include="Logics\HoroscopeAgent.cs" />
+    <Compile Include="Logics\Month.cs" />
     <Compile Include="Logics\PhotosGroupInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

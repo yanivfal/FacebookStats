@@ -25,10 +25,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void FetchHoroscopeNameAndImage()
         {
             string dateOfBirth = FBAgent.LoggedInUser.Birthday;
-            //string zodiacName = ZodiacAgent.getZodiacName(dateOfBirth);
+            DateTime userDOB = DateTime.ParseExact(dateOfBirth, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            
+            eZodiacs zodiacName = HoroscopeAgent.GetZodiac(userDOB);
 
-            labelHoroscopeTitle.Text = "You Are Lion!";
-            //labelHoroscopeTitle.Text = string.Format("You Are {0}!", zodiacName);
+            //labelHoroscopeTitle.Text = "You Are Lion!";
+            labelHoroscopeTitle.Text = string.Format("You Are {0}!", zodiacName.ToString());
             //pictureBoxHoroscope.Image = ZodiacAgent.getZodiacImage(dateOfBirth);
         }
 

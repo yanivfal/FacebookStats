@@ -40,7 +40,7 @@
             // 
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.title.Location = new System.Drawing.Point(638, 59);
+            this.title.Location = new System.Drawing.Point(401, 45);
             this.title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(765, 82);
@@ -52,7 +52,7 @@
             this.likesFromDate.CalendarFont = new System.Drawing.Font("Levenim MT", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likesFromDate.Font = new System.Drawing.Font("Levenim MT", 15.9F);
             this.likesFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.likesFromDate.Location = new System.Drawing.Point(523, 157);
+            this.likesFromDate.Location = new System.Drawing.Point(298, 160);
             this.likesFromDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.likesFromDate.Name = "likesFromDate";
             this.likesFromDate.Size = new System.Drawing.Size(404, 82);
@@ -62,7 +62,7 @@
             // 
             this.fromLabel.AutoSize = true;
             this.fromLabel.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.fromLabel.Location = new System.Drawing.Point(363, 174);
+            this.fromLabel.Location = new System.Drawing.Point(126, 171);
             this.fromLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fromLabel.Name = "fromLabel";
             this.fromLabel.Size = new System.Drawing.Size(140, 63);
@@ -73,7 +73,7 @@
             // 
             this.toLabel.AutoSize = true;
             this.toLabel.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.toLabel.Location = new System.Drawing.Point(1026, 174);
+            this.toLabel.Location = new System.Drawing.Point(759, 174);
             this.toLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.toLabel.Name = "toLabel";
             this.toLabel.Size = new System.Drawing.Size(78, 63);
@@ -85,7 +85,7 @@
             this.likesToDate.CalendarFont = new System.Drawing.Font("Levenim MT", 15.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.likesToDate.Font = new System.Drawing.Font("Levenim MT", 15.9F);
             this.likesToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.likesToDate.Location = new System.Drawing.Point(1118, 160);
+            this.likesToDate.Location = new System.Drawing.Point(845, 160);
             this.likesToDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.likesToDate.Name = "likesToDate";
             this.likesToDate.Size = new System.Drawing.Size(406, 82);
@@ -95,7 +95,7 @@
             // 
             this.checkLikesButton.Font = new System.Drawing.Font("Levenim MT", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.checkLikesButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkLikesButton.Location = new System.Drawing.Point(752, 273);
+            this.checkLikesButton.Location = new System.Drawing.Point(415, 294);
             this.checkLikesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkLikesButton.Name = "checkLikesButton";
             this.checkLikesButton.Size = new System.Drawing.Size(617, 124);
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1924, 916);
+            this.ClientSize = new System.Drawing.Size(1684, 1621);
             this.Controls.Add(this.checkLikesButton);
             this.Controls.Add(this.likesToDate);
             this.Controls.Add(this.toLabel);
