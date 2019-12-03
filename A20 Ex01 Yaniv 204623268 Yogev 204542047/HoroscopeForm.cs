@@ -64,5 +64,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
             this.Controls.Add(horscopeText);
         }
+
+        private void backComponent1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
