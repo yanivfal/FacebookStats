@@ -20,26 +20,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             LoginResult loginResult;
             bool isLoginSucceeded = true;
             o_AccessToken = null;
-            loginResult = FacebookService.Login("2731122040258680",
-                "public_profile",
-                "email",
-                "publish_to_groups",
-                "user_birthday",
-                "user_age_range",
-                "user_gender",
-                "user_link",
-                "user_tagged_places",
-                "user_videos",
-                "publish_to_groups",
-                "groups_access_member_info",
-                "user_friends",
-                "user_events",
-                "user_likes",
-                "user_location",
-                "user_photos",
-                "user_posts",
-                "user_hometown"
-            );
+
+            loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos");
             //loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
