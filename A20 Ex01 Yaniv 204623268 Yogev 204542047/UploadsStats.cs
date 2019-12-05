@@ -20,14 +20,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public UploadsStats()
         {
-            m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+            
+
             m_UserMinLikes = 0;
             m_UserMaxLikes = 200;
 
             InitializeComponent();
             InitializeLocationAndSize();
 
-            setTableInfo();
+            try
+            {
+                m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+                setTableInfo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void InitializeLocationAndSize()

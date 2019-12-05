@@ -29,7 +29,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 FBAgent.LoggedInUser = result.LoggedInUser;
                 CurrentForm = new MainForm();
             }
-            //CurrentForm = new UploadsStats();
+
             CurrentForm.ShowDialog();
             AppSettings.Instance.SaveToFile();
         }

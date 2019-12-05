@@ -48,8 +48,17 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {    
             this.pictureBoxHoroscope.Size = new Size(100, 100);
             pictureBoxHoroscope.Left = (this.Width) / 2 - (pictureBoxHoroscope.Width / 2);
-            this.Controls.Remove(buttonHoroscopeResolve);
-            initializeHoroscopeLabel();
+            
+            try
+            {
+                initializeHoroscopeLabel();
+                this.Controls.Remove(buttonHoroscopeResolve);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something occur, please try again!");
+            }
+            
         }
 
         private void initializeHoroscopeLabel()
