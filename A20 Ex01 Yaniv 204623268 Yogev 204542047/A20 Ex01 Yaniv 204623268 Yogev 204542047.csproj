@@ -59,13 +59,13 @@
     <Compile Include="Logics\eZodiacs.cs" />
     <Compile Include="Logics\HoroscopeAgent.cs" />
     <Compile Include="Logics\Month.cs" />
+    <Compile Include="Logics\PhotosGroupInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RelativeUserDetails.cs" />
-    <Compile Include="settings\AccessTokenForTest.cs" />
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="Logics\FBAgent.cs" />
     <Compile Include="LoginForm.cs">

@@ -17,12 +17,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public HoroscopeForm()
         {
-            InitializeComponent();
-            LocateAllControls();
-            FetchHoroscopeNameAndImage();
+            initializeComponent();
+            locateAllControls();
+            fetchHoroscopeNameAndImage();
         }
 
-        private void FetchHoroscopeNameAndImage()
+        private void fetchHoroscopeNameAndImage()
         {
             string dateOfBirth = FBAgent.LoggedInUser.Birthday;
             DateTime userDOB = DateTime.ParseExact(dateOfBirth, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -32,11 +32,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             labelHoroscopeTitle.Text = string.Format("You Are {0}!", m_ZodiacName.ToString());
         }
 
-        private void LocateAllControls()
+        private void locateAllControls()
         {
             // Move all the controls to the center
             this.labelHoroscopeTitle.Left = (this.Width) / 2 - (labelHoroscopeTitle.Width / 2);
-
         }
 
         private void buttonHoroscopeResolve_Click(object sender, EventArgs e)

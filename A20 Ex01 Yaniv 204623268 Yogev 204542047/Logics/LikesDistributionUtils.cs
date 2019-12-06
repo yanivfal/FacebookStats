@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 
@@ -12,7 +10,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     {
         internal static List<Photo> GetPhotosBetweenDates(DateTime i_DateFrom, DateTime i_DateTo)
         {
-            List<Photo> photos = new List<Photo>();
+            List<Photo> m_Photos = new List<Photo>();
 
             foreach (Album album in FBAgent.LoggedInUser.Albums)
             {
@@ -20,12 +18,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 {
                     if (i_DateFrom <= photo.CreatedTime && photo.CreatedTime <= i_DateTo)
                     {
-                        photos.Add(photo);
+                        m_Photos.Add(photo);
                     }
                 }
             }
 
-            return photos;
+            return m_Photos;
         }
 
         internal static List<RelativeUserDetails> GetUsersLikesInPhotos(List<Photo> i_Photos)
@@ -35,13 +33,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             foreach (Photo photo in i_Photos)
             {
-                for(int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
+                //foreach (User user in photo.LikedBy) - LikedBy depcrated, show friends instead.
+                for (int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
                 {
                     User user = FBAgent.LoggedInUser.Friends[i];
-                //LikeBy - depcrated, we show the friends instead
-                //foreach (User user in photo.LikedBy)
-                //{
-                    if (!relativeUsersDetails.ContainsKey(user.Id))
+                    if(!relativeUsersDetails.ContainsKey(user.Id))
                     {
                         relativeUsersDetails[user.Id] = new RelativeUserDetails(user);
                     }
@@ -60,7 +56,37 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             return relativeUserLikes;
         }
 
-        
+        internal static Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> GetUserLikesAmountByDayAndDayPart()
+        {
+            Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> daysLikes = new Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>>();
+
+            //foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                //foreach (Photo photo in album.Photos) 
+                //Changed to PhotosTaggedIn because LikedBy depcrated, we want to run on the tagged photos instead all photos.
+                for (var i=0; i<5 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
+                {
+                    Photo photo = FBAgent.LoggedInUser.PhotosTaggedIn[i];
+                    DayOfWeek currentDay = photo.CreatedTime.Value.DayOfWeek;
+                    eDayParts currentDayPart = getCurrentDayPart(photo.CreatedTime.Value.Hour);
+
+                    if (!daysLikes.Keys.Contains(currentDay))
+                    {
+                        daysLikes[currentDay] = new Dictionary<eDayParts, PhotosGroupInfo>();
+                    }
+                    if (!daysLikes[currentDay].Keys.Contains(currentDayPart))
+                    {
+                        daysLikes[currentDay][currentDayPart] = new PhotosGroupInfo();
+                    }
+
+                    daysLikes[currentDay][currentDayPart].LikesAmount += photo.LikedBy.Count;
+                    daysLikes[currentDay][currentDayPart].PhotosAmount++;
+                }
+            }
+
+            return daysLikes;
+        }
+
         private static eDayParts getCurrentDayPart(int i_Hour)
         {
             eDayParts currentDayPart;

@@ -103,7 +103,7 @@
             this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBoxAlbums.FormattingEnabled = true;
             this.comboBoxAlbums.Location = new System.Drawing.Point(649, 456);
-            this.comboBoxAlbums.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBoxAlbums.Margin = new System.Windows.Forms.Padding(5);
             this.comboBoxAlbums.Name = "comboBoxAlbums";
             this.comboBoxAlbums.Size = new System.Drawing.Size(377, 43);
             this.comboBoxAlbums.TabIndex = 10;
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1684, 1578);
+            this.ClientSize = new System.Drawing.Size(1684, 1621);
             this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
@@ -166,6 +166,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LikeWhosh";
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();

@@ -33,5 +33,29 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
             return isLoginSucceeded;
         }
-    } 
+
+        internal static LoginResult Connect(string i_LastAccessToken)
+        {
+            LoginResult result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
+            FBAgent.LoggedInUser = result.LoggedInUser;
+
+            return result;
+        }
+
+        internal static FacebookObjectCollection<Photo> GetAlbumPhotosByName(string i_AlbumName)
+        {
+            FacebookObjectCollection<Photo> photos = null;
+
+            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                if (i_AlbumName.Equals(album.Name))
+                {
+                    photos = album.Photos;
+                    break;
+                }
+            }
+
+            return photos;
+        }
+    }
 }

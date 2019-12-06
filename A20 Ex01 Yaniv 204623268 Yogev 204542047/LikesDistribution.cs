@@ -20,7 +20,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public LikesDistribution()
         {
-            m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
+            m_UserAmountOfLikesStatistics = LikesDistributionUtils.GetUserLikesAmountByDayAndDayPart();
             m_UserMinLikes = 0;
             m_UserMaxLikes = 200;
 

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
@@ -20,10 +12,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             r_PhotoHeight = calcHeightByratio(i_Photo);
             InitializeComponent();
-            InitializePhotoProperties(i_Photo);
+            initializePhotoProperties(i_Photo);
         }
 
-        private void InitializePhotoProperties(Photo photo)
+        private void initializePhotoProperties(Photo photo)
         {
             this.Width = k_PhotoWidth;
             this.Height = r_PhotoHeight + 100;
@@ -35,7 +27,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             int height;
 
-            float imageRatio = i_Photo.ImageNormal.Height / (float)i_Photo.ImageNormal.Width;
+            float imageRatio = i_Photo.ImageNormal.Height / (float) i_Photo.ImageNormal.Width;
             height = (int)(k_PhotoWidth * imageRatio);
 
             return height;
@@ -51,18 +43,14 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             wallPhotoPictureBox.Top = DateIcon.Bottom + 5;
         }
 
-        //Insert demmy data
         private void setPictureDetails(Photo i_Photo)
         {
+            //Insert dummy data
             labelDate.Text = i_Photo.CreatedTime.Value.ToString("MMMM dd");
-
-            // labelLikes.Text = i_Photo.LikedBy.Count().ToString();
-
+            //labelLikes.Text = i_Photo.LikedBy.Count().ToString
             labelLikes.Text = "267";
-
-            //labelLikes.Text = i_Photo.LikedBy.Count().ToString();
-
+            //labelLikes.Text = i_Photo.LikedBy.Count().ToString
             labelLocation.Text = "IDC, Herzeliya";
-        }     
+        }
     }
 }
