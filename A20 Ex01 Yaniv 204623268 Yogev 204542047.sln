@@ -5,11 +5,6 @@ VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A20 Ex01 Yaniv 204623268 Yogev 204542047", "A20 Ex01 Yaniv 204623268 Yogev 204542047\A20 Ex01 Yaniv 204623268 Yogev 204542047.csproj", "{F799782C-9D45-4739-BF83-E15581B1272C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A05DD2E0-106C-4A59-A33A-3CBDC627AAB2}"
-	ProjectSection(SolutionItems) = preProject
-		SUBMIT DP IDC A20 Ex01 YanivFalik 204623268 YogevNissan 204542047.txt = SUBMIT DP IDC A20 Ex01 YanivFalik 204623268 YogevNissan 204542047.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
