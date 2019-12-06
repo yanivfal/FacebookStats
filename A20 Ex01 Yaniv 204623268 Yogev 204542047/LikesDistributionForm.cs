@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
-    public partial class LikesDistribution : Form
+    public partial class LikesDistributionForm : Form
     {
         private Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> m_UserAmountOfLikesStatistics;
         private int m_UserMinLikes;
         private int m_UserMaxLikes;
 
-        public LikesDistribution()
+        public LikesDistributionForm()
         {
             
 
