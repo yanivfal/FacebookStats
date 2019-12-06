@@ -1,6 +1,6 @@
 ﻿namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 {
-    public enum Month
+    public enum eMonth
     {
         NotSet = 0,
         January = 1,

@@ -42,40 +42,40 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
             switch (i_DateOfBirth.Month)
             {
-                case (int) Month.January: 
+                case (int) eMonth.January: 
                     zodiac = (i_DateOfBirth.Day <= 19) ? eZodiacs.Capricorn : eZodiacs.Aquarius;
                     break;
-                case (int) Month.February:
+                case (int) eMonth.February:
                     zodiac = (i_DateOfBirth.Day <= 18) ? eZodiacs.Aquarius : eZodiacs.Pisces;
                     break;
-                case (int) Month.March:
+                case (int) eMonth.March:
                     zodiac = (i_DateOfBirth.Day <= 20) ? eZodiacs.Pisces : eZodiacs.Aries;
                     break;
-                case (int) Month.April:
+                case (int) eMonth.April:
                     zodiac = (i_DateOfBirth.Day <= 20) ? eZodiacs.Aries : eZodiacs.Taurus;
                     break;
-                case (int) Month.May:
+                case (int) eMonth.May:
                     zodiac = (i_DateOfBirth.Day <= 20) ? eZodiacs.Taurus : eZodiacs.Gemini;
                     break;
-                case (int) Month.June:
+                case (int) eMonth.June:
                     zodiac = (i_DateOfBirth.Day <= 20) ? eZodiacs.Gemini : eZodiacs.Cancer;
                     break;
-                case (int) Month.July:
+                case (int) eMonth.July:
                     zodiac = (i_DateOfBirth.Day <= 22) ? eZodiacs.Cancer : eZodiacs.Leo;
                     break;
-                case (int) Month.August:
+                case (int) eMonth.August:
                     zodiac = (i_DateOfBirth.Day <= 22) ? eZodiacs.Leo : eZodiacs.Virgo;
                     break;
-                case (int) Month.September:
+                case (int) eMonth.September:
                     zodiac = (i_DateOfBirth.Day <= 22) ? eZodiacs.Virgo : eZodiacs.Libra;
                     break;
-                case (int) Month.October:
+                case (int) eMonth.October:
                     zodiac = (i_DateOfBirth.Day <= 22) ? eZodiacs.Libra : eZodiacs.Scorpio;
                     break;
-                case (int) Month.November:
+                case (int) eMonth.November:
                     zodiac = (i_DateOfBirth.Day <= 21) ? eZodiacs.Scorpio : eZodiacs.Sagittarius;
                     break;
-                case (int) Month.December:
+                case (int) eMonth.December:
                     zodiac = (i_DateOfBirth.Day <= 21) ? eZodiacs.Sagittarius : eZodiacs.Capricorn;
                     break;
             }

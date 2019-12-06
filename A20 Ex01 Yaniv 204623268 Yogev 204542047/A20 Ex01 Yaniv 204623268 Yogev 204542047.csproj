@@ -58,14 +58,13 @@
     <Compile Include="Logics\eDayParts.cs" />
     <Compile Include="Logics\eZodiacs.cs" />
     <Compile Include="Logics\HoroscopeAgent.cs" />
-    <Compile Include="Logics\Month.cs" />
+    <Compile Include="Logics\eMonth.cs" />
     <Compile Include="Logics\PhotosGroupInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RelativeUserDetails.cs" />
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="Logics\FBAgent.cs" />
     <Compile Include="LoginForm.cs">
@@ -137,6 +136,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="appSettings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="dlls\Facebook.dll" />
     <Content Include="dlls\FbGraphApiWrapper.dll" />
     <None Include="Resources\Taurus_Astrology_Img.png" />

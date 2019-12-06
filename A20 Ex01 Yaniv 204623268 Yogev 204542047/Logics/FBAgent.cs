@@ -36,9 +36,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
         internal static LoginResult Connect(string i_LastAccessToken)
         {
-            LoginResult result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
-            FBAgent.LoggedInUser = result.LoggedInUser;
+            LoginResult result = null;
 
+            try
+            {
+                result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
+                LoggedInUser = result.LoggedInUser;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
             return result;
         }
 
@@ -46,7 +55,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
         {
             FacebookObjectCollection<Photo> photos = null;
 
-            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            foreach (Album album in LoggedInUser.Albums)
             {
                 if (i_AlbumName.Equals(album.Name))
                 {

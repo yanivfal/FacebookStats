@@ -26,36 +26,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             return m_Photos;
         }
 
-        internal static List<RelativeUserDetails> GetUsersLikesInPhotos(List<Photo> i_Photos)
-        {
-            List<RelativeUserDetails> relativeUserLikes = new List<RelativeUserDetails>();
-            Dictionary<string, RelativeUserDetails> relativeUsersDetails = new Dictionary<string, RelativeUserDetails>();
-
-            foreach (Photo photo in i_Photos)
-            {
-                //foreach (User user in photo.LikedBy) - LikedBy depcrated, show friends instead.
-                for (int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
-                {
-                    User user = FBAgent.LoggedInUser.Friends[i];
-                    if(!relativeUsersDetails.ContainsKey(user.Id))
-                    {
-                        relativeUsersDetails[user.Id] = new RelativeUserDetails(user);
-                    }
-
-                    relativeUsersDetails[user.Id].Likes++;
-                }
-            }
-
-            foreach (KeyValuePair<string, RelativeUserDetails> relatedUser in relativeUsersDetails)
-            { 
-                relativeUserLikes.Add(relatedUser.Value);
-            }
-
-            relativeUserLikes.Sort((i_User1, i_User2) => (i_User1.Likes).CompareTo(i_User2.Likes));
-
-            return relativeUserLikes;
-        }
-
         internal static Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> GetUserLikesAmountByDayAndDayPart()
         {
             Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> daysLikes = new Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>>();
