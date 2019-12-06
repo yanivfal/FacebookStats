@@ -11,7 +11,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
         internal static bool LoginAndInit(out string o_AccessToken)
         {
-            LoginResult loginResult;
+            LoginResult loginResult = null;
             bool isLoginSucceeded = false;
             o_AccessToken = null;
 
