@@ -18,19 +18,22 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
         public static bool LoginAndInit(out string o_AccessToken)
         {
             LoginResult loginResult;
-            bool isLoginSucceeded = true;
+            bool isLoginSucceeded = false;
             o_AccessToken = null;
-
-            loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos");
-            //loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
-            if (!string.IsNullOrEmpty(loginResult.AccessToken))
+            try
             {
-                o_AccessToken = loginResult.AccessToken;
-                LoggedInUser = loginResult.LoggedInUser;
+                loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos");
+                //loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
+                if (!string.IsNullOrEmpty(loginResult.AccessToken))
+                {
+                    isLoginSucceeded = true;
+                    o_AccessToken = loginResult.AccessToken;
+                    LoggedInUser = loginResult.LoggedInUser;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                isLoginSucceeded = false;
+                MessageBox.Show(ex.Message);
             }
 
             return isLoginSucceeded;

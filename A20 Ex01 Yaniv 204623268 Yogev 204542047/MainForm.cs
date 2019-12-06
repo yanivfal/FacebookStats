@@ -15,9 +15,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             InitializeComponent();
             initializeWindowSettings();
-            fetchUserData();
-            fetchAlbumsNamesInComboBox();
-            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+
+            try
+            {
+                fetchUserData();
+                fetchAlbumsNamesInComboBox();
+                comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void initializeWindowSettings()
