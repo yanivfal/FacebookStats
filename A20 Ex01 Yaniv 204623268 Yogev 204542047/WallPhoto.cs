@@ -35,20 +35,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             int height;
 
-            int imageHeight = 300;
-            int imageWidth = 200;
-
-            try
-            {
-                imageHeight = i_Photo.ImageNormal.Height;
-                imageWidth = i_Photo.ImageNormal.Width;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            float imageRatio = imageHeight / (float)imageWidth;
+            float imageRatio = i_Photo.ImageNormal.Height / (float)i_Photo.ImageNormal.Width;
             height = (int)(k_PhotoWidth * imageRatio);
 
             return height;
@@ -58,16 +45,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             wallPhotoPictureBox.Width = k_PhotoWidth;
             wallPhotoPictureBox.Height = r_PhotoHeight;
-
-            try
-            {
-                wallPhotoPictureBox.Image = i_Photo.ImageNormal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            wallPhotoPictureBox.Image = i_Photo.ImageNormal;
             wallPhotoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             wallPhotoPictureBox.Left = this.Left;
             wallPhotoPictureBox.Top = DateIcon.Bottom + 5;
