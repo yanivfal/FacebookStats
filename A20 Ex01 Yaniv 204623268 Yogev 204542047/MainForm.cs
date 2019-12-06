@@ -15,8 +15,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public MainForm()
         {
             InitializeComponent();
-            initializeWindowSettings();
-            fetchUserData();        
+            initializeWindowSettings();        
         }
 
         private void initializeWindowSettings()
@@ -56,7 +55,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchSelcetedAlbum(string i_AlbumName)
         {
             int position = topCover.Bottom + 100;
-            int count = 0;
+            int numOfFetchedPhoto = 0;
             FacebookObjectCollection<Photo> wallPictures = FBAgent.GetAlbumPhotosByName(i_AlbumName);
 
             foreach (Photo photo in wallPictures)
@@ -68,7 +67,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 this.Controls.Add(photoComponent);
                 m_CurrentPhotoOnWall.Add(photoComponent);
                 //Show the first k_NumberOfPhotosOnWall images
-                if (count++ >= k_NumberOfPhotosOnWall)
+                if (++numOfFetchedPhoto >= k_NumberOfPhotosOnWall)
                 {
                     break;
                 }
@@ -118,8 +117,16 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            fetchAlbumsNamesInComboBox();
-            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+            try
+            {
+                fetchUserData();
+                fetchAlbumsNamesInComboBox();
+                comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

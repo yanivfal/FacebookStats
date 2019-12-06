@@ -31,15 +31,22 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             bool isLoginSucceeded = false;
             string accessToken = null;
 
-            isLoginSucceeded = FBAgent.LoginAndInit(out accessToken);
-            if (isLoginSucceeded)
+            try
             {
-                isLoginSucceeded = true;
-                UIRunner.HideCurrentForm();
-                UIRunner.OpenForm<MainForm>();
-                setRememberMeChoise(accessToken);
+                isLoginSucceeded = FBAgent.LoginAndInit(out accessToken);
+                if (isLoginSucceeded)
+                {
+                    isLoginSucceeded = true;
+                    UIRunner.HideCurrentForm();
+                    UIRunner.OpenForm<MainForm>();
+                    setRememberMeChoise(accessToken);
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Something occur, please try again!");
             }
@@ -59,7 +66,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBoxLogin_Click(object sender, EventArgs e)
         {
             loginAndInit();
         }
