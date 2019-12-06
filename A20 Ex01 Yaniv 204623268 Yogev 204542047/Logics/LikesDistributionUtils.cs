@@ -8,11 +8,11 @@ using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
-    class Utils
+    class LikesDistributionUtils
     {
         internal static List<Photo> GetPhotosBetweenDates(DateTime i_DateFrom, DateTime i_DateTo)
         {
-            List<Photo> photos = new List<Photo>();
+            List<Photo> m_Photos = new List<Photo>();
 
             foreach (Album album in FBAgent.LoggedInUser.Albums)
             {
@@ -20,12 +20,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 {
                     if (i_DateFrom <= photo.CreatedTime && photo.CreatedTime <= i_DateTo)
                     {
-                        photos.Add(photo);
+                        m_Photos.Add(photo);
                     }
                 }
             }
 
-            return photos;
+            return m_Photos;
         }
 
         internal static List<RelativeUserDetails> GetUsersLikesInPhotos(List<Photo> i_Photos)

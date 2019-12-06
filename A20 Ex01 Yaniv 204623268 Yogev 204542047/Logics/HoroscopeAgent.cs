@@ -206,7 +206,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             return image;
         }
 
-        public static string HttpGetRequest(string i_URL)
+        private static string HttpGetRequest(string i_URL)
         {
             // Create a request for the URL.   
             WebRequest request = WebRequest.Create(i_URL);

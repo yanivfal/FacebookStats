@@ -81,7 +81,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void uploadStatisticsButton_Click(object sender, EventArgs e)
         {
             UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<UploadsStats>();
+            UIRunner.OpenForm<LikesDistribution>();
             //After previous screen is closed
             UIRunner.OpenForm<MainForm>();
         }
