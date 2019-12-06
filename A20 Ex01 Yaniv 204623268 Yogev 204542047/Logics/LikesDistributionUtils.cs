@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 
@@ -35,8 +33,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             foreach (Photo photo in i_Photos)
             {
-                //foreach (User user in photo.LikedBy)
-                for(int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
+                //foreach (User user in photo.LikedBy) - LikedBy depcrated, show friends instead.
+                for (int i=0; i<5 && i < FBAgent.LoggedInUser.Friends.Count; i++)
                 {
                     User user = FBAgent.LoggedInUser.Friends[i];
                     if(!relativeUsersDetails.ContainsKey(user.Id))
@@ -64,8 +62,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             //foreach (Album album in FBAgent.LoggedInUser.Albums)
             {
-                //foreach (Photo photo in album.Photos)
-                for(var i=0; i<5 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
+                //foreach (Photo photo in album.Photos) 
+                //Changed to PhotosTaggedIn because LikedBy depcrated, we want to run on the tagged photos instead all photos.
+                for (var i=0; i<5 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
                 {
                     Photo photo = FBAgent.LoggedInUser.PhotosTaggedIn[i];
                     DayOfWeek currentDay = photo.CreatedTime.Value.DayOfWeek;
@@ -113,7 +112,5 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             return currentDayPart;
         }
-            
-        
     }
 }

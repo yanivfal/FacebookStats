@@ -28,12 +28,13 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void loginAndInit()
         {
-            bool isLoginSucceeded;
-            string accessToken;
+            bool isLoginSucceeded = false;
+            string accessToken = null;
 
             isLoginSucceeded = FBAgent.LoginAndInit(out accessToken);
             if (isLoginSucceeded)
             {
+                isLoginSucceeded = true;
                 UIRunner.HideCurrentForm();
                 UIRunner.OpenForm<MainForm>();
                 setRememberMeChoise(accessToken);

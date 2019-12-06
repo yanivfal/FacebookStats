@@ -1,29 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using A20_Ex01_Yaniv_204623268_Yogev_204542047.settings;
-using Facebook;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 {
-    public static class FBAgent
+    internal static class FBAgent
     {
         internal static User LoggedInUser { get; set; }
 
-        public static bool LoginAndInit(out string o_AccessToken)
+        internal static bool LoginAndInit(out string o_AccessToken)
         {
-            LoginResult loginResult;
+            LoginResult loginResult = null;
             bool isLoginSucceeded = false;
             o_AccessToken = null;
+
             try
             {
                 loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos");
-                //loginResult = FacebookService.Connect(AccessTokenForTest.Access_Token);
+
                 if (!string.IsNullOrEmpty(loginResult.AccessToken))
                 {
                     isLoginSucceeded = true;
@@ -38,5 +33,29 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
             return isLoginSucceeded;
         }
-    } 
+
+        internal static LoginResult Connect(string i_LastAccessToken)
+        {
+            LoginResult result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
+            FBAgent.LoggedInUser = result.LoggedInUser;
+
+            return result;
+        }
+
+        internal static FacebookObjectCollection<Photo> GetAlbumPhotosByName(string i_AlbumName)
+        {
+            FacebookObjectCollection<Photo> photos = null;
+
+            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                if (i_AlbumName.Equals(album.Name))
+                {
+                    photos = album.Photos;
+                    break;
+                }
+            }
+
+            return photos;
+        }
+    }
 }

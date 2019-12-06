@@ -7,26 +7,16 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
+        private int k_NumberOfPhotosOnWall = 3;
 
         public MainForm()
         {
             InitializeComponent();
             initializeWindowSettings();
-
-            try
-            {
-                fetchUserData();
-                fetchAlbumsNamesInComboBox();
-                comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            fetchUserData();        
         }
 
         private void initializeWindowSettings()
@@ -43,9 +33,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             topCover.Width = this.Width - 20;
             // Buttons size and location
             horoscopeButton.Left = this.Left + 30;
-            uploadStatisticsButton.Left = this.Right - uploadStatisticsButton.Width
-                - 30;
-
+            uploadStatisticsButton.Left = this.Right - uploadStatisticsButton.Width - 30;
         }
 
         private void fetchUserData()
@@ -69,7 +57,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             int position = topCover.Bottom + 100;
             int count = 0;
-            FacebookObjectCollection<Photo> wallPictures = getAlbumPhotosByName(i_AlbumName);
+            FacebookObjectCollection<Photo> wallPictures = FBAgent.GetAlbumPhotosByName(i_AlbumName);
 
             foreach (Photo photo in wallPictures)
             {
@@ -79,8 +67,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 m_CurrentPhotoOnWall.Add(photoComponent);
-                count++;
-                if (count >= 3)
+                //Show the first k_NumberOfPhotosOnWall images
+                if (count++ >= k_NumberOfPhotosOnWall)
                 {
                     break;
                 }
@@ -112,22 +100,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             UIRunner.OpenForm<MainForm>();
         }
 
-        private FacebookObjectCollection<Photo> getAlbumPhotosByName(string i_AlbumName)
-        {
-            FacebookObjectCollection<Photo> photos = null;
-
-            foreach (Album album in FBAgent.LoggedInUser.Albums)
-            {
-                if (i_AlbumName.Equals(album.Name))
-                {
-                    photos = album.Photos;
-                    break;
-                }
-            }
-
-            return photos;
-        }
-
         private void clearWall()
         {
             foreach (WallPhoto photo in m_CurrentPhotoOnWall)
@@ -142,6 +114,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             clearWall();
             fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            fetchAlbumsNamesInComboBox();
+            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
         }
     }
 }

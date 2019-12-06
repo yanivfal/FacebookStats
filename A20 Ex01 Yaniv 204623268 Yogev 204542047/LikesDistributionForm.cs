@@ -20,23 +20,14 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         public LikesDistributionForm()
         {
-            
-
+            m_UserAmountOfLikesStatistics = LikesDistributionUtils.GetUserLikesAmountByDayAndDayPart();
             m_UserMinLikes = 0;
             m_UserMaxLikes = 200;
 
             InitializeComponent();
             InitializeLocationAndSize();
 
-            try
-            {
-                m_UserAmountOfLikesStatistics = Utils.GetUserLikesAmountByDayAndDayPart();
-                setTableInfo();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            setTableInfo();
         }
 
         private void InitializeLocationAndSize()

@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void initializeComponent()
         {
             this.labelHoroscopeTitle = new System.Windows.Forms.Label();
             this.buttonHoroscopeResolve = new System.Windows.Forms.Button();

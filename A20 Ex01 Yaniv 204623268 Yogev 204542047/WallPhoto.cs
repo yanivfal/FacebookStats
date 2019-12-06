@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
@@ -20,10 +12,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             r_PhotoHeight = calcHeightByratio(i_Photo);
             InitializeComponent();
-            InitializePhotoProperties(i_Photo);
+            initializePhotoProperties(i_Photo);
         }
 
-        private void InitializePhotoProperties(Photo photo)
+        private void initializePhotoProperties(Photo photo)
         {
             this.Width = k_PhotoWidth;
             this.Height = r_PhotoHeight + 100;
@@ -35,20 +27,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             int height;
 
-            int imageHeight = 300;
-            int imageWidth = 200;
-
-            try
-            {
-                imageHeight = i_Photo.ImageNormal.Height;
-                imageWidth = i_Photo.ImageNormal.Width;
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            float imageRatio = imageHeight / (float)imageWidth;
+            float imageRatio = i_Photo.ImageNormal.Height / (float) i_Photo.ImageNormal.Width;
             height = (int)(k_PhotoWidth * imageRatio);
 
             return height;
@@ -58,33 +37,20 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             wallPhotoPictureBox.Width = k_PhotoWidth;
             wallPhotoPictureBox.Height = r_PhotoHeight;
-
-            try
-            {
-                wallPhotoPictureBox.Image = i_Photo.ImageNormal;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            wallPhotoPictureBox.Image = i_Photo.ImageNormal;
             wallPhotoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             wallPhotoPictureBox.Left = this.Left;
             wallPhotoPictureBox.Top = DateIcon.Bottom + 5;
         }
 
-        //Insert demmy data
         private void setPictureDetails(Photo i_Photo)
         {
+            //Insert dummy data
             labelDate.Text = i_Photo.CreatedTime.Value.ToString("MMMM dd");
-
-            // labelLikes.Text = i_Photo.LikedBy.Count().ToString();
-
+            //labelLikes.Text = i_Photo.LikedBy.Count().ToString
             labelLikes.Text = "267";
-
-            //labelLikes.Text = i_Photo.LikedBy.Count().ToString();
-
+            //labelLikes.Text = i_Photo.LikedBy.Count().ToString
             labelLocation.Text = "IDC, Herzeliya";
-        }     
+        }
     }
 }
