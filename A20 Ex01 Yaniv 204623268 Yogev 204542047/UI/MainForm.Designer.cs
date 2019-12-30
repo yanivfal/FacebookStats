@@ -35,10 +35,12 @@
             this.mainFormFacadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logoutLabel = new System.Windows.Forms.Label();
             this.comboBoxAlbums = new System.Windows.Forms.ComboBox();
+            this.userAlbumsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.topCover = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
@@ -76,7 +78,7 @@
             // 
             this.userName.AutoSize = true;
             this.userName.BackColor = System.Drawing.Color.RoyalBlue;
-            this.userName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainFormFacadeBindingSource, "m_UserName", true, System.Windows.Forms.DataSourceUpdateMode.Never, "User Name"));
+            this.userName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainFormFacadeBindingSource, "UserName", true, System.Windows.Forms.DataSourceUpdateMode.Never, "User Name"));
             this.userName.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.userName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.userName.Location = new System.Drawing.Point(167, 114);
@@ -107,6 +109,8 @@
             // 
             this.comboBoxAlbums.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBoxAlbums.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxAlbums.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mainFormFacadeBindingSource, "SelectedAlbum", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.comboBoxAlbums.DataSource = this.userAlbumsBindingSource;
             this.comboBoxAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBoxAlbums.FormattingEnabled = true;
@@ -114,8 +118,12 @@
             this.comboBoxAlbums.Name = "comboBoxAlbums";
             this.comboBoxAlbums.Size = new System.Drawing.Size(214, 29);
             this.comboBoxAlbums.TabIndex = 10;
-            this.comboBoxAlbums.Text = "Select Album";
             this.comboBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbums_SelectedIndexChanged_1);
+            // 
+            // userAlbumsBindingSource
+            // 
+            this.userAlbumsBindingSource.DataMember = "UserAlbums";
+            this.userAlbumsBindingSource.DataSource = this.mainFormFacadeBindingSource;
             // 
             // logoutButton
             // 
@@ -133,7 +141,7 @@
             // 
             // profilePicture
             // 
-            this.profilePicture.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.mainFormFacadeBindingSource, "m_ProfilePicture", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.profilePicture.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.mainFormFacadeBindingSource, "ProfilePicture", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.profilePicture.Location = new System.Drawing.Point(35, 20);
             this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.profilePicture.Name = "profilePicture";
@@ -158,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 701);
+            this.ClientSize = new System.Drawing.Size(947, 779);
             this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
@@ -176,6 +184,7 @@
             this.Text = "LikeWhosh";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
@@ -195,5 +204,6 @@
         private System.Windows.Forms.Label logoutLabel;
         private System.Windows.Forms.ComboBox comboBoxAlbums;
         private System.Windows.Forms.BindingSource mainFormFacadeBindingSource;
+        private System.Windows.Forms.BindingSource userAlbumsBindingSource;
     }
 }
