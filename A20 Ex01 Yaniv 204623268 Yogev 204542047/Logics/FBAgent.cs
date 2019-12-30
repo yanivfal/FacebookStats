@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
@@ -32,6 +33,21 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             }
 
             return isLoginSucceeded;
+        }
+
+        internal static List<string> GetAlbumsNames()
+        {
+            List<string> albumList = new List<string>();
+
+            foreach (Album album in FBAgent.LoggedInUser.Albums)
+            {
+                if (album.Photos.Count != 0)
+                {
+                    albumList.Add(album.Name);
+                }
+            }
+
+            return albumList;
         }
 
         internal static LoginResult Connect(string i_LastAccessToken)

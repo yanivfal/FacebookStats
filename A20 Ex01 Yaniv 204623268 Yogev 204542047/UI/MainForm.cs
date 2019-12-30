@@ -1,4 +1,5 @@
-﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
+﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -9,13 +10,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
     internal partial class MainForm : Form
     {
+        private MainFormFacade m_Facade;
         private List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
         private int k_NumberOfPhotosOnWall = 3;
 
         public MainForm()
         {
+            m_Facade = new MainFormFacade();
             InitializeComponent();
-            initializeWindowSettings();        
+            initializeWindowSettings();  
         }
 
         private void initializeWindowSettings()
@@ -37,8 +40,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void fetchUserData()
         {
-            this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
-            this.userName.Text = FBAgent.LoggedInUser.Name;
+            mainFormFacadeBindingSource.DataSource = m_Facade;
+            //this.userName.Text = FBAgent.LoggedInUser.Name;
+            //this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
+
         }
 
         private void fetchAlbumsNamesInComboBox()
