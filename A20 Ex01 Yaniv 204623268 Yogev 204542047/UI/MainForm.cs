@@ -117,6 +117,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             clearWall();
+            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
             fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
         }
 
@@ -126,7 +127,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             {
                 fetchUserData();
                 fetchAlbumsNamesInComboBox();
-                comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+                //comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
             }
             catch (Exception ex)
             {

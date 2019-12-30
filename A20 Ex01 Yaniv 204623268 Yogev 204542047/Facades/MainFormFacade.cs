@@ -20,6 +20,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades
             UserName = FBAgent.LoggedInUser.Name;
             ProfilePicture = FBAgent.LoggedInUser.ImageNormal;
             UserAlbums = FBAgent.GetAlbumsNames();
+            //UserAlbums = new BindingSource();
+            // UserAlbums.DataSource = FBAgent.GetAlbumsNames();
         }
     }
 }
