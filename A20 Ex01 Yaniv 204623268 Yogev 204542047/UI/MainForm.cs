@@ -46,17 +46,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         }
 
-        private void fetchAlbumsNamesInComboBox()
-        {
-            foreach (Album album in FBAgent.LoggedInUser.Albums)
-            {
-                if (album.Photos.Count != 0)
-                {
-                    comboBoxAlbums.Items.Add(album.Name);
-                } 
-            }
-        }
-
         private void fetchSelcetedAlbum(string i_AlbumName)
         {
             int position = topCover.Bottom + 100;
@@ -117,7 +106,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             clearWall();
-            comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
             fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
         }
 
@@ -126,13 +114,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                fetchAlbumsNamesInComboBox();
-                //comboBoxAlbums.SelectedItem = comboBoxAlbums.Items[0];
+                fetchAlbumsComboBox();
+                fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void fetchAlbumsComboBox()
+        {
+            userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
         }
     }
 }
