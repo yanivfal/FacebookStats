@@ -23,8 +23,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             else
             {
                 LoginResult result = FBAgent.Connect(AppSettings.Instance.LastAccessToken);
-                CurrentForm = new MainForm();
-                //CurrentForm = new FriendsForm();
+                CurrentForm = new EventsForm();
             }
 
             CurrentForm.ShowDialog();

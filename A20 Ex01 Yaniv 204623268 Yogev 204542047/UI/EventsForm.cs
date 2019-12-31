@@ -1,23 +1,22 @@
-﻿using System;
+﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
+using FacebookWrapper.ObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
-    public partial class FriendComponent : UserControl
+    public partial class EventsForm : Form
     {
-        public FriendComponent(User i_Friend)
+        public EventsForm()
         {
             InitializeComponent();
-            this.friendImage.Image = i_Friend.ImageNormal;
-            this.friendName.Text = i_Friend.Name;
         }
     }
 }
