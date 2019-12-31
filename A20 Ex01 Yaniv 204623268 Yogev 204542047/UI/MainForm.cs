@@ -31,15 +31,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            AppSettings.Instance.RememberUser = false;
-            AppSettings.Instance.LastAccessToken = null;
-            AppSettings.Instance.SaveToFile();
-            UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<LoginForm>();
-        }
-
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.SelectedItem.ToString());
@@ -106,6 +97,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void initializeEventsTabPage()
         {
             TabPanelFactory.CreateEventsTabPage(ref tabEvents);
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            AppSettings.Instance.RememberUser = false;
+            AppSettings.Instance.LastAccessToken = null;
+            AppSettings.Instance.SaveToFile();
+            UIRunner.HideCurrentForm();
+            UIRunner.OpenForm<LoginForm>();
         }
     }
 }
