@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.horoscopeButton = new System.Windows.Forms.Button();
-            this.uploadStatisticsButton = new System.Windows.Forms.Button();
             this.userName = new System.Windows.Forms.Label();
             this.mainFormFacadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logoutLabel = new System.Windows.Forms.Label();
@@ -51,35 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
             this.tabsNavigator.SuspendLayout();
+            this.tabWall.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // horoscopeButton
-            // 
-            this.horoscopeButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.horoscopeButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.horoscopeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.horoscopeButton.Location = new System.Drawing.Point(35, 221);
-            this.horoscopeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.horoscopeButton.Name = "horoscopeButton";
-            this.horoscopeButton.Size = new System.Drawing.Size(398, 41);
-            this.horoscopeButton.TabIndex = 4;
-            this.horoscopeButton.Text = "Get your horoscope!";
-            this.horoscopeButton.UseVisualStyleBackColor = false;
-            this.horoscopeButton.Click += new System.EventHandler(this.horoscopeButton_Click);
-            // 
-            // uploadStatisticsButton
-            // 
-            this.uploadStatisticsButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.uploadStatisticsButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.uploadStatisticsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uploadStatisticsButton.Location = new System.Drawing.Point(471, 222);
-            this.uploadStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.uploadStatisticsButton.Name = "uploadStatisticsButton";
-            this.uploadStatisticsButton.Size = new System.Drawing.Size(432, 40);
-            this.uploadStatisticsButton.TabIndex = 5;
-            this.uploadStatisticsButton.Text = "When should I upload photos?";
-            this.uploadStatisticsButton.UseVisualStyleBackColor = false;
-            this.uploadStatisticsButton.Click += new System.EventHandler(this.uploadStatisticsButton_Click);
             // 
             // userName
             // 
@@ -121,7 +92,7 @@
             this.comboBoxAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBoxAlbums.FormattingEnabled = true;
-            this.comboBoxAlbums.Location = new System.Drawing.Point(365, 294);
+            this.comboBoxAlbums.Location = new System.Drawing.Point(316, 22);
             this.comboBoxAlbums.Name = "comboBoxAlbums";
             this.comboBoxAlbums.Size = new System.Drawing.Size(214, 29);
             this.comboBoxAlbums.TabIndex = 10;
@@ -184,7 +155,9 @@
             // 
             // tabWall
             // 
+            this.tabWall.AutoScroll = true;
             this.tabWall.BackColor = System.Drawing.SystemColors.Control;
+            this.tabWall.Controls.Add(this.comboBoxAlbums);
             this.tabWall.Location = new System.Drawing.Point(4, 29);
             this.tabWall.Name = "tabWall";
             this.tabWall.Padding = new System.Windows.Forms.Padding(3);
@@ -238,13 +211,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 1031);
+            this.ClientSize = new System.Drawing.Size(947, 1057);
             this.Controls.Add(this.tabsNavigator);
-            this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.uploadStatisticsButton);
-            this.Controls.Add(this.horoscopeButton);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.topCover);
@@ -262,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
             this.tabsNavigator.ResumeLayout(false);
+            this.tabWall.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,8 +242,6 @@
 
         private System.Windows.Forms.PictureBox topCover;
         private System.Windows.Forms.PictureBox profilePicture;
-        private System.Windows.Forms.Button horoscopeButton;
-        private System.Windows.Forms.Button uploadStatisticsButton;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.PictureBox logoutButton;
         private System.Windows.Forms.Label logoutLabel;
