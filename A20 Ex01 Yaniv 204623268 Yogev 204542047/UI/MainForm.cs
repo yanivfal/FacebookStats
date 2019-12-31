@@ -53,8 +53,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 //initializeHoroscopeTabPage();
                 //initializeLikesDistributionTabPage();
                 //initializeWallTabPage();
-                initializeFreindsListTabPage();
-                //initializeEventsTabPage();
+                //initializeFreindsListTabPage();
+                initializeEventsTabPage();
             }
             catch (Exception ex)
             {
@@ -103,6 +103,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             TabPanelFactory.CreateFreindsListTabPage(ref tabFreindList);
         }
 
-
+        private void initializeEventsTabPage()
+        {
+            TabPanelFactory.CreateEventsTabPage(ref tabEvents);
+        }
     }
 }
