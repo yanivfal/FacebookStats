@@ -18,7 +18,14 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             m_Facade = new MainFormFacade();
             InitializeComponent();
-            initializeWindowSettings();  
+            initializeWindowSettings();
+
+            Form ho = new HoroscopeForm();
+            ho.TopLevel = false;
+            ho.Visible = true;
+            ho.FormBorderStyle = FormBorderStyle.None;
+            tabPage1.Controls.Add(ho);
+            //panel1.Controls.Add(ho);
         }
 
         private void initializeWindowSettings()
@@ -87,10 +94,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void horoscopeButton_Click(object sender, EventArgs e)
         {
-            UIRunner.HideCurrentForm();
+            
+           /* UIRunner.HideCurrentForm();
             UIRunner.OpenForm<HoroscopeForm>();
             //After previous screen is closed
-            UIRunner.OpenForm<MainForm>();
+            UIRunner.OpenForm<MainForm>();*/
         }
 
         private void clearWall()
@@ -126,6 +134,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchAlbumsComboBox()
         {
             userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

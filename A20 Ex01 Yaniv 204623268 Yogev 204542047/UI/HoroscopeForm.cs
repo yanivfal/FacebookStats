@@ -62,5 +62,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             this.Close();
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // HoroscopeForm
+            // 
+            this.ClientSize = new System.Drawing.Size(2021, 844);
+            this.Name = "HoroscopeForm";
+            this.Load += new System.EventHandler(this.HoroscopeForm_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void HoroscopeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
