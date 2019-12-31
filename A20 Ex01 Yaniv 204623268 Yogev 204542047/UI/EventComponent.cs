@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
-    public partial class FriendComponent : UserControl
+    public partial class EventComponent : UserControl
     {
-        public FriendComponent(User i_Friend)
+        public EventComponent(Event i_CurrentEvent)
         {
             InitializeComponent();
-            this.friendImage.Image = i_Friend.ImageNormal;
-            this.friendName.Text = i_Friend.Name;
+            eventBindingSource.DataSource = i_CurrentEvent;
         }
     }
 }

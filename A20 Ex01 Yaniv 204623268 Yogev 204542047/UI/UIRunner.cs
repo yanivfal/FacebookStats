@@ -1,4 +1,5 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.UI;
 using FacebookWrapper;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             else
             {
                 LoginResult result = FBAgent.Connect(AppSettings.Instance.LastAccessToken);
-                CurrentForm = new MainForm();
+                CurrentForm = new EventsForm();
             }
 
             CurrentForm.ShowDialog();
