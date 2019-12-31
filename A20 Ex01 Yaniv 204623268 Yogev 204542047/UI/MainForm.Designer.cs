@@ -39,11 +39,18 @@
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.topCover = new System.Windows.Forms.PictureBox();
+            this.tabsNavigator = new System.Windows.Forms.TabControl();
+            this.tabWall = new System.Windows.Forms.TabPage();
+            this.tabLikesDist = new System.Windows.Forms.TabPage();
+            this.tabHoroscope = new System.Windows.Forms.TabPage();
+            this.tabFreindList = new System.Windows.Forms.TabPage();
+            this.tabEvents = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
+            this.tabsNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // horoscopeButton
@@ -161,12 +168,78 @@
             this.topCover.TabIndex = 1;
             this.topCover.TabStop = false;
             // 
+            // tabsNavigator
+            // 
+            this.tabsNavigator.Controls.Add(this.tabWall);
+            this.tabsNavigator.Controls.Add(this.tabLikesDist);
+            this.tabsNavigator.Controls.Add(this.tabHoroscope);
+            this.tabsNavigator.Controls.Add(this.tabFreindList);
+            this.tabsNavigator.Controls.Add(this.tabEvents);
+            this.tabsNavigator.Location = new System.Drawing.Point(0, 185);
+            this.tabsNavigator.Name = "tabsNavigator";
+            this.tabsNavigator.SelectedIndex = 0;
+            this.tabsNavigator.Size = new System.Drawing.Size(952, 718);
+            this.tabsNavigator.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabsNavigator.TabIndex = 11;
+            // 
+            // tabWall
+            // 
+            this.tabWall.BackColor = System.Drawing.SystemColors.Control;
+            this.tabWall.Location = new System.Drawing.Point(4, 29);
+            this.tabWall.Name = "tabWall";
+            this.tabWall.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWall.Size = new System.Drawing.Size(944, 685);
+            this.tabWall.TabIndex = 0;
+            this.tabWall.Text = "Wall";
+            // 
+            // tabLikesDist
+            // 
+            this.tabLikesDist.BackColor = System.Drawing.SystemColors.Control;
+            this.tabLikesDist.Location = new System.Drawing.Point(4, 29);
+            this.tabLikesDist.Name = "tabLikesDist";
+            this.tabLikesDist.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLikesDist.Size = new System.Drawing.Size(944, 685);
+            this.tabLikesDist.TabIndex = 1;
+            this.tabLikesDist.Text = "Likes Distribution";
+            // 
+            // tabHoroscope
+            // 
+            this.tabHoroscope.BackColor = System.Drawing.SystemColors.Control;
+            this.tabHoroscope.Location = new System.Drawing.Point(4, 29);
+            this.tabHoroscope.Name = "tabHoroscope";
+            this.tabHoroscope.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHoroscope.Size = new System.Drawing.Size(944, 685);
+            this.tabHoroscope.TabIndex = 2;
+            this.tabHoroscope.Text = "Horoscope";
+            // 
+            // tabFreindList
+            // 
+            this.tabFreindList.BackColor = System.Drawing.SystemColors.Control;
+            this.tabFreindList.Location = new System.Drawing.Point(4, 29);
+            this.tabFreindList.Name = "tabFreindList";
+            this.tabFreindList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFreindList.Size = new System.Drawing.Size(944, 685);
+            this.tabFreindList.TabIndex = 3;
+            this.tabFreindList.Text = "Freinds List";
+            // 
+            // tabEvents
+            // 
+            this.tabEvents.BackColor = System.Drawing.SystemColors.Control;
+            this.tabEvents.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.tabEvents.Location = new System.Drawing.Point(4, 29);
+            this.tabEvents.Name = "tabEvents";
+            this.tabEvents.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEvents.Size = new System.Drawing.Size(944, 685);
+            this.tabEvents.TabIndex = 4;
+            this.tabEvents.Text = "Events";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 779);
+            this.ClientSize = new System.Drawing.Size(947, 1031);
+            this.Controls.Add(this.tabsNavigator);
             this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
@@ -188,6 +261,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
+            this.tabsNavigator.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +279,11 @@
         private System.Windows.Forms.ComboBox comboBoxAlbums;
         private System.Windows.Forms.BindingSource mainFormFacadeBindingSource;
         private System.Windows.Forms.BindingSource userAlbumsBindingSource;
+        private System.Windows.Forms.TabControl tabsNavigator;
+        private System.Windows.Forms.TabPage tabWall;
+        private System.Windows.Forms.TabPage tabLikesDist;
+        private System.Windows.Forms.TabPage tabHoroscope;
+        private System.Windows.Forms.TabPage tabFreindList;
+        private System.Windows.Forms.TabPage tabEvents;
     }
 }

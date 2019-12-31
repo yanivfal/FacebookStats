@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facades\MainFormFacade.cs" />
+    <Compile Include="Factory\TabPanelFactory.cs" />
     <Compile Include="Logics\eDayParts.cs" />
     <Compile Include="Logics\eZodiacs.cs" />
     <Compile Include="Logics\HoroscopeAgent.cs" />

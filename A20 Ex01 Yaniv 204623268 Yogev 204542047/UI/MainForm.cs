@@ -18,7 +18,27 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             m_Facade = new MainFormFacade();
             InitializeComponent();
-            initializeWindowSettings();  
+            initializeWindowSettings();
+
+
+            //test
+            this.tabsNavigator.Top = this.topCover.Bottom;
+
+            HoroscopeForm horoscopeForm = new HoroscopeForm();
+            horoscopeForm.TopLevel = false;
+            horoscopeForm.Visible = true;
+            horoscopeForm.FormBorderStyle = FormBorderStyle.None;
+            horoscopeForm.Height = tabHoroscope.Height;
+            horoscopeForm.Width = tabHoroscope.Width;
+            tabHoroscope.Controls.Add(horoscopeForm);
+
+            LikesDistributionForm likesDistForm = new LikesDistributionForm();
+            likesDistForm.TopLevel = false;
+            likesDistForm.Visible = true;
+            likesDistForm.FormBorderStyle = FormBorderStyle.None;
+            //likesDistForm.Height = tabPage2.Height;
+            likesDistForm.Width = tabLikesDist.Width;
+            tabLikesDist.Controls.Add(likesDistForm);
         }
 
         private void initializeWindowSettings()
@@ -41,9 +61,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchUserData()
         {
             mainFormFacadeBindingSource.DataSource = m_Facade;
-            //this.userName.Text = FBAgent.LoggedInUser.Name;
-            //this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
-
         }
 
         private void fetchSelcetedAlbum(string i_AlbumName)
@@ -114,8 +131,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                fetchAlbumsComboBox();
-                fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+                //fetchAlbumsComboBox();
+                //fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
             }
             catch (Exception ex)
             {
