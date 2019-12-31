@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 1072);
+            this.ClientSize = new System.Drawing.Size(947, 1046);
             this.Controls.Add(this.tabsNavigator);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);

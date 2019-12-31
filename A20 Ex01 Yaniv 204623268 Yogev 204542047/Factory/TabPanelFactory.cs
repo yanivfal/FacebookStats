@@ -69,6 +69,26 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             }
         }
 
+        public static void CreateEventsTabPage(ref TabPage i_EventsTabPage)
+        {
+            int position = i_EventsTabPage.Top + 60;
+            int numOfFetchedPhoto = 0;
+            FacebookObjectCollection<Event> userEvents = FBAgent.LoggedInUser.Events;
+
+            foreach (Event fbEvent in userEvents)
+            {
+                EventComponent eventComponent = new EventComponent(fbEvent);
+                eventComponent.Top = position;
+                position = eventComponent.Bottom + 30;
+                eventComponent.Left = (i_EventsTabPage.Width) / 2 - (eventComponent.Width / 2);
+                i_EventsTabPage.Controls.Add(eventComponent);
+                if (++numOfFetchedPhoto >= 3)
+                {
+                    break;
+                }
+            }
+        }
+
         private static void clearWall(ref TabPage i_WallTabPage)
         {
             foreach (Control photo in i_WallTabPage.Controls)

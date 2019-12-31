@@ -18,7 +18,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
 
             try
             {
-                loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos");
+                loginResult = FacebookService.Login("2731122040258680", "public_profile", "user_birthday", "user_photos", "user_events");
 
                 if (!string.IsNullOrEmpty(loginResult.AccessToken))
                 {
