@@ -67,6 +67,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\PictureBoxProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="Logics\FBAgent.cs" />
     <Compile Include="UI\EventComponent.cs">
