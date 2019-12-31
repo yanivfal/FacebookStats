@@ -36,10 +36,22 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             i_LikesDistTabPage.Controls.Add(likesDistForm);
         }
 
+        public static void CreateFreindsListTabPage(ref TabPage i_FreindsListTabPage)
+        {
+            FriendsForm freindsForm = new FriendsForm();
+            freindsForm.TopLevel = false;
+            freindsForm.Visible = true;
+            freindsForm.FormBorderStyle = FormBorderStyle.None;
+            freindsForm.Width = i_FreindsListTabPage.Width;
+            freindsForm.Height = i_FreindsListTabPage.Height;
+
+            i_FreindsListTabPage.Controls.Add(freindsForm);
+        }
+
         public static void CreateWallTabPage(ref TabPage i_WallTabPage, string i_SelectedAlbum)
         {
             clearWall(ref i_WallTabPage);
-            int position = i_WallTabPage.Top + 100;
+            int position = i_WallTabPage.Top + 60;
             int numOfFetchedPhoto = 0;
             FacebookObjectCollection<Photo> wallPictures = FBAgent.GetAlbumPhotosByName(i_SelectedAlbum);
 
