@@ -175,6 +175,9 @@
     </Content>
     <Content Include="dlls\Facebook.dll" />
     <Content Include="dlls\FbGraphApiWrapper.dll" />
+    <Content Include="Resources\2020_event_picture.jpg" />
+    <Content Include="Resources\omerAdam_event_picture.jpg" />
+    <Content Include="Resources\Wedding_event_picture.jpg" />
     <None Include="Resources\Taurus_Astrology_Img.png" />
     <None Include="Resources\Aries_Astrology_Img.png" />
     <None Include="Resources\Gemini_Astrology_Img.png" />

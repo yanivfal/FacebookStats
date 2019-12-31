@@ -35,7 +35,6 @@
             this.comboBoxAlbums = new System.Windows.Forms.ComboBox();
             this.userAlbumsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logoutButton = new System.Windows.Forms.PictureBox();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.topCover = new System.Windows.Forms.PictureBox();
             this.tabsNavigator = new System.Windows.Forms.TabControl();
             this.tabWall = new System.Windows.Forms.TabPage();
@@ -43,13 +42,18 @@
             this.tabHoroscope = new System.Windows.Forms.TabPage();
             this.tabFreindList = new System.Windows.Forms.TabPage();
             this.tabEvents = new System.Windows.Forms.TabPage();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
+            this.labelEventTitle = new System.Windows.Forms.Label();
+            this.labelFriendsTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
             this.tabsNavigator.SuspendLayout();
             this.tabWall.SuspendLayout();
+            this.tabFreindList.SuspendLayout();
+            this.tabEvents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -117,17 +121,6 @@
             this.logoutButton.TabStop = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // profilePicture
-            // 
-            this.profilePicture.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.mainFormFacadeBindingSource, "ProfilePicture", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.profilePicture.Location = new System.Drawing.Point(35, 20);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(109, 142);
-            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.profilePicture.TabIndex = 2;
-            this.profilePicture.TabStop = false;
-            // 
             // topCover
             // 
             this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
@@ -189,17 +182,19 @@
             // 
             this.tabFreindList.AutoScroll = true;
             this.tabFreindList.BackColor = System.Drawing.SystemColors.Control;
+            this.tabFreindList.Controls.Add(this.labelFriendsTitle);
             this.tabFreindList.Location = new System.Drawing.Point(4, 29);
             this.tabFreindList.Name = "tabFreindList";
             this.tabFreindList.Padding = new System.Windows.Forms.Padding(3);
             this.tabFreindList.Size = new System.Drawing.Size(944, 685);
             this.tabFreindList.TabIndex = 3;
-            this.tabFreindList.Text = "Freinds List";
+            this.tabFreindList.Text = "Friends List";
             // 
             // tabEvents
             // 
             this.tabEvents.AutoScroll = true;
             this.tabEvents.BackColor = System.Drawing.SystemColors.Control;
+            this.tabEvents.Controls.Add(this.labelEventTitle);
             this.tabEvents.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.tabEvents.Location = new System.Drawing.Point(4, 29);
             this.tabEvents.Name = "tabEvents";
@@ -207,6 +202,37 @@
             this.tabEvents.Size = new System.Drawing.Size(944, 685);
             this.tabEvents.TabIndex = 4;
             this.tabEvents.Text = "Events";
+            // 
+            // profilePicture
+            // 
+            this.profilePicture.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.mainFormFacadeBindingSource, "ProfilePicture", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.profilePicture.Location = new System.Drawing.Point(35, 20);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(109, 142);
+            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.profilePicture.TabIndex = 2;
+            this.profilePicture.TabStop = false;
+            // 
+            // labelEventTitle
+            // 
+            this.labelEventTitle.AutoSize = true;
+            this.labelEventTitle.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelEventTitle.Location = new System.Drawing.Point(445, 26);
+            this.labelEventTitle.Name = "labelEventTitle";
+            this.labelEventTitle.Size = new System.Drawing.Size(227, 27);
+            this.labelEventTitle.TabIndex = 0;
+            this.labelEventTitle.Text = "Your following events:";
+            // 
+            // labelFriendsTitle
+            // 
+            this.labelFriendsTitle.AutoSize = true;
+            this.labelFriendsTitle.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.labelFriendsTitle.Location = new System.Drawing.Point(382, 25);
+            this.labelFriendsTitle.Name = "labelFriendsTitle";
+            this.labelFriendsTitle.Size = new System.Drawing.Size(118, 27);
+            this.labelFriendsTitle.TabIndex = 1;
+            this.labelFriendsTitle.Text = "Friends list:";
             // 
             // MainForm
             // 
@@ -231,10 +257,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
             this.tabsNavigator.ResumeLayout(false);
             this.tabWall.ResumeLayout(false);
+            this.tabFreindList.ResumeLayout(false);
+            this.tabFreindList.PerformLayout();
+            this.tabEvents.ResumeLayout(false);
+            this.tabEvents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +273,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox topCover;
-        private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.Label userName;
         private System.Windows.Forms.PictureBox logoutButton;
         private System.Windows.Forms.Label logoutLabel;
@@ -256,5 +285,8 @@
         private System.Windows.Forms.TabPage tabHoroscope;
         private System.Windows.Forms.TabPage tabFreindList;
         private System.Windows.Forms.TabPage tabEvents;
+        private System.Windows.Forms.PictureBox profilePicture;
+        private System.Windows.Forms.Label labelFriendsTitle;
+        private System.Windows.Forms.Label labelEventTitle;
     }
 }

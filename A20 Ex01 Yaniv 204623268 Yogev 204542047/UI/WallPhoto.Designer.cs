@@ -31,14 +31,12 @@
             this.LocationLogo = new System.Windows.Forms.PictureBox();
             this.LikesLogo = new System.Windows.Forms.PictureBox();
             this.DateIcon = new System.Windows.Forms.PictureBox();
-            this.wallPhotoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelLikes = new System.Windows.Forms.Label();
             this.labelLocation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LocationLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikesLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallPhotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LocationLogo
@@ -73,14 +71,6 @@
             this.DateIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DateIcon.TabIndex = 1;
             this.DateIcon.TabStop = false;
-            // 
-            // wallPhotoPictureBox
-            // 
-            this.wallPhotoPictureBox.Location = new System.Drawing.Point(1, 68);
-            this.wallPhotoPictureBox.Name = "wallPhotoPictureBox";
-            this.wallPhotoPictureBox.Size = new System.Drawing.Size(531, 438);
-            this.wallPhotoPictureBox.TabIndex = 0;
-            this.wallPhotoPictureBox.TabStop = false;
             // 
             // labelDate
             // 
@@ -122,21 +112,17 @@
             this.Controls.Add(this.LocationLogo);
             this.Controls.Add(this.LikesLogo);
             this.Controls.Add(this.DateIcon);
-            this.Controls.Add(this.wallPhotoPictureBox);
             this.Name = "WallPhoto";
             this.Size = new System.Drawing.Size(533, 509);
             ((System.ComponentModel.ISupportInitialize)(this.LocationLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LikesLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wallPhotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox wallPhotoPictureBox;
         private System.Windows.Forms.PictureBox DateIcon;
         private System.Windows.Forms.PictureBox LikesLogo;
         private System.Windows.Forms.PictureBox LocationLogo;
