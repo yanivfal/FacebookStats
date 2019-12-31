@@ -39,16 +39,18 @@
             this.logoutButton = new System.Windows.Forms.PictureBox();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.topCover = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabsNavigator = new System.Windows.Forms.TabControl();
+            this.tabWall = new System.Windows.Forms.TabPage();
+            this.tabLikesDist = new System.Windows.Forms.TabPage();
+            this.tabHoroscope = new System.Windows.Forms.TabPage();
+            this.tabFreindList = new System.Windows.Forms.TabPage();
+            this.tabEvents = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormFacadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAlbumsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabsNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // horoscopeButton
@@ -56,10 +58,10 @@
             this.horoscopeButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.horoscopeButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.horoscopeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.horoscopeButton.Location = new System.Drawing.Point(62, 343);
-            this.horoscopeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.horoscopeButton.Location = new System.Drawing.Point(35, 221);
+            this.horoscopeButton.Margin = new System.Windows.Forms.Padding(2);
             this.horoscopeButton.Name = "horoscopeButton";
-            this.horoscopeButton.Size = new System.Drawing.Size(708, 64);
+            this.horoscopeButton.Size = new System.Drawing.Size(398, 41);
             this.horoscopeButton.TabIndex = 4;
             this.horoscopeButton.Text = "Get your horoscope!";
             this.horoscopeButton.UseVisualStyleBackColor = false;
@@ -70,10 +72,10 @@
             this.uploadStatisticsButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.uploadStatisticsButton.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.uploadStatisticsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.uploadStatisticsButton.Location = new System.Drawing.Point(837, 344);
-            this.uploadStatisticsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.uploadStatisticsButton.Location = new System.Drawing.Point(471, 222);
+            this.uploadStatisticsButton.Margin = new System.Windows.Forms.Padding(2);
             this.uploadStatisticsButton.Name = "uploadStatisticsButton";
-            this.uploadStatisticsButton.Size = new System.Drawing.Size(768, 62);
+            this.uploadStatisticsButton.Size = new System.Drawing.Size(432, 40);
             this.uploadStatisticsButton.TabIndex = 5;
             this.uploadStatisticsButton.Text = "When should I upload photos?";
             this.uploadStatisticsButton.UseVisualStyleBackColor = false;
@@ -86,10 +88,10 @@
             this.userName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mainFormFacadeBindingSource, "UserName", true, System.Windows.Forms.DataSourceUpdateMode.Never, "User Name"));
             this.userName.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.userName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.userName.Location = new System.Drawing.Point(297, 177);
-            this.userName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userName.Location = new System.Drawing.Point(167, 114);
+            this.userName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(353, 80);
+            this.userName.Size = new System.Drawing.Size(213, 48);
             this.userName.TabIndex = 3;
             this.userName.Text = "User Name";
             // 
@@ -103,10 +105,10 @@
             this.logoutLabel.BackColor = System.Drawing.Color.RoyalBlue;
             this.logoutLabel.Font = new System.Drawing.Font("Levenim MT", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.logoutLabel.ForeColor = System.Drawing.Color.White;
-            this.logoutLabel.Location = new System.Drawing.Point(1515, 160);
-            this.logoutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logoutLabel.Location = new System.Drawing.Point(852, 103);
+            this.logoutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.logoutLabel.Name = "logoutLabel";
-            this.logoutLabel.Size = new System.Drawing.Size(131, 46);
+            this.logoutLabel.Size = new System.Drawing.Size(78, 27);
             this.logoutLabel.TabIndex = 9;
             this.logoutLabel.Text = "Logout";
             // 
@@ -119,10 +121,9 @@
             this.comboBoxAlbums.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxAlbums.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBoxAlbums.FormattingEnabled = true;
-            this.comboBoxAlbums.Location = new System.Drawing.Point(1195, 438);
-            this.comboBoxAlbums.Margin = new System.Windows.Forms.Padding(5);
+            this.comboBoxAlbums.Location = new System.Drawing.Point(365, 294);
             this.comboBoxAlbums.Name = "comboBoxAlbums";
-            this.comboBoxAlbums.Size = new System.Drawing.Size(377, 43);
+            this.comboBoxAlbums.Size = new System.Drawing.Size(214, 29);
             this.comboBoxAlbums.TabIndex = 10;
             this.comboBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.comboBoxAlbums_SelectedIndexChanged_1);
             // 
@@ -137,10 +138,10 @@
             this.logoutButton.BackgroundImage = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.logOutWhite2;
             this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logoutButton.Location = new System.Drawing.Point(1515, 31);
-            this.logoutButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.logoutButton.Location = new System.Drawing.Point(852, 20);
+            this.logoutButton.Margin = new System.Windows.Forms.Padding(2);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(142, 124);
+            this.logoutButton.Size = new System.Drawing.Size(80, 80);
             this.logoutButton.TabIndex = 8;
             this.logoutButton.TabStop = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
@@ -148,10 +149,10 @@
             // profilePicture
             // 
             this.profilePicture.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.mainFormFacadeBindingSource, "ProfilePicture", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.profilePicture.Location = new System.Drawing.Point(62, 31);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.profilePicture.Location = new System.Drawing.Point(35, 20);
+            this.profilePicture.Margin = new System.Windows.Forms.Padding(2);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(194, 220);
+            this.profilePicture.Size = new System.Drawing.Size(109, 142);
             this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.profilePicture.TabIndex = 2;
             this.profilePicture.TabStop = false;
@@ -159,62 +160,86 @@
             // topCover
             // 
             this.topCover.BackColor = System.Drawing.Color.RoyalBlue;
-            this.topCover.Location = new System.Drawing.Point(-2, -2);
-            this.topCover.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.topCover.Location = new System.Drawing.Point(-1, -1);
+            this.topCover.Margin = new System.Windows.Forms.Padding(2);
             this.topCover.Name = "topCover";
-            this.topCover.Size = new System.Drawing.Size(1694, 296);
+            this.topCover.Size = new System.Drawing.Size(953, 191);
             this.topCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.topCover.TabIndex = 1;
             this.topCover.TabStop = false;
             // 
-            // panel1
+            // tabsNavigator
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 1207);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1692, 0);
-            this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.tabsNavigator.Controls.Add(this.tabWall);
+            this.tabsNavigator.Controls.Add(this.tabLikesDist);
+            this.tabsNavigator.Controls.Add(this.tabHoroscope);
+            this.tabsNavigator.Controls.Add(this.tabFreindList);
+            this.tabsNavigator.Controls.Add(this.tabEvents);
+            this.tabsNavigator.Location = new System.Drawing.Point(0, 185);
+            this.tabsNavigator.Name = "tabsNavigator";
+            this.tabsNavigator.SelectedIndex = 0;
+            this.tabsNavigator.Size = new System.Drawing.Size(952, 718);
+            this.tabsNavigator.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabsNavigator.TabIndex = 11;
             // 
-            // tabControl1
+            // tabWall
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(184, 465);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1347, 404);
-            this.tabControl1.TabIndex = 12;
+            this.tabWall.BackColor = System.Drawing.SystemColors.Control;
+            this.tabWall.Location = new System.Drawing.Point(4, 29);
+            this.tabWall.Name = "tabWall";
+            this.tabWall.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWall.Size = new System.Drawing.Size(944, 685);
+            this.tabWall.TabIndex = 0;
+            this.tabWall.Text = "Wall";
             // 
-            // tabPage1
+            // tabLikesDist
             // 
-            this.tabPage1.Location = new System.Drawing.Point(10, 48);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1327, 346);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabLikesDist.BackColor = System.Drawing.SystemColors.Control;
+            this.tabLikesDist.Location = new System.Drawing.Point(4, 29);
+            this.tabLikesDist.Name = "tabLikesDist";
+            this.tabLikesDist.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLikesDist.Size = new System.Drawing.Size(944, 685);
+            this.tabLikesDist.TabIndex = 1;
+            this.tabLikesDist.Text = "Likes Distribution";
             // 
-            // tabPage2
+            // tabHoroscope
             // 
-            this.tabPage2.Location = new System.Drawing.Point(10, 48);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1327, 346);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabHoroscope.BackColor = System.Drawing.SystemColors.Control;
+            this.tabHoroscope.Location = new System.Drawing.Point(4, 29);
+            this.tabHoroscope.Name = "tabHoroscope";
+            this.tabHoroscope.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHoroscope.Size = new System.Drawing.Size(944, 685);
+            this.tabHoroscope.TabIndex = 2;
+            this.tabHoroscope.Text = "Horoscope";
+            // 
+            // tabFreindList
+            // 
+            this.tabFreindList.BackColor = System.Drawing.SystemColors.Control;
+            this.tabFreindList.Location = new System.Drawing.Point(4, 29);
+            this.tabFreindList.Name = "tabFreindList";
+            this.tabFreindList.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFreindList.Size = new System.Drawing.Size(944, 685);
+            this.tabFreindList.TabIndex = 3;
+            this.tabFreindList.Text = "Freinds List";
+            // 
+            // tabEvents
+            // 
+            this.tabEvents.BackColor = System.Drawing.SystemColors.Control;
+            this.tabEvents.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.tabEvents.Location = new System.Drawing.Point(4, 29);
+            this.tabEvents.Name = "tabEvents";
+            this.tabEvents.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEvents.Size = new System.Drawing.Size(944, 685);
+            this.tabEvents.TabIndex = 4;
+            this.tabEvents.Text = "Events";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1684, 1250);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(947, 1031);
+            this.Controls.Add(this.tabsNavigator);
             this.Controls.Add(this.comboBoxAlbums);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
@@ -224,7 +249,7 @@
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.topCover);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -236,7 +261,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoutButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topCover)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabsNavigator.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,9 +279,11 @@
         private System.Windows.Forms.ComboBox comboBoxAlbums;
         private System.Windows.Forms.BindingSource mainFormFacadeBindingSource;
         private System.Windows.Forms.BindingSource userAlbumsBindingSource;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabsNavigator;
+        private System.Windows.Forms.TabPage tabWall;
+        private System.Windows.Forms.TabPage tabLikesDist;
+        private System.Windows.Forms.TabPage tabHoroscope;
+        private System.Windows.Forms.TabPage tabFreindList;
+        private System.Windows.Forms.TabPage tabEvents;
     }
 }

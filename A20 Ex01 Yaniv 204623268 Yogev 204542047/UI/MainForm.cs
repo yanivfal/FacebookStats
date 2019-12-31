@@ -20,12 +20,25 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             InitializeComponent();
             initializeWindowSettings();
 
-            Form ho = new HoroscopeForm();
-            ho.TopLevel = false;
-            ho.Visible = true;
-            ho.FormBorderStyle = FormBorderStyle.None;
-            tabPage1.Controls.Add(ho);
-            //panel1.Controls.Add(ho);
+
+            //test
+            this.tabsNavigator.Top = this.topCover.Bottom;
+
+            HoroscopeForm horoscopeForm = new HoroscopeForm();
+            horoscopeForm.TopLevel = false;
+            horoscopeForm.Visible = true;
+            horoscopeForm.FormBorderStyle = FormBorderStyle.None;
+            horoscopeForm.Height = tabHoroscope.Height;
+            horoscopeForm.Width = tabHoroscope.Width;
+            tabHoroscope.Controls.Add(horoscopeForm);
+
+            LikesDistributionForm likesDistForm = new LikesDistributionForm();
+            likesDistForm.TopLevel = false;
+            likesDistForm.Visible = true;
+            likesDistForm.FormBorderStyle = FormBorderStyle.None;
+            //likesDistForm.Height = tabPage2.Height;
+            likesDistForm.Width = tabLikesDist.Width;
+            tabLikesDist.Controls.Add(likesDistForm);
         }
 
         private void initializeWindowSettings()
@@ -48,9 +61,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchUserData()
         {
             mainFormFacadeBindingSource.DataSource = m_Facade;
-            //this.userName.Text = FBAgent.LoggedInUser.Name;
-            //this.profilePicture.Image = FBAgent.LoggedInUser.ImageNormal;
-
         }
 
         private void fetchSelcetedAlbum(string i_AlbumName)
@@ -94,11 +104,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void horoscopeButton_Click(object sender, EventArgs e)
         {
-            
-           /* UIRunner.HideCurrentForm();
+            UIRunner.HideCurrentForm();
             UIRunner.OpenForm<HoroscopeForm>();
             //After previous screen is closed
-            UIRunner.OpenForm<MainForm>();*/
+            UIRunner.OpenForm<MainForm>();
         }
 
         private void clearWall()
@@ -122,8 +131,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                fetchAlbumsComboBox();
-                fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+                //fetchAlbumsComboBox();
+                //fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
             }
             catch (Exception ex)
             {
@@ -134,11 +143,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void fetchAlbumsComboBox()
         {
             userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
