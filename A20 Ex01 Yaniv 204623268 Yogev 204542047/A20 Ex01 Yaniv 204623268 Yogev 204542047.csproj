@@ -69,6 +69,18 @@
     </Compile>
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="Logics\FBAgent.cs" />
+    <Compile Include="UI\FriendComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FriendComponent.Designer.cs">
+      <DependentUpon>FriendComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FriendsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FriendsForm.Designer.cs">
+      <DependentUpon>FriendsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <Compile Include="UI\WallPhoto.Designer.cs">
       <DependentUpon>WallPhoto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FriendComponent.resx">
+      <DependentUpon>FriendComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FriendsForm.resx">
+      <DependentUpon>FriendsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
