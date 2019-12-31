@@ -13,8 +13,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     internal partial class MainForm : Form
     {
         private MainFormFacade m_Facade;
-        private List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
-        private int k_NumberOfPhotosOnWall = 3;
 
         public MainForm()
         {
@@ -23,20 +21,45 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             initializeWindowSettings(); 
         }
 
-        private void initializeWallTabPage()
+        private void fetchUserData()
         {
-            fetchAlbumsComboBox();
-            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.Items[0].ToString());
+            mainFormFacadeBindingSource.DataSource = m_Facade;
         }
 
-        private void initializeLikesDistributionTabPage()
+        private void fetchAlbumsComboBox()
         {
-            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
+            userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
         }
 
-        private void initializeHoroscopeTabPage()
+        private void logoutButton_Click(object sender, EventArgs e)
         {
-            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
+            AppSettings.Instance.RememberUser = false;
+            AppSettings.Instance.LastAccessToken = null;
+            AppSettings.Instance.SaveToFile();
+            UIRunner.HideCurrentForm();
+            UIRunner.OpenForm<LoginForm>();
+        }
+
+        private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.SelectedItem.ToString());
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                fetchUserData();
+                //initializeHoroscopeTabPage();
+                //initializeLikesDistributionTabPage();
+                //initializeWallTabPage();
+                initializeFreindsListTabPage();
+                //initializeEventsTabPage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void initializeWindowSettings()
@@ -56,58 +79,30 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
             //Navigator tabControl location
             this.tabsNavigator.Top = this.topCover.Bottom;
+            this.tabsNavigator.Width = this.Width;
         }
 
-        private void fetchUserData()
+        private void initializeWallTabPage()
         {
-            mainFormFacadeBindingSource.DataSource = m_Facade;
+            fetchAlbumsComboBox();
+            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.Items[0].ToString());
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void initializeLikesDistributionTabPage()
         {
-            AppSettings.Instance.RememberUser = false;
-            AppSettings.Instance.LastAccessToken = null;
-            AppSettings.Instance.SaveToFile();
-            UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<LoginForm>();
+            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
         }
 
-        private void clearWall()
+        private void initializeHoroscopeTabPage()
         {
-            foreach (WallPhoto photo in m_CurrentPhotoOnWall)
-            {
-                this.Controls.Remove(photo);
-            }
-
-            m_CurrentPhotoOnWall.Clear();
+            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
         }
 
-        private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            clearWall();
-            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.SelectedItem.ToString());
+        private void initializeFreindsListTabPage()
+        {    
+            TabPanelFactory.CreateFreindsListTabPage(ref tabFreindList);
         }
 
-        private void MainForm_Shown(object sender, EventArgs e)
-        {
-            try
-            {
-                fetchUserData();
-                //initializeHoroscopeTabPage();
-                //initializeLikesDistributionTabPage();
-                initializeWallTabPage();
-                //initializeFreindsListTabPage();
-                //initializeEventsTabPage();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        private void fetchAlbumsComboBox()
-        {
-            userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
-        }
     }
 }

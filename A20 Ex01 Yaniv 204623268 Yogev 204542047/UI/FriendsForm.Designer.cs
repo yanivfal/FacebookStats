@@ -38,9 +38,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Levenim MT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 47);
+            this.label1.Location = new System.Drawing.Point(194, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(658, 80);
+            this.label1.Size = new System.Drawing.Size(395, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Here are your friends!";
             // 
@@ -49,22 +50,24 @@
             this.friendsTable.ColumnCount = 3;
             this.friendsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.friendsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.friendsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 415F));
-            this.friendsTable.Location = new System.Drawing.Point(1, 192);
+            this.friendsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
+            this.friendsTable.Location = new System.Drawing.Point(1, 124);
+            this.friendsTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.friendsTable.Name = "friendsTable";
             this.friendsTable.RowCount = 2;
-            this.friendsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.friendsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.friendsTable.Size = new System.Drawing.Size(1329, 577);
+            this.friendsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.76923F));
+            this.friendsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.23077F));
+            this.friendsTable.Size = new System.Drawing.Size(748, 455);
             this.friendsTable.TabIndex = 0;
             // 
             // FriendsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 766);
+            this.ClientSize = new System.Drawing.Size(750, 578);
             this.Controls.Add(this.friendsTable);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FriendsForm";
             this.Text = "FriendsForm";
             this.ResumeLayout(false);

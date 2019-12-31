@@ -187,6 +187,7 @@
             // 
             // tabFreindList
             // 
+            this.tabFreindList.AutoScroll = true;
             this.tabFreindList.BackColor = System.Drawing.SystemColors.Control;
             this.tabFreindList.Location = new System.Drawing.Point(4, 29);
             this.tabFreindList.Name = "tabFreindList";
@@ -197,6 +198,7 @@
             // 
             // tabEvents
             // 
+            this.tabEvents.AutoScroll = true;
             this.tabEvents.BackColor = System.Drawing.SystemColors.Control;
             this.tabEvents.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.tabEvents.Location = new System.Drawing.Point(4, 29);
@@ -211,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(947, 1057);
+            this.ClientSize = new System.Drawing.Size(947, 1072);
             this.Controls.Add(this.tabsNavigator);
             this.Controls.Add(this.logoutLabel);
             this.Controls.Add(this.logoutButton);
