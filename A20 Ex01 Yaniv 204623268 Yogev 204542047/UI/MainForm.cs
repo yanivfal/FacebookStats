@@ -1,4 +1,5 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -18,27 +19,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         {
             m_Facade = new MainFormFacade();
             InitializeComponent();
-            initializeWindowSettings();
+            initializeWindowSettings(); 
+        }
 
+        private void initializeWallTabPage()
+        {
+            fetchAlbumsComboBox();
+            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.Items[0].ToString());
+        }
 
-            //test
-            this.tabsNavigator.Top = this.topCover.Bottom;
+        private void initializeLikesDistributionTabPage()
+        {
+            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
+        }
 
-            HoroscopeForm horoscopeForm = new HoroscopeForm();
-            horoscopeForm.TopLevel = false;
-            horoscopeForm.Visible = true;
-            horoscopeForm.FormBorderStyle = FormBorderStyle.None;
-            horoscopeForm.Height = tabHoroscope.Height;
-            horoscopeForm.Width = tabHoroscope.Width;
-            tabHoroscope.Controls.Add(horoscopeForm);
-
-            LikesDistributionForm likesDistForm = new LikesDistributionForm();
-            likesDistForm.TopLevel = false;
-            likesDistForm.Visible = true;
-            likesDistForm.FormBorderStyle = FormBorderStyle.None;
-            //likesDistForm.Height = tabPage2.Height;
-            likesDistForm.Width = tabLikesDist.Width;
-            tabLikesDist.Controls.Add(likesDistForm);
+        private void initializeHoroscopeTabPage()
+        {
+            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
         }
 
         private void initializeWindowSettings()
@@ -48,49 +45,21 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             int width = screen.Width / 2 + 20;
             int height = screen.Height - 20;
             this.Size = new Size(width, height);
+
             // Logo button location
             logoutButton.Left = this.Right - logoutButton.Width - 50;
             logoutLabel.Left = this.Right - logoutButton.Width - 50;
+
             // Top cover size
             topCover.Width = this.Width - 20;
-            // Buttons size and location
-            horoscopeButton.Left = this.Left + 30;
-            uploadStatisticsButton.Left = this.Right - uploadStatisticsButton.Width - 30;
+
+            //Navigator tabControl location
+            this.tabsNavigator.Top = this.topCover.Bottom;
         }
 
         private void fetchUserData()
         {
             mainFormFacadeBindingSource.DataSource = m_Facade;
-        }
-
-        private void fetchSelcetedAlbum(string i_AlbumName)
-        {
-            int position = topCover.Bottom + 100;
-            int numOfFetchedPhoto = 0;
-            FacebookObjectCollection<Photo> wallPictures = FBAgent.GetAlbumPhotosByName(i_AlbumName);
-
-            foreach (Photo photo in wallPictures)
-            {
-                WallPhoto photoComponent = new WallPhoto(photo);
-                photoComponent.Top = position;
-                position = photoComponent.Bottom + 30;
-                photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
-                this.Controls.Add(photoComponent);
-                m_CurrentPhotoOnWall.Add(photoComponent);
-                //Show the first k_NumberOfPhotosOnWall images
-                if (++numOfFetchedPhoto >= k_NumberOfPhotosOnWall)
-                {
-                    break;
-                }
-            }
-        }
-
-        private void uploadStatisticsButton_Click(object sender, EventArgs e)
-        {
-            UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<LikesDistributionForm>();
-            //After previous screen is closed
-            UIRunner.OpenForm<MainForm>();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -100,14 +69,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             AppSettings.Instance.SaveToFile();
             UIRunner.HideCurrentForm();
             UIRunner.OpenForm<LoginForm>();
-        }
-
-        private void horoscopeButton_Click(object sender, EventArgs e)
-        {
-            UIRunner.HideCurrentForm();
-            UIRunner.OpenForm<HoroscopeForm>();
-            //After previous screen is closed
-            UIRunner.OpenForm<MainForm>();
         }
 
         private void clearWall()
@@ -123,7 +84,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             clearWall();
-            fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.SelectedItem.ToString());
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -131,8 +92,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                //fetchAlbumsComboBox();
-                //fetchSelcetedAlbum(comboBoxAlbums.SelectedItem.ToString());
+                //initializeHoroscopeTabPage();
+                //initializeLikesDistributionTabPage();
+                initializeWallTabPage();
+                //initializeFreindsListTabPage();
+                //initializeEventsTabPage();
             }
             catch (Exception ex)
             {
