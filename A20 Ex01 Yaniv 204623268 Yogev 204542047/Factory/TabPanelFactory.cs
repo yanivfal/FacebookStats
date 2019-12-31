@@ -58,9 +58,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 
         private static void clearWall(ref TabPage i_WallTabPage)
         {
-            foreach (WallPhoto photo in i_WallTabPage.Controls)
+            foreach (Control photo in i_WallTabPage.Controls)
             {
-                i_WallTabPage.Controls.Remove(photo);
+                if (photo is WallPhoto)
+                {
+                    i_WallTabPage.Controls.Remove(photo);
+                } 
             }
         }
 
