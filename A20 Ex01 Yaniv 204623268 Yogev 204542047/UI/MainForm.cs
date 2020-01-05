@@ -6,6 +6,7 @@ using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
@@ -41,9 +42,13 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
+                new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
+                //new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
+                //new Thread(new ThreadStart(initializeWallTabPage)).Start();
+
                 //initializeHoroscopeTabPage();
                 //initializeLikesDistributionTabPage();
-                initializeWallTabPage();
+                //initializeWallTabPage();
                 //initializeFreindsListTabPage();
                 //initializeEventsTabPage();
             }
@@ -79,12 +84,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.Items[0].ToString());
         }
 
-        private void initializeLikesDistributionTabPage()
+        private void initializeHoroscopeTabPage()
         {
             TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
         }
 
-        private void initializeHoroscopeTabPage()
+        private void initializeLikesDistributionTabPage()
         {
             TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
         }

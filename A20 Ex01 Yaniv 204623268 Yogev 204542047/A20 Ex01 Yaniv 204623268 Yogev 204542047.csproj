@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dummy\DummyGenerator.cs" />
     <Compile Include="Facades\MainFormFacade.cs" />
     <Compile Include="Factory\TabPanelFactory.cs" />
     <Compile Include="Logics\eDayParts.cs" />
