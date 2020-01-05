@@ -51,7 +51,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             i_FreindsListTabPage.Controls.Add(freindsForm);
         }
 
-        public static void CreateWallTabPage(ref TabPage i_WallTabPage, string i_SelectedAlbum)
+        public static void CreateWallTabPage(TabPage i_WallTabPage, string i_SelectedAlbum)
         {
             clearWall(ref i_WallTabPage);
             int position = i_WallTabPage.Top + 60;
@@ -64,7 +64,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
                 photoComponent.Left = (i_WallTabPage.Width) / 2 - (photoComponent.Width / 2);
-                i_WallTabPage.Controls.Add(photoComponent);
+                i_WallTabPage.Invoke(new Action(() => i_WallTabPage.Controls.Add(photoComponent)));
                 m_CurrentPhotoOnWall.Add(photoComponent);
                 if (++numOfFetchedPhoto >= 3)
                 {

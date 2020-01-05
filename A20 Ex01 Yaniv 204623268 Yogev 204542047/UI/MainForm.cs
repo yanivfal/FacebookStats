@@ -6,6 +6,7 @@ using FacebookWrapper.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
@@ -33,7 +34,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.SelectedItem.ToString());
+            TabPanelFactory.CreateWallTabPage(tabWall, comboBoxAlbums.SelectedItem.ToString());
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -41,9 +42,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
+                //new Thread(new ThreadStart(initializeWallTabPage)).Start();
+                //new Thread(new ThreadStart(initializeEventsTabPage)).Start();
+                new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
+                //new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
+                //new Thread(new ThreadStart(initializeLikesDistributionTabPage)).Start();
+
                 //initializeHoroscopeTabPage();
                 //initializeLikesDistributionTabPage();
-                initializeWallTabPage();
+                //initializeWallTabPage();
                 //initializeFreindsListTabPage();
                 //initializeEventsTabPage();
             }
@@ -76,17 +83,17 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void initializeWallTabPage()
         {
             fetchAlbumsComboBox();
-            TabPanelFactory.CreateWallTabPage(ref tabWall, comboBoxAlbums.Items[0].ToString());
+            TabPanelFactory.CreateWallTabPage(tabWall, comboBoxAlbums.Items[0].ToString());
         }
 
         private void initializeLikesDistributionTabPage()
         {
-            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
+            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
         }
 
         private void initializeHoroscopeTabPage()
         {
-            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
+            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
         }
 
         private void initializeFreindsListTabPage()
