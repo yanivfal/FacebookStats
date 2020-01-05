@@ -1,4 +1,5 @@
-﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
+﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Dummy;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.UI;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -73,8 +74,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
         {
             int position = i_EventsTabPage.Top + 60;
             int numOfFetchedPhoto = 0;
-            FacebookObjectCollection<Event> userEvents = FBAgent.LoggedInUser.Events;
-
+            //FacebookObjectCollection<Event> userEvents = FBAgent.LoggedInUser.Events;
+            FacebookObjectCollection<Event> userEvents = DummyGenerator.GetDummyEvents();
             foreach (Event fbEvent in userEvents)
             {
                 EventComponent eventComponent = new EventComponent(fbEvent);
