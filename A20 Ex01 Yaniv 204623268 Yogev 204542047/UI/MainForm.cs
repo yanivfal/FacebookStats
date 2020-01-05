@@ -42,17 +42,17 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                //new Thread(new ThreadStart(initializeWallTabPage)).Start();
+                new Thread(new ThreadStart(initializeWallTabPage)).Start();
                 //new Thread(new ThreadStart(initializeEventsTabPage)).Start();
-                new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
-                //new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
+                //new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
+               // new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
                 //new Thread(new ThreadStart(initializeLikesDistributionTabPage)).Start();
 
-                //initializeHoroscopeTabPage();
+                initializeHoroscopeTabPage();
                 //initializeLikesDistributionTabPage();
                 //initializeWallTabPage();
-                //initializeFreindsListTabPage();
-                //initializeEventsTabPage();
+                initializeFreindsListTabPage();
+                initializeEventsTabPage();
             }
             catch (Exception ex)
             {
@@ -93,12 +93,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void initializeHoroscopeTabPage()
         {
-            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
+            TabPanelFactory.CreateHoroscopeTabPage(tabHoroscope);
         }
 
         private void initializeFreindsListTabPage()
         {    
-            TabPanelFactory.CreateFreindsListTabPage(ref tabFreindList);
+            TabPanelFactory.CreateFreindsListTabPage(tabFreindList);
         }
 
         private void initializeEventsTabPage()

@@ -14,7 +14,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
     {
         private static List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
 
-        public static void CreateHoroscopeTabPage(ref TabPage i_HoroscopeTabPage)
+        public static void CreateHoroscopeTabPage(TabPage i_HoroscopeTabPage)
         {
             HoroscopeForm horoscopeForm = new HoroscopeForm();
             horoscopeForm.TopLevel = false;
@@ -23,6 +23,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             horoscopeForm.Height = i_HoroscopeTabPage.Height;
             horoscopeForm.Width = i_HoroscopeTabPage.Width;
             centeringAllControls(horoscopeForm, i_HoroscopeTabPage.Width);
+
+            //i_HoroscopeTabPage.Invoke(new Action(() => i_HoroscopeTabPage.Controls.Add(new )));
 
             i_HoroscopeTabPage.Controls.Add(horoscopeForm);
         }
@@ -38,7 +40,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             i_LikesDistTabPage.Controls.Add(likesDistForm);
         }
 
-        public static void CreateFreindsListTabPage(ref TabPage i_FreindsListTabPage)
+        public static void CreateFreindsListTabPage(TabPage i_FreindsListTabPage)
         {
             centeringAllControls(i_FreindsListTabPage, i_FreindsListTabPage.Width);
             FriendsForm freindsForm = new FriendsForm();
@@ -48,7 +50,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             freindsForm.Width = i_FreindsListTabPage.Width;
             freindsForm.Height = i_FreindsListTabPage.Height;
 
-            i_FreindsListTabPage.Controls.Add(freindsForm);
+            i_FreindsListTabPage.Invoke(new Action(() => i_FreindsListTabPage.Controls.Add(freindsForm)));
         }
 
         public static void CreateWallTabPage(TabPage i_WallTabPage, string i_SelectedAlbum)
@@ -73,7 +75,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             }
         }
 
-        //Demmy data
+        //Dummy data
         public static void CreateEventsTabPage(ref TabPage i_EventsTabPage)
         {
             centeringAllControls(i_EventsTabPage, i_EventsTabPage.Width);
