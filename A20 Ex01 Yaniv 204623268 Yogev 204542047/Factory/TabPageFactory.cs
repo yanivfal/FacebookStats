@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 {
-    public class TabPanelFactory
+    public class TabPageFactory
     {
         private static List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
 
@@ -38,17 +38,20 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             i_LikesDistTabPage.Controls.Add(likesDistForm);
         }
 
-        public static void CreateFreindsListTabPage(ref TabPage i_FreindsListTabPage)
+        public static void CreateFreindsListTabPage(TabPage i_FreindsListTabPage)
         {
+            int position = i_FreindsListTabPage.Top + 50;
+            FacebookObjectCollection<User> userFriends = FBAgent.LoggedInUser.Friends;
+            for (int i = 0; i < userFriends.Count && i < 6; i++)
+            {
+                User friend = userFriends[i];
+                FriendComponent friendComponent = new FriendComponent(friend);
+                friendComponent.Top = position;
+                i_FreindsListTabPage.Invoke(new Action(() => i_FreindsListTabPage.Controls.Add(friendComponent)));
+                position += 20;
+            }
+           
             centeringAllControls(i_FreindsListTabPage, i_FreindsListTabPage.Width);
-            FriendsForm freindsForm = new FriendsForm();
-            freindsForm.TopLevel = false;
-            freindsForm.Visible = true;
-            freindsForm.FormBorderStyle = FormBorderStyle.None;
-            freindsForm.Width = i_FreindsListTabPage.Width;
-            freindsForm.Height = i_FreindsListTabPage.Height;
-
-            i_FreindsListTabPage.Controls.Add(freindsForm);
         }
 
         public static void CreateWallTabPage(TabPage i_WallTabPage, string i_SelectedAlbum)

@@ -34,7 +34,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 
         private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            TabPanelFactory.CreateWallTabPage(tabWall, comboBoxAlbums.SelectedItem.ToString());
+            TabPageFactory.CreateWallTabPage(tabWall, comboBoxAlbums.SelectedItem.ToString());
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -42,17 +42,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                //new Thread(new ThreadStart(initializeWallTabPage)).Start();
-                //new Thread(new ThreadStart(initializeEventsTabPage)).Start();
-                new Thread(new ThreadStart(initializeHoroscopeTabPage)).Start();
-                //new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
-                //new Thread(new ThreadStart(initializeLikesDistributionTabPage)).Start();
+                new Thread(new ThreadStart(initializeWallTabPage)).Start();
+                new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
 
-                //initializeHoroscopeTabPage();
-                //initializeLikesDistributionTabPage();
-                //initializeWallTabPage();
-                //initializeFreindsListTabPage();
-                //initializeEventsTabPage();
+                initializeHoroscopeTabPage();
+                initializeLikesDistributionTabPage();
+                initializeEventsTabPage();
             }
             catch (Exception ex)
             {
@@ -83,27 +78,27 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         private void initializeWallTabPage()
         {
             fetchAlbumsComboBox();
-            TabPanelFactory.CreateWallTabPage(tabWall, comboBoxAlbums.Items[0].ToString());
+            TabPageFactory.CreateWallTabPage(tabWall, comboBoxAlbums.Items[0].ToString());
         }
 
         private void initializeLikesDistributionTabPage()
         {
-            TabPanelFactory.CreateLikesDistTabPage(ref tabLikesDist);
+            TabPageFactory.CreateLikesDistTabPage(ref tabLikesDist);
         }
 
         private void initializeHoroscopeTabPage()
         {
-            TabPanelFactory.CreateHoroscopeTabPage(ref tabHoroscope);
+            TabPageFactory.CreateHoroscopeTabPage(ref tabHoroscope);
         }
 
         private void initializeFreindsListTabPage()
         {    
-            TabPanelFactory.CreateFreindsListTabPage(ref tabFreindList);
+            TabPageFactory.CreateFreindsListTabPage(tabFreindList);
         }
 
         private void initializeEventsTabPage()
         {
-            TabPanelFactory.CreateEventsTabPage(ref tabEvents);
+            TabPageFactory.CreateEventsTabPage(ref tabEvents);
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

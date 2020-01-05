@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facades\MainFormFacade.cs" />
-    <Compile Include="Factory\TabPanelFactory.cs" />
+    <Compile Include="Factory\TabPageFactory.cs" />
     <Compile Include="Logics\eDayParts.cs" />
     <Compile Include="Logics\eZodiacs.cs" />
     <Compile Include="Logics\HoroscopeAgent.cs" />
@@ -84,11 +84,11 @@
     <Compile Include="UI\FriendComponent.Designer.cs">
       <DependentUpon>FriendComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FriendsForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="UI\HoroscopeComponent.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\FriendsForm.Designer.cs">
-      <DependentUpon>FriendsForm.cs</DependentUpon>
+    <Compile Include="UI\HoroscopeComponent.Designer.cs">
+      <DependentUpon>HoroscopeComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="UI\FriendComponent.resx">
       <DependentUpon>FriendComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FriendsForm.resx">
-      <DependentUpon>FriendsForm.cs</DependentUpon>
+    <EmbeddedResource Include="UI\HoroscopeComponent.resx">
+      <DependentUpon>HoroscopeComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
