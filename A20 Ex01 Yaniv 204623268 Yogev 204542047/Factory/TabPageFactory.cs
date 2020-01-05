@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 {
-    public class TabPanelFactory
+    public class TabPageFactory
     {
         private static List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
 
-        public static void CreateHoroscopeTabPage(TabPage i_HoroscopeTabPage)
+        public static void CreateHoroscopeTabPage(ref TabPage i_HoroscopeTabPage)
         {
             HoroscopeForm horoscopeForm = new HoroscopeForm();
             horoscopeForm.TopLevel = false;
@@ -23,8 +23,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             horoscopeForm.Height = i_HoroscopeTabPage.Height;
             horoscopeForm.Width = i_HoroscopeTabPage.Width;
             centeringAllControls(horoscopeForm, i_HoroscopeTabPage.Width);
-
-            //i_HoroscopeTabPage.Invoke(new Action(() => i_HoroscopeTabPage.Controls.Add(new )));
 
             i_HoroscopeTabPage.Controls.Add(horoscopeForm);
         }
@@ -42,15 +40,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 
         public static void CreateFreindsListTabPage(TabPage i_FreindsListTabPage)
         {
+            int position = i_FreindsListTabPage.Top + 50;
+            FacebookObjectCollection<User> userFriends = FBAgent.LoggedInUser.Friends;
+            for (int i = 0; i < userFriends.Count && i < 6; i++)
+            {
+                User friend = userFriends[i];
+                FriendComponent friendComponent = new FriendComponent(friend);
+                friendComponent.Top = position;
+                i_FreindsListTabPage.Invoke(new Action(() => i_FreindsListTabPage.Controls.Add(friendComponent)));
+                position += 20;
+            }
+           
             centeringAllControls(i_FreindsListTabPage, i_FreindsListTabPage.Width);
-            FriendsForm freindsForm = new FriendsForm();
-            freindsForm.TopLevel = false;
-            freindsForm.Visible = true;
-            freindsForm.FormBorderStyle = FormBorderStyle.None;
-            freindsForm.Width = i_FreindsListTabPage.Width;
-            freindsForm.Height = i_FreindsListTabPage.Height;
-
-            i_FreindsListTabPage.Invoke(new Action(() => i_FreindsListTabPage.Controls.Add(freindsForm)));
         }
 
         public static void CreateWallTabPage(TabPage i_WallTabPage, string i_SelectedAlbum)
@@ -75,7 +76,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             }
         }
 
-        //Dummy data
+        //Demmy data
         public static void CreateEventsTabPage(ref TabPage i_EventsTabPage)
         {
             centeringAllControls(i_EventsTabPage, i_EventsTabPage.Width);
