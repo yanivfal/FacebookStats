@@ -1,30 +1,26 @@
 ﻿using FacebookWrapper.ObjectModel;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Proxy
 {
-
     internal class PictureBoxProxy : PictureBox
     {
-        private const int k_PhotoWidth = 400;
+        private int m_PictureWidth;
 
-        public PictureBoxProxy(Photo i_Photo)
+        public PictureBoxProxy(Photo i_Photo, int i_PictureWidth)
         {
+            m_PictureWidth = i_PictureWidth;
             SizeMode = PictureBoxSizeMode.StretchImage;
             Image = i_Photo.ImageNormal;
             Height = calcHeightByratio(i_Photo);
+            Width = m_PictureWidth;
         }
 
         private int calcHeightByratio(Photo i_Photo)
         {
-            int imageHeight = k_PhotoWidth;
-            int imageWidth = k_PhotoWidth;
+            int imageHeight = m_PictureWidth;
+            int imageWidth = m_PictureWidth;
 
             try
             {
@@ -37,7 +33,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Proxy
             }
 
             float imageRatio = imageHeight / (float)imageWidth;
-            int height = (int)(k_PhotoWidth * imageRatio);
+            int height = (int)(m_PictureWidth * imageRatio);
 
             return height;
         }

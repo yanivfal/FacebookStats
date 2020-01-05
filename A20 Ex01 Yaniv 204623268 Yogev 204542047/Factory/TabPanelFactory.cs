@@ -1,5 +1,4 @@
-﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Dummy;
-using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
+﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.UI;
 using FacebookWrapper.ObjectModel;
 using System;
@@ -13,6 +12,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 {
     public class TabPanelFactory
     {
+        private static List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
+
         public static void CreateHoroscopeTabPage(ref TabPage i_HoroscopeTabPage)
         {
             HoroscopeForm horoscopeForm = new HoroscopeForm();
@@ -39,6 +40,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 
         public static void CreateFreindsListTabPage(ref TabPage i_FreindsListTabPage)
         {
+            centeringAllControls(i_FreindsListTabPage, i_FreindsListTabPage.Width);
             FriendsForm freindsForm = new FriendsForm();
             freindsForm.TopLevel = false;
             freindsForm.Visible = true;
@@ -63,6 +65,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
                 position = photoComponent.Bottom + 30;
                 photoComponent.Left = (i_WallTabPage.Width) / 2 - (photoComponent.Width / 2);
                 i_WallTabPage.Controls.Add(photoComponent);
+                m_CurrentPhotoOnWall.Add(photoComponent);
                 if (++numOfFetchedPhoto >= 3)
                 {
                     break;
@@ -70,34 +73,49 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             }
         }
 
+        //Demmy data
         public static void CreateEventsTabPage(ref TabPage i_EventsTabPage)
         {
+            centeringAllControls(i_EventsTabPage, i_EventsTabPage.Width);
             int position = i_EventsTabPage.Top + 60;
-            int numOfFetchedPhoto = 0;
-            //FacebookObjectCollection<Event> userEvents = FBAgent.LoggedInUser.Events;
-            FacebookObjectCollection<Event> userEvents = DummyGenerator.GetDummyEvents();
-            foreach (Event fbEvent in userEvents)
-            {
-                EventComponent eventComponent = new EventComponent(fbEvent);
-                eventComponent.Top = position;
-                position = eventComponent.Bottom + 30;
-                eventComponent.Left = (i_EventsTabPage.Width) / 2 - (eventComponent.Width / 2);
-                i_EventsTabPage.Controls.Add(eventComponent);
-                if (++numOfFetchedPhoto >= 3)
-                {
-                    break;
-                }
-            }
+            EventComponent eventComponent1 = new EventComponent();
+            createEventDammyData(ref eventComponent1, "2020 celebrations", "IDC", "01/01/20",
+                "00:00", "03:00", position);
+            position = eventComponent1.Bottom + 20;
+            centeringControl(eventComponent1, i_EventsTabPage.Width);
+
+            EventComponent eventComponent2 = new EventComponent();
+            createEventDammyData(ref eventComponent2, "Omer Adam Show", "Keisariya", "18/01/20",
+                "20:00", "22:00", position);
+            position = eventComponent2.Bottom + 20;
+            centeringControl(eventComponent2, i_EventsTabPage.Width);
+
+            EventComponent eventComponent3 = new EventComponent();
+            createEventDammyData(ref eventComponent3, "Yogev Wedding", "Mikonos", "?/?/?",
+                "20:00", "05:00", position);
+            centeringControl(eventComponent3, i_EventsTabPage.Width);
+
+            i_EventsTabPage.Controls.Add(eventComponent1);
+            i_EventsTabPage.Controls.Add(eventComponent2);
+            i_EventsTabPage.Controls.Add(eventComponent3);
+        }
+
+        private static void createEventDammyData(ref EventComponent i_Event, string i_EventName,
+            string i_Location, string i_Date, string i_Start, string i_End, int i_Position)
+        {
+            i_Event.labelEventName.Text = string.Format("{0}", i_EventName);
+            i_Event.labelEventLocation.Text = string.Format("{0}{1}", "Location: ", i_Location);
+            i_Event.labelEventDate.Text = string.Format("{0}{1}", "Date: ", i_Date);
+            i_Event.labelEventStartt.Text = string.Format("{0}{1}", "Starts at: ", i_Start);
+            i_Event.labelEventEnd.Text = string.Format("{0}{1}", "Ends at: ", i_End);
+            i_Event.Top = i_Position;
         }
 
         private static void clearWall(ref TabPage i_WallTabPage)
         {
-            foreach (Control photo in i_WallTabPage.Controls)
+            foreach (WallPhoto photo in m_CurrentPhotoOnWall)
             {
-                if (photo is WallPhoto)
-                {
-                    i_WallTabPage.Controls.Remove(photo);
-                } 
+                 i_WallTabPage.Controls.Remove(photo);
             }
         }
 
@@ -106,8 +124,23 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
             // Move all the controls to the center
             foreach (Control control in i_FormToCentering.Controls)
             {
-                control.Left = i_TabPageWidth / 2 - (control.Width / 2);
+                centeringControl(control, i_TabPageWidth);
             }
+        }
+
+        private static void centeringAllControls(TabPage i_TabPageToCentering, int i_TabPageWidth)
+        {
+            // Move all the controls to the center
+            foreach (Control control in i_TabPageToCentering.Controls)
+            {
+                centeringControl(control, i_TabPageWidth);
+            }
+        }
+
+        private static void centeringControl(Control i_ControlToCentering, int i_TabPageWidth)
+        {
+            // Move controls to the center
+            i_ControlToCentering.Left = i_TabPageWidth / 2 - (i_ControlToCentering.Width / 2);
         }
     }
 }
