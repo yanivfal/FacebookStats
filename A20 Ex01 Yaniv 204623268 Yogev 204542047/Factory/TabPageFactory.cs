@@ -12,7 +12,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 {
     public class TabPageFactory
     {
-        private static List<WallPhoto> m_CurrentPhotoOnWall = new List<WallPhoto>();
+        private static List<WallPhotoComponent> m_CurrentPhotoOnWall = new List<WallPhotoComponent>();
 
         public static void CreateHoroscopeTabPage(ref TabPage i_HoroscopeTabPage)
         {
@@ -63,7 +63,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 
             foreach (Photo photo in wallPictures)
             {
-                WallPhoto photoComponent = new WallPhoto(photo);
+                WallPhotoComponent photoComponent = new WallPhotoComponent(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
                 photoComponent.Left = (i_WallTabPage.Width) / 2 - (photoComponent.Width / 2);
@@ -116,7 +116,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory
 
         private static void clearWall(ref TabPage i_WallTabPage)
         {
-            foreach (WallPhoto photo in m_CurrentPhotoOnWall)
+            foreach (WallPhotoComponent photo in m_CurrentPhotoOnWall)
             {
                  i_WallTabPage.Controls.Remove(photo);
             }

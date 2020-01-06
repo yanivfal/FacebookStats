@@ -4,16 +4,23 @@ using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
-    public partial class WallPhoto : UserControl
+    public partial class WallPhotoComponent : UserControl
     {
         private PictureBoxProxy m_Photo;
 
-        public WallPhoto(Photo i_Photo)
+        public WallPhotoComponent(Photo i_Photo)
         {
-            m_Photo = new PictureBoxProxy(i_Photo, 400);
+            m_Photo = new PictureBoxProxy();
+            AddPhoto(i_Photo);
             InitializeComponent();
             initializePhotoProperties(i_Photo);
             setPictureDetails(i_Photo);
+        }
+
+        private void AddPhoto(Photo i_Photo)
+        {
+            m_Photo.Image = i_Photo.ImageNormal;
+            m_Photo.Width = 400;
         }
 
         private void initializePhotoProperties(Photo i_Photo)
