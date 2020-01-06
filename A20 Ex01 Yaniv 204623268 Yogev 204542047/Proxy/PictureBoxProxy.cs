@@ -1,41 +1,74 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Proxy
 {
     internal class PictureBoxProxy : PictureBox
     {
-        private int m_PictureWidth;
+        private float ImageRatio { get; set; }
 
-        public PictureBoxProxy(Photo i_Photo, int i_PictureWidth)
+        public new Image Image
         {
-            m_PictureWidth = i_PictureWidth;
-            SizeMode = PictureBoxSizeMode.StretchImage;
-            Image = i_Photo.ImageNormal;
-            Height = calcHeightByratio(i_Photo);
-            Width = m_PictureWidth;
+            get
+            {
+                return base.Image;
+            }
+            set
+            {
+                base.Image = value;
+                if (value != null)
+                {
+                    ImageRatio = calcRatio(this.Image);
+                }              
+            }
         }
 
-        private int calcHeightByratio(Photo i_Photo)
+        public new int Width
         {
-            int imageHeight = m_PictureWidth;
-            int imageWidth = m_PictureWidth;
+            get
+            {
+                return base.Width;
+            }
+            set
+            {
+                base.Width = value;
+                if (Image != null)
+                {
+                    FixResolution();
+                }
+            }
+        }
+
+        public PictureBoxProxy() : base()
+        {
+        }
+
+        private void FixResolution()
+        {
+            SizeMode = PictureBoxSizeMode.StretchImage;
+            Height = (int)(base.Width * ImageRatio);
+        }
+
+        private float calcRatio(Image i_Photo)
+        {
+            float imageRatio;
+            int imageHeight = i_Photo.Width;
+            int imageWidth = i_Photo.Width;
 
             try
             {
-                imageHeight = i_Photo.ImageNormal.Height;
-                imageWidth = i_Photo.ImageNormal.Width;
+                imageHeight = i_Photo.Height;
+                imageWidth = i_Photo.Width;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            float imageRatio = imageHeight / (float)imageWidth;
-            int height = (int)(m_PictureWidth * imageRatio);
+            imageRatio = imageHeight / (float)imageWidth;
 
-            return height;
+            return imageRatio;
         }
     }
 }

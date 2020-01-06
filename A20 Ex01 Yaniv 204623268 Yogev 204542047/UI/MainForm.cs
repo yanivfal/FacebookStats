@@ -1,10 +1,6 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory;
-using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
-using A20_Ex01_Yaniv_204623268_Yogev_204542047.UI;
-using FacebookWrapper.ObjectModel;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;

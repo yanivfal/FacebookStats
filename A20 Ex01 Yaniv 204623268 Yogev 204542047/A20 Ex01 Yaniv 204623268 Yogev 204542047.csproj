@@ -118,11 +118,14 @@
     <Compile Include="UI\HoroscopeForm.Designer.cs">
       <DependentUpon>HoroscopeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\WallPhoto.cs">
+    <Compile Include="UI\WallPhotoComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\WallPhoto.Designer.cs">
-      <DependentUpon>WallPhoto.cs</DependentUpon>
+    <Compile Include="UI\WallPhotoComponent.Designer.cs">
+      <DependentUpon>WallPhotoComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WallTabPage.cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="UI\EventComponent.resx">
       <DependentUpon>EventComponent.cs</DependentUpon>
@@ -150,8 +153,8 @@
     <EmbeddedResource Include="UI\HoroscopeForm.resx">
       <DependentUpon>HoroscopeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\WallPhoto.resx">
-      <DependentUpon>WallPhoto.cs</DependentUpon>
+    <EmbeddedResource Include="UI\WallPhotoComponent.resx">
+      <DependentUpon>WallPhotoComponent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades.MainFormFacade.datasource" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Event.datasource" />
