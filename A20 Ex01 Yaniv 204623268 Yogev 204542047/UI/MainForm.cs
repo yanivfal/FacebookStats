@@ -1,5 +1,6 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades;
 using A20_Ex01_Yaniv_204623268_Yogev_204542047.Factory;
+using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -10,13 +11,22 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
     internal partial class MainForm : Form
     {
         private MainFormFacade m_Facade;
+        private TabPageFactory m_TabPageFactory;
 
         public MainForm()
         {
             m_Facade = new MainFormFacade();
+            m_TabPageFactory = new TabPageFactory();
             InitializeComponent();
-            initializeWindowSettings(); 
+            initializeWindowSettings();
         }
+
+        private void initializeTabPage(eTabPage i_TabPage)
+        {
+            TabPage tabPage = m_TabPageFactory.CreateTabPage(i_TabPage);
+            tabsNavigator.Invoke(new Action(() => tabsNavigator.Controls.Add(tabPage)));
+        }
+
 
         private void fetchUserData()
         {
@@ -28,22 +38,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             userAlbumsBindingSource.DataSource = m_Facade.UserAlbums;
         }
 
-        private void comboBoxAlbums_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            TabPageFactory.CreateWallTabPage(tabWall, comboBoxAlbums.SelectedItem.ToString());
-        }
-
         private void MainForm_Shown(object sender, EventArgs e)
         {
             try
             {
                 fetchUserData();
-                new Thread(new ThreadStart(initializeWallTabPage)).Start();
-                new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
-
-                initializeHoroscopeTabPage();
-                initializeLikesDistributionTabPage();
-                initializeEventsTabPage();
+                new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.WallPhotos)))).Start();
+                //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Horoscope)))).Start();
+                new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Events)))).Start();
+                initializeTabPage(eTabPage.LikesDistribution);
+                initializeTabPage(eTabPage.Horoscope);
+                //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.LikesDistribution)))).Start();
+                new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Friends)))).Start();
             }
             catch (Exception ex)
             {
@@ -69,32 +75,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             //Navigator tabControl location
             this.tabsNavigator.Top = this.topCover.Bottom;
             this.tabsNavigator.Width = this.Width;
-        }
-
-        private void initializeWallTabPage()
-        {
-            fetchAlbumsComboBox();
-            TabPageFactory.CreateWallTabPage(tabWall, comboBoxAlbums.Items[0].ToString());
-        }
-
-        private void initializeLikesDistributionTabPage()
-        {
-            TabPageFactory.CreateLikesDistTabPage(ref tabLikesDist);
-        }
-
-        private void initializeHoroscopeTabPage()
-        {
-            TabPageFactory.CreateHoroscopeTabPage(ref tabHoroscope);
-        }
-
-        private void initializeFreindsListTabPage()
-        {    
-            TabPageFactory.CreateFreindsListTabPage(tabFreindList);
-        }
-
-        private void initializeEventsTabPage()
-        {
-            TabPageFactory.CreateEventsTabPage(ref tabEvents);
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
