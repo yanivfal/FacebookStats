@@ -58,6 +58,7 @@
     <Compile Include="Facades\MainFormFacade.cs" />
     <Compile Include="Factory\TabPageFactory.cs" />
     <Compile Include="Logics\eDayParts.cs" />
+    <Compile Include="Logics\eTabPage.cs" />
     <Compile Include="Logics\eZodiacs.cs" />
     <Compile Include="Logics\HoroscopeAgent.cs" />
     <Compile Include="Logics\eMonth.cs" />
@@ -72,11 +73,15 @@
     </Compile>
     <Compile Include="settings\AppSettings.cs" />
     <Compile Include="Logics\FBAgent.cs" />
+    <Compile Include="UI\ControlsUtils.cs" />
     <Compile Include="UI\EventComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\EventComponent.Designer.cs">
       <DependentUpon>EventComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EventsTabPage.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\FriendComponent.cs">
       <SubType>UserControl</SubType>
@@ -84,11 +89,20 @@
     <Compile Include="UI\FriendComponent.Designer.cs">
       <DependentUpon>FriendComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FriendsTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\HoroscopeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\HoroscopeComponent.Designer.cs">
       <DependentUpon>HoroscopeComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HoroscopeTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\LikesDistributionTabPage.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>

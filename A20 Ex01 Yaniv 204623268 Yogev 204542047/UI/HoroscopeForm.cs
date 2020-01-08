@@ -72,7 +72,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             this.ClientSize = new Size(2021, 844);
             this.Name = "HoroscopeForm";
             this.ResumeLayout(false);
-
         }
     }
 }

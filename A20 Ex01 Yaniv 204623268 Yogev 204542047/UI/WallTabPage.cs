@@ -11,11 +11,12 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
     internal class WallTabPage : TabPage
     {
-        List<WallPhotoComponent> WallPhotosList = new List<WallPhotoComponent>();
-        ComboBox m_AlbumsComboBox;
-
-        public WallTabPage()
+        private List<WallPhotoComponent> m_WallPhotosList = new List<WallPhotoComponent>();
+        private ComboBox m_AlbumsComboBox;
+        // Need to add selectedAlbum
+        public WallTabPage(string i_TabText) : base(i_TabText)
         {
+            this.AutoScroll = true;
             this.Height = 685;
             this.Width = 944;
             initializeAlbumsComboBox();
@@ -36,7 +37,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
                 position = photoComponent.Bottom + 30;
                 photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
-                WallPhotosList.Add(photoComponent);
+                m_WallPhotosList.Add(photoComponent);
                 if (++numOfFetchedPhoto >= 3)
                 {
                     break;
@@ -53,34 +54,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         private void clearWall()
         {
-            foreach (WallPhotoComponent photo in WallPhotosList)
+            foreach (WallPhotoComponent photo in m_WallPhotosList)
             {
                 this.Controls.Remove(photo);
             }
-        }
-
-        private static void centeringAllControls(Form i_FormToCentering, int i_TabPageWidth)
-        {
-            // Move all the controls to the center
-            foreach (Control control in i_FormToCentering.Controls)
-            {
-                centeringControl(control, i_TabPageWidth);
-            }
-        }
-
-        private static void centeringAllControls(TabPage i_TabPageToCentering, int i_TabPageWidth)
-        {
-            // Move all the controls to the center
-            foreach (Control control in i_TabPageToCentering.Controls)
-            {
-                centeringControl(control, i_TabPageWidth);
-            }
-        }
-
-        private static void centeringControl(Control i_ControlToCentering, int i_TabPageWidth)
-        {
-            // Move controls to the center
-            i_ControlToCentering.Left = i_TabPageWidth / 2 - (i_ControlToCentering.Width / 2);
         }
     }
 }
