@@ -43,13 +43,15 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             try
             {
                 fetchUserData();
-                //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.WallPhotos)))).Start();
+                new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.WallPhotos)))).Start();
                 //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Horoscope)))).Start();
                 //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Events)))).Start();
                 //initializeTabPage(eTabPage.LikesDistribution);
                 //initializeTabPage(eTabPage.Horoscope);
-                new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.LikesDistribution)))).Start();
+                //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.LikesDistribution)))).Start();
                 //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Friends)))).Start();
+                int width = this.Width;
+                int Height = this.Height;
             }
             catch (Exception ex)
             {
@@ -75,6 +77,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             //Navigator tabControl location
             this.tabsNavigator.Top = this.topCover.Bottom;
             this.tabsNavigator.Width = this.Width;
+
+            AppSettings.Instance.MainWindowWidth = this.Width;
+            AppSettings.Instance.MainWindowHeight = this.Height;
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
