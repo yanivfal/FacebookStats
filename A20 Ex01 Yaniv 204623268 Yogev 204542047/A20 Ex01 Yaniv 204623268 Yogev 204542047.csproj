@@ -126,12 +126,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logics\LikesDistributionUtils.cs" />
-    <Compile Include="UI\HoroscopeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\HoroscopeForm.Designer.cs">
-      <DependentUpon>HoroscopeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\WallPhotoComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\HoroscopeForm.resx">
-      <DependentUpon>HoroscopeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\WallPhotoComponent.resx">
       <DependentUpon>WallPhotoComponent.cs</DependentUpon>
