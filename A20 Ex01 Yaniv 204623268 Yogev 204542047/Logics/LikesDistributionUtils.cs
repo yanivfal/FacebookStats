@@ -34,7 +34,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             {
                 //foreach (Photo photo in album.Photos) 
                 //Changed to PhotosTaggedIn because LikedBy depcrated, we want to run on the tagged photos instead all photos.
-                for (var i=0; i<5 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
+                for (var i=0; i<1 && i < FBAgent.LoggedInUser.PhotosTaggedIn.Count; i++)
                 {
                     Photo photo = FBAgent.LoggedInUser.PhotosTaggedIn[i];
                     DayOfWeek currentDay = photo.CreatedTime.Value.DayOfWeek;

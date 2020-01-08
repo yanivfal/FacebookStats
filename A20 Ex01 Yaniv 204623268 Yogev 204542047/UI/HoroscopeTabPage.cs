@@ -27,7 +27,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         private void initializeComponent()
         {
-            this.Width = AppSettings;
+            this.Width = AppSettings.Instance.MainWindowWidth;
+            this.Height = AppSettings.Instance.MainWindowHeight;
+
 
             this.labelHoroscopeTitle = new System.Windows.Forms.Label();
             this.buttonHoroscopeResolve = new System.Windows.Forms.Button();
