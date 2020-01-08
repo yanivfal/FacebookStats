@@ -39,11 +39,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             {
                 fetchUserData();
                 new Thread(new ThreadStart(initializeWallTabPage)).Start();
-                new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
+                //new Thread(new ThreadStart(initializeFreindsListTabPage)).Start();
 
-                initializeHoroscopeTabPage();
-                initializeLikesDistributionTabPage();
-                initializeEventsTabPage();
+                //initializeHoroscopeTabPage();
+                //initializeLikesDistributionTabPage();
+                //initializeEventsTabPage();
             }
             catch (Exception ex)
             {
