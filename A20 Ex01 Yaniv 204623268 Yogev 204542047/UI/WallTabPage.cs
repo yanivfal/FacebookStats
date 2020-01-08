@@ -29,7 +29,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
                 WallPhotoComponent photoComponent = new WallPhotoComponent(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
-                photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
+                //photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 m_WallPhotosList.Add(photoComponent);
                 if (++numOfFetchedPhoto >= 3)
@@ -37,6 +37,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
                     break;
                 }
             }
+
+            ControlsUtils.CenteringAllControls(this);
         }
 
         private void clearWall()

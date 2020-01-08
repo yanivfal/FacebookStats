@@ -18,7 +18,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             horoscopeForm.Height = 500;
             horoscopeForm.Width = 500;
             this.Controls.Add(horoscopeForm);
-            ControlsUtils.CenteringAllControls(this, this.Width);
+            ControlsUtils.CenteringAllControls(this);
         }
     }
 }

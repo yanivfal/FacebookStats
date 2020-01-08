@@ -50,8 +50,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
                 //initializeTabPage(eTabPage.Horoscope);
                 //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.LikesDistribution)))).Start();
                 //new Thread(new ThreadStart(new Action(() => initializeTabPage(eTabPage.Friends)))).Start();
-                int width = this.Width;
-                int Height = this.Height;
             }
             catch (Exception ex)
             {

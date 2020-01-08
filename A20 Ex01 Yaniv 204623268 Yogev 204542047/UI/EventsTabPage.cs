@@ -1,9 +1,4 @@
-﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
@@ -14,16 +9,26 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         public EventsTabPage(string i_TabText) : base(i_TabText)
         {
-            this.Width = 500;
-            this.Height = 500;
-            this.AutoScroll = true;
+           
+            initializeComponent();
+            fetchEvents();         
+        }
 
+        private void fetchEvents()
+        {
             EventList = getDummyData();
 
             for (int i = 0; i < EventList.Count && i < 6; i++)
             {
                 this.Controls.Add(EventList[i]);
             }
+        }
+
+        private void initializeComponent()
+        {
+            this.Width = 500;
+            this.Height = 500;
+            this.AutoScroll = true;
         }
 
         private List<EventComponent> getDummyData()
@@ -34,18 +39,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             createEventDummyData(ref eventComponent1, "2020 celebrations", "IDC", "01/01/20",
                 "00:00", "03:00", position);
             position = eventComponent1.Bottom + 20;
-            ControlsUtils.CenteringControl(eventComponent1, this.Width);
+            ControlsUtils.CenteringControl(eventComponent1);
 
             EventComponent eventComponent2 = new EventComponent();
             createEventDummyData(ref eventComponent2, "Omer Adam Show", "Keisariya", "18/01/20",
                 "20:00", "22:00", position);
             position = eventComponent2.Bottom + 20;
-            ControlsUtils.CenteringControl(eventComponent2, this.Width);
+            ControlsUtils.CenteringControl(eventComponent2);
 
             EventComponent eventComponent3 = new EventComponent();
             createEventDummyData(ref eventComponent3, "Yogev Wedding", "Mikonos", "?/?/?",
                 "20:00", "05:00", position);
-            ControlsUtils.CenteringControl(eventComponent3, this.Width);
+            ControlsUtils.CenteringControl(eventComponent3);
 
 
             events.Add(eventComponent1);
