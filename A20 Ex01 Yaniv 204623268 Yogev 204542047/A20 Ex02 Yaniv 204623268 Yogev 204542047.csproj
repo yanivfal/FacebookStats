@@ -129,6 +129,12 @@
     <EmbeddedResource Include="UI\FriendComponent.resx">
       <DependentUpon>FriendComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\HoroscopeTabPage.resx">
+      <DependentUpon>HoroscopeTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LikesDistributionTabPage.resx">
+      <DependentUpon>LikesDistributionTabPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

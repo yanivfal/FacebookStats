@@ -1,15 +1,11 @@
 ﻿using A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
-    internal class HoroscopeTabPage : TabPage
+    class HoroscopeTabPage : TabPage
     {
         eZodiacs m_ZodiacName;
         Label labelHoroscopeTitle;
@@ -20,76 +16,54 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
         {
             initializeComponent();
             locateAllControls();
-            fetchHoroscopeNameAndImage();
-
-            ControlsUtils.CenteringAllControls(this);
+            fetchHoroscopeNameAndImage();       
         }
 
         private void initializeComponent()
         {
+            //
+            //this
+            //
             this.Width = AppSettings.Instance.MainWindowWidth;
             this.Height = AppSettings.Instance.MainWindowHeight;
-
-
-            this.labelHoroscopeTitle = new System.Windows.Forms.Label();
-            this.buttonHoroscopeResolve = new System.Windows.Forms.Button();
-            this.pictureBoxHoroscope = new System.Windows.Forms.PictureBox();
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoroscope)).BeginInit();
-            //this.SuspendLayout();
+            this.labelHoroscopeTitle = new Label();
+            this.buttonHoroscopeResolve = new Button();
+            this.pictureBoxHoroscope = new PictureBox();      
             // 
             // labelHoroscopeTitle
             // 
             this.labelHoroscopeTitle.AutoSize = true;
             this.labelHoroscopeTitle.Font = new System.Drawing.Font("Levenim MT", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            //this.labelHoroscopeTitle.Location = new System.Drawing.Point(510, 48);
             this.labelHoroscopeTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelHoroscopeTitle.Name = "labelHoroscopeTitle";
-            //this.labelHoroscopeTitle.Size = new System.Drawing.Size(320, 50);
-            //this.labelHoroscopeTitle.TabIndex = 1;
             this.labelHoroscopeTitle.Text = "Horoscope Zone";
             // 
             // buttonHoroscopeResolve
             // 
-            this.buttonHoroscopeResolve.Font = new System.Drawing.Font("Levenim MT", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonHoroscopeResolve.Location = new System.Drawing.Point(411, 643);
-            this.buttonHoroscopeResolve.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonHoroscopeResolve.Font = new Font("Levenim MT", 8F, FontStyle.Bold,GraphicsUnit.Point, ((byte)(177)));
+            this.buttonHoroscopeResolve.Location = new Point(411, 643);
+            this.buttonHoroscopeResolve.Margin = new Padding(5);
             this.buttonHoroscopeResolve.Name = "buttonHoroscopeResolve";
-            this.buttonHoroscopeResolve.Size = new System.Drawing.Size(537, 46);
-            //this.buttonHoroscopeResolve.TabIndex = 2;
-            this.buttonHoroscopeResolve.Location = new System.Drawing.Point(510, 48);
+            this.buttonHoroscopeResolve.Size = new Size(537, 46);
+            this.buttonHoroscopeResolve.Location = new Point(510, 48);
             this.buttonHoroscopeResolve.Text = "Click here to get your horoscope";
             this.buttonHoroscopeResolve.UseVisualStyleBackColor = true;
-            this.buttonHoroscopeResolve.Click += new System.EventHandler(this.buttonHoroscopeResolve_Click);
+            this.buttonHoroscopeResolve.Click += new EventHandler(this.buttonHoroscopeResolve_Click);
             // 
             // pictureBoxHoroscope
             // 
-            this.pictureBoxHoroscope.Image = global::A20_Ex01_Yaniv_204623268_Yogev_204542047.Properties.Resources.horoscopesLogo;
-            //this.pictureBoxHoroscope.Location = new System.Drawing.Point(411, 130);
-            this.pictureBoxHoroscope.Margin = new System.Windows.Forms.Padding(5);
+            this.pictureBoxHoroscope.Image = Properties.Resources.horoscopesLogo;
+            this.pictureBoxHoroscope.Margin = new Padding(5);
             this.pictureBoxHoroscope.Name = "pictureBoxHoroscope";
-            //this.pictureBoxHoroscope.Size = new System.Drawing.Size(533, 465);
-            this.pictureBoxHoroscope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            //this.pictureBoxHoroscope.TabIndex = 0;
-            //this.pictureBoxHoroscope.TabStop = false;
-            // 
-            // HoroscopeForm
-            // 
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            //this.ClientSize = new System.Drawing.Size(1356, 862);
+            this.pictureBoxHoroscope.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.BackColor = SystemColors.Control;
+
             this.Controls.Add(this.buttonHoroscopeResolve);
             this.Controls.Add(this.labelHoroscopeTitle);
             this.Controls.Add(this.pictureBoxHoroscope);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
-            //this.MaximizeBox = false;
-            //this.Name = "HoroscopeForm";
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Horoscope";
-            //((System.ComponentModel.ISupportInitialize)(this.pictureBoxHoroscope)).EndInit();
-            //this.ResumeLayout(false);
-            //this.PerformLayout();
+
         }
 
         private void fetchHoroscopeNameAndImage()
@@ -105,7 +79,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
         private void locateAllControls()
         {
             // Move all the controls to the center
-            this.labelHoroscopeTitle.Left = (this.Width) / 2 - (labelHoroscopeTitle.Width / 2);
+            this.labelHoroscopeTitle.Top = this.Top + 20;
+            this.pictureBoxHoroscope.Top = labelHoroscopeTitle.Bottom + 30;
+            this.buttonHoroscopeResolve.Top = pictureBoxHoroscope.Bottom + 30;
+
+            ControlsUtils.CenteringAllControls(this);
         }
 
         private void buttonHoroscopeResolve_Click(object sender, EventArgs e)
@@ -116,7 +94,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
         private void fetchHoroscope()
         {
             this.pictureBoxHoroscope.Size = new Size(100, 100);
-            pictureBoxHoroscope.Left = (this.Width) / 2 - (pictureBoxHoroscope.Width / 2);
+            ControlsUtils.CenteringControl(pictureBoxHoroscope);
             this.Controls.Remove(buttonHoroscopeResolve);
             initializeHoroscopeLabel();
         }
@@ -127,11 +105,18 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
             horscopeText.Font = new Font("Levenim MT", 10);
             horscopeText.Height = 300;
-            horscopeText.Width = this.Width - 50;
+            horscopeText.Width = AppSettings.Instance.MainWindowWidth - 50;
             horscopeText.Text = HoroscopeAgent.GetHoroscope(m_ZodiacName);
             horscopeText.Top = pictureBoxHoroscope.Bottom + 10;
-            horscopeText.Left = (this.Width) / 2 - (horscopeText.Width / 2);
+            ControlsUtils.CenteringControl(horscopeText);
             this.Controls.Add(horscopeText);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.ResumeLayout(false);
+
         }
     }
 }
