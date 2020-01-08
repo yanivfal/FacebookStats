@@ -23,12 +23,14 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             m_UserMinLikes = 0;
             m_UserMaxLikes = 200;
 
+            Width = AppSettings.Instance.MainWindowWidth;
+            Height = AppSettings.Instance.MainWindowHeight;
+
             InitializeComponent();
 
             setTableInfo();
 
-            Width = AppSettings.Instance.MainWindowWidth;
-            Height = AppSettings.Instance.MainWindowHeight;
+            
 
         }
 
@@ -59,9 +61,9 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             StatsTable.ColumnCount = 5;
             StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.09581F));
             StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.90419F));
-            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
-            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
-            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45));
             StatsTable.Controls.Add(labelEvening, 4, 0);
             StatsTable.Controls.Add(labelAfterNoon, 3, 0);
             StatsTable.Controls.Add(labelNoon, 2, 0);
@@ -93,10 +95,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             labelEvening.AutoSize = true;
             labelEvening.Enabled = false;
             labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelEvening.Location = new System.Drawing.Point(1393, 0);
+            labelEvening.Location = new System.Drawing.Point(100, 0);
             labelEvening.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             labelEvening.Name = "labelEvening";
-            labelEvening.Size = new System.Drawing.Size(193, 60);
+            labelEvening.Size = new System.Drawing.Size(450, 60);
             labelEvening.TabIndex = 6;
             labelEvening.Text = "Evening";
             labelEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,10 +108,10 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             labelAfterNoon.AutoSize = true;
             labelAfterNoon.Enabled = false;
             labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelAfterNoon.Location = new System.Drawing.Point(1009, 0);
+            labelAfterNoon.Location = new System.Drawing.Point(350, 0);
             labelAfterNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             labelAfterNoon.Name = "labelAfterNoon";
-            labelAfterNoon.Size = new System.Drawing.Size(233, 60);
+            labelAfterNoon.Size = new System.Drawing.Size(133, 60);
             labelAfterNoon.TabIndex = 5;
             labelAfterNoon.Text = "Afternoon";
             labelAfterNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,7 +121,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             labelNoon.AutoSize = true;
             labelNoon.Enabled = false;
             labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelNoon.Location = new System.Drawing.Point(726, 0);
+            labelNoon.Location = new System.Drawing.Point(250, 0);
             labelNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             labelNoon.Name = "labelNoon";
             labelNoon.Size = new System.Drawing.Size(140, 60);
@@ -223,7 +225,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             labelMorning.AutoSize = true;
             labelMorning.Enabled = false;
             labelMorning.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelMorning.Location = new System.Drawing.Point(381, 0);
+            labelMorning.Location = new System.Drawing.Point(150, 0);
             labelMorning.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             labelMorning.Name = "labelMorning";
             labelMorning.Size = new System.Drawing.Size(199, 60);
@@ -248,7 +250,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             labelHigh.AutoSize = true;
             labelHigh.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             labelHigh.ForeColor = System.Drawing.Color.Green;
-            labelHigh.Location = new System.Drawing.Point(530, 108);
+            labelHigh.Location = new System.Drawing.Point(250, 90);
             labelHigh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             labelHigh.Name = "labelHigh";
             labelHigh.Size = new System.Drawing.Size(93, 46);
@@ -261,7 +263,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             label1.ForeColor = System.Drawing.Color.DarkOrange;
-            label1.Location = new System.Drawing.Point(862, 108);
+            label1.Location = new System.Drawing.Point(350, 90);
             label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(155, 46);
@@ -274,7 +276,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             label2.ForeColor = System.Drawing.Color.Firebrick;
-            label2.Location = new System.Drawing.Point(1204, 108);
+            label2.Location = new System.Drawing.Point(450, 90);
             label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(84, 46);
