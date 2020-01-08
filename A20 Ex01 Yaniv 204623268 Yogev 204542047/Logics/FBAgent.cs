@@ -57,7 +57,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.Logics
             try
             {
                 result = FacebookService.Connect(AppSettings.Instance.LastAccessToken);
-                //result = FacebookService.Connect("EAAmz8OcMQHgBAKNJQcYe6QJvVZBl0wWcARWK7zOQmt3ZCaE4nSlL0w0K1naH0fQ4bZBwwYZCMt3WPZApHsqubZCgb9yERMZA96cLdFZCX3V5HGALiCKZAwsedhxcU9aU8hOO6tTPScBc9JNdzOdBfcEF8GN34eeZAGjtuiRBfVaWFZConFZBDZCUDiCwe3KAwRNFulR4kf4FjzxYjdAZDZD");
                 LoggedInUser = result.LoggedInUser;
             }
             catch (Exception ex)

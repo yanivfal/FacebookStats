@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
-    class HoroscopeTabPage : TabPage
+    internal class HoroscopeTabPage : TabPage
     {
         eZodiacs m_ZodiacName;
         Label labelHoroscopeTitle;
@@ -22,7 +22,7 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             locateAllControls();
             fetchHoroscopeNameAndImage();
 
-            ControlsUtils.CenteringAllControls(this, this.Width);
+            ControlsUtils.CenteringAllControls(this);
         }
 
         private void initializeComponent()

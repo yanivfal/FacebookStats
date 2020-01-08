@@ -9,28 +9,12 @@ using System.Windows.Forms;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 {
-    class LikesDistributionTabPage : TabPage
+    internal class LikesDistributionTabPage : TabPage
     {
         private Dictionary<DayOfWeek, Dictionary<eDayParts, PhotosGroupInfo>> m_UserAmountOfLikesStatistics;
         private int m_UserMinLikes;
         private int m_UserMaxLikes;
-
         TableLayoutPanel StatsTable;
-        Label labelEvening = new System.Windows.Forms.Label();
-        Label labelAfterNoon = new System.Windows.Forms.Label();
-        Label labelNoon = new System.Windows.Forms.Label();
-        Label labelSundat = new System.Windows.Forms.Label();
-        Label labelMonday = new System.Windows.Forms.Label();
-        Label labelTuesday = new System.Windows.Forms.Label();
-        Label labelWednesday = new System.Windows.Forms.Label();
-        Label labelThursday = new System.Windows.Forms.Label();
-        Label labelFriday = new System.Windows.Forms.Label();
-        Label labelSaturday = new System.Windows.Forms.Label();
-        Label labelMorning = new System.Windows.Forms.Label();
-        Label labelTitle = new System.Windows.Forms.Label();
-        Label labelHigh = new System.Windows.Forms.Label();
-        Label label1 = new System.Windows.Forms.Label();
-        Label label2 = new System.Windows.Forms.Label();
 
 
         public LikesDistributionTabPage(string i_TabText) : base(i_TabText)
@@ -40,287 +24,293 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
             m_UserMaxLikes = 200;
 
             InitializeComponent();
-            InitializeLocationAndSize();
 
             setTableInfo();
+
+            Width = AppSettings.Instance.MainWindowWidth;
+            Height = AppSettings.Instance.MainWindowHeight;
+
         }
 
         private void InitializeComponent()
         {
-            this.StatsTable = new System.Windows.Forms.TableLayoutPanel();
-            this.labelEvening = new System.Windows.Forms.Label();
-            this.labelAfterNoon = new System.Windows.Forms.Label();
-            this.labelNoon = new System.Windows.Forms.Label();
-            this.labelSundat = new System.Windows.Forms.Label();
-            this.labelMonday = new System.Windows.Forms.Label();
-            this.labelTuesday = new System.Windows.Forms.Label();
-            this.labelWednesday = new System.Windows.Forms.Label();
-            this.labelThursday = new System.Windows.Forms.Label();
-            this.labelFriday = new System.Windows.Forms.Label();
-            this.labelSaturday = new System.Windows.Forms.Label();
-            this.labelMorning = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.labelHigh = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.StatsTable.SuspendLayout();
-            this.SuspendLayout();
+            Label labelEvening = new System.Windows.Forms.Label();
+            Label labelAfterNoon = new System.Windows.Forms.Label();
+            Label labelNoon = new System.Windows.Forms.Label();
+            Label labelSundat = new System.Windows.Forms.Label();
+            Label labelMonday = new System.Windows.Forms.Label();
+            Label labelTuesday = new System.Windows.Forms.Label();
+            Label labelWednesday = new System.Windows.Forms.Label();
+            Label labelThursday = new System.Windows.Forms.Label();
+            Label labelFriday = new System.Windows.Forms.Label();
+            Label labelSaturday = new System.Windows.Forms.Label();
+            Label labelMorning = new System.Windows.Forms.Label();
+            Label labelTitle = new System.Windows.Forms.Label();
+            Label labelHigh = new System.Windows.Forms.Label();
+            Label label1 = new System.Windows.Forms.Label();
+            Label label2 = new System.Windows.Forms.Label();
+            StatsTable = new System.Windows.Forms.TableLayoutPanel();
+
+            StatsTable.SuspendLayout();
+            SuspendLayout();
             // 
             // StatsTable
             // 
-            this.StatsTable.ColumnCount = 5;
-            this.StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.09581F));
-            this.StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.90419F));
-            this.StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
-            this.StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
-            this.StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
-            this.StatsTable.Controls.Add(this.labelEvening, 4, 0);
-            this.StatsTable.Controls.Add(this.labelAfterNoon, 3, 0);
-            this.StatsTable.Controls.Add(this.labelNoon, 2, 0);
-            this.StatsTable.Controls.Add(this.labelSundat, 0, 1);
-            this.StatsTable.Controls.Add(this.labelMonday, 0, 2);
-            this.StatsTable.Controls.Add(this.labelTuesday, 0, 3);
-            this.StatsTable.Controls.Add(this.labelWednesday, 0, 4);
-            this.StatsTable.Controls.Add(this.labelThursday, 0, 5);
-            this.StatsTable.Controls.Add(this.labelFriday, 0, 6);
-            this.StatsTable.Controls.Add(this.labelSaturday, 0, 7);
-            this.StatsTable.Controls.Add(this.labelMorning, 1, 0);
-            this.StatsTable.Location = new System.Drawing.Point(57, 223);
-            this.StatsTable.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.StatsTable.Name = "StatsTable";
-            this.StatsTable.RowCount = 8;
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.1746F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.8254F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.StatsTable.Size = new System.Drawing.Size(1634, 972);
-            this.StatsTable.TabIndex = 0;
+            StatsTable.ColumnCount = 5;
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.09581F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.90419F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 283F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
+            StatsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
+            StatsTable.Controls.Add(labelEvening, 4, 0);
+            StatsTable.Controls.Add(labelAfterNoon, 3, 0);
+            StatsTable.Controls.Add(labelNoon, 2, 0);
+            StatsTable.Controls.Add(labelSundat, 0, 1);
+            StatsTable.Controls.Add(labelMonday, 0, 2);
+            StatsTable.Controls.Add(labelTuesday, 0, 3);
+            StatsTable.Controls.Add(labelWednesday, 0, 4);
+            StatsTable.Controls.Add(labelThursday, 0, 5);
+            StatsTable.Controls.Add(labelFriday, 0, 6);
+            StatsTable.Controls.Add(labelSaturday, 0, 7);
+            StatsTable.Controls.Add(labelMorning, 1, 0);
+            StatsTable.Location = new System.Drawing.Point(57, 223);
+            StatsTable.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            StatsTable.Name = "StatsTable";
+            StatsTable.RowCount = 8;
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.1746F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.8254F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            StatsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            StatsTable.Size = new System.Drawing.Size(1634, 972);
+            StatsTable.TabIndex = 0;
             // 
             // labelEvening
             // 
-            this.labelEvening.AutoSize = true;
-            this.labelEvening.Enabled = false;
-            this.labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvening.Location = new System.Drawing.Point(1393, 0);
-            this.labelEvening.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelEvening.Name = "labelEvening";
-            this.labelEvening.Size = new System.Drawing.Size(193, 60);
-            this.labelEvening.TabIndex = 6;
-            this.labelEvening.Text = "Evening";
-            this.labelEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelEvening.AutoSize = true;
+            labelEvening.Enabled = false;
+            labelEvening.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelEvening.Location = new System.Drawing.Point(1393, 0);
+            labelEvening.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelEvening.Name = "labelEvening";
+            labelEvening.Size = new System.Drawing.Size(193, 60);
+            labelEvening.TabIndex = 6;
+            labelEvening.Text = "Evening";
+            labelEvening.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelAfterNoon
             // 
-            this.labelAfterNoon.AutoSize = true;
-            this.labelAfterNoon.Enabled = false;
-            this.labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAfterNoon.Location = new System.Drawing.Point(1009, 0);
-            this.labelAfterNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelAfterNoon.Name = "labelAfterNoon";
-            this.labelAfterNoon.Size = new System.Drawing.Size(233, 60);
-            this.labelAfterNoon.TabIndex = 5;
-            this.labelAfterNoon.Text = "Afternoon";
-            this.labelAfterNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelAfterNoon.AutoSize = true;
+            labelAfterNoon.Enabled = false;
+            labelAfterNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelAfterNoon.Location = new System.Drawing.Point(1009, 0);
+            labelAfterNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelAfterNoon.Name = "labelAfterNoon";
+            labelAfterNoon.Size = new System.Drawing.Size(233, 60);
+            labelAfterNoon.TabIndex = 5;
+            labelAfterNoon.Text = "Afternoon";
+            labelAfterNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNoon
             // 
-            this.labelNoon.AutoSize = true;
-            this.labelNoon.Enabled = false;
-            this.labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoon.Location = new System.Drawing.Point(726, 0);
-            this.labelNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelNoon.Name = "labelNoon";
-            this.labelNoon.Size = new System.Drawing.Size(140, 60);
-            this.labelNoon.TabIndex = 4;
-            this.labelNoon.Text = "Noon";
-            this.labelNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelNoon.AutoSize = true;
+            labelNoon.Enabled = false;
+            labelNoon.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelNoon.Location = new System.Drawing.Point(726, 0);
+            labelNoon.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelNoon.Name = "labelNoon";
+            labelNoon.Size = new System.Drawing.Size(140, 60);
+            labelNoon.TabIndex = 4;
+            labelNoon.Text = "Noon";
+            labelNoon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSundat
             // 
-            this.labelSundat.AutoSize = true;
-            this.labelSundat.Enabled = false;
-            this.labelSundat.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSundat.Location = new System.Drawing.Point(5, 137);
-            this.labelSundat.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelSundat.Name = "labelSundat";
-            this.labelSundat.Size = new System.Drawing.Size(184, 60);
-            this.labelSundat.TabIndex = 7;
-            this.labelSundat.Text = "Sunday";
-            this.labelSundat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelSundat.AutoSize = true;
+            labelSundat.Enabled = false;
+            labelSundat.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelSundat.Location = new System.Drawing.Point(5, 137);
+            labelSundat.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelSundat.Name = "labelSundat";
+            labelSundat.Size = new System.Drawing.Size(184, 60);
+            labelSundat.TabIndex = 7;
+            labelSundat.Text = "Sunday";
+            labelSundat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMonday
             // 
-            this.labelMonday.AutoSize = true;
-            this.labelMonday.Enabled = false;
-            this.labelMonday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonday.Location = new System.Drawing.Point(5, 258);
-            this.labelMonday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelMonday.Name = "labelMonday";
-            this.labelMonday.Size = new System.Drawing.Size(203, 60);
-            this.labelMonday.TabIndex = 8;
-            this.labelMonday.Text = "Monday";
-            this.labelMonday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelMonday.AutoSize = true;
+            labelMonday.Enabled = false;
+            labelMonday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelMonday.Location = new System.Drawing.Point(5, 258);
+            labelMonday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelMonday.Name = "labelMonday";
+            labelMonday.Size = new System.Drawing.Size(203, 60);
+            labelMonday.TabIndex = 8;
+            labelMonday.Text = "Monday";
+            labelMonday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTuesday
             // 
-            this.labelTuesday.AutoSize = true;
-            this.labelTuesday.Enabled = false;
-            this.labelTuesday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTuesday.Location = new System.Drawing.Point(5, 379);
-            this.labelTuesday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelTuesday.Name = "labelTuesday";
-            this.labelTuesday.Size = new System.Drawing.Size(200, 60);
-            this.labelTuesday.TabIndex = 9;
-            this.labelTuesday.Text = "Tuesday";
-            this.labelTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTuesday.AutoSize = true;
+            labelTuesday.Enabled = false;
+            labelTuesday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelTuesday.Location = new System.Drawing.Point(5, 379);
+            labelTuesday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelTuesday.Name = "labelTuesday";
+            labelTuesday.Size = new System.Drawing.Size(200, 60);
+            labelTuesday.TabIndex = 9;
+            labelTuesday.Text = "Tuesday";
+            labelTuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelWednesday
             // 
-            this.labelWednesday.AutoSize = true;
-            this.labelWednesday.Enabled = false;
-            this.labelWednesday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWednesday.Location = new System.Drawing.Point(5, 495);
-            this.labelWednesday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelWednesday.Name = "labelWednesday";
-            this.labelWednesday.Size = new System.Drawing.Size(279, 60);
-            this.labelWednesday.TabIndex = 10;
-            this.labelWednesday.Text = "Wednesday";
-            this.labelWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelWednesday.AutoSize = true;
+            labelWednesday.Enabled = false;
+            labelWednesday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelWednesday.Location = new System.Drawing.Point(5, 495);
+            labelWednesday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelWednesday.Name = "labelWednesday";
+            labelWednesday.Size = new System.Drawing.Size(279, 60);
+            labelWednesday.TabIndex = 10;
+            labelWednesday.Text = "Wednesday";
+            labelWednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelThursday
             // 
-            this.labelThursday.AutoSize = true;
-            this.labelThursday.Enabled = false;
-            this.labelThursday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelThursday.Location = new System.Drawing.Point(5, 616);
-            this.labelThursday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelThursday.Name = "labelThursday";
-            this.labelThursday.Size = new System.Drawing.Size(212, 60);
-            this.labelThursday.TabIndex = 11;
-            this.labelThursday.Text = "Thursday";
-            this.labelThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelThursday.AutoSize = true;
+            labelThursday.Enabled = false;
+            labelThursday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelThursday.Location = new System.Drawing.Point(5, 616);
+            labelThursday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelThursday.Name = "labelThursday";
+            labelThursday.Size = new System.Drawing.Size(212, 60);
+            labelThursday.TabIndex = 11;
+            labelThursday.Text = "Thursday";
+            labelThursday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelFriday
             // 
-            this.labelFriday.AutoSize = true;
-            this.labelFriday.Enabled = false;
-            this.labelFriday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFriday.Location = new System.Drawing.Point(5, 745);
-            this.labelFriday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelFriday.Name = "labelFriday";
-            this.labelFriday.Size = new System.Drawing.Size(155, 60);
-            this.labelFriday.TabIndex = 12;
-            this.labelFriday.Text = "Friday";
-            this.labelFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelFriday.AutoSize = true;
+            labelFriday.Enabled = false;
+            labelFriday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelFriday.Location = new System.Drawing.Point(5, 745);
+            labelFriday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelFriday.Name = "labelFriday";
+            labelFriday.Size = new System.Drawing.Size(155, 60);
+            labelFriday.TabIndex = 12;
+            labelFriday.Text = "Friday";
+            labelFriday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSaturday
             // 
-            this.labelSaturday.AutoSize = true;
-            this.labelSaturday.Enabled = false;
-            this.labelSaturday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaturday.Location = new System.Drawing.Point(5, 867);
-            this.labelSaturday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelSaturday.Name = "labelSaturday";
-            this.labelSaturday.Size = new System.Drawing.Size(214, 60);
-            this.labelSaturday.TabIndex = 13;
-            this.labelSaturday.Text = "Saturday";
-            this.labelSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelSaturday.AutoSize = true;
+            labelSaturday.Enabled = false;
+            labelSaturday.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelSaturday.Location = new System.Drawing.Point(5, 867);
+            labelSaturday.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelSaturday.Name = "labelSaturday";
+            labelSaturday.Size = new System.Drawing.Size(214, 60);
+            labelSaturday.TabIndex = 13;
+            labelSaturday.Text = "Saturday";
+            labelSaturday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMorning
             // 
-            this.labelMorning.AutoSize = true;
-            this.labelMorning.Enabled = false;
-            this.labelMorning.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMorning.Location = new System.Drawing.Point(381, 0);
-            this.labelMorning.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelMorning.Name = "labelMorning";
-            this.labelMorning.Size = new System.Drawing.Size(199, 60);
-            this.labelMorning.TabIndex = 3;
-            this.labelMorning.Text = "Morning";
-            this.labelMorning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelMorning.AutoSize = true;
+            labelMorning.Enabled = false;
+            labelMorning.Font = new System.Drawing.Font("Levenim MT", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelMorning.Location = new System.Drawing.Point(381, 0);
+            labelMorning.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelMorning.Name = "labelMorning";
+            labelMorning.Size = new System.Drawing.Size(199, 60);
+            labelMorning.TabIndex = 3;
+            labelMorning.Text = "Morning";
+            labelMorning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelTitle.Location = new System.Drawing.Point(162, 31);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(1351, 45);
-            this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "This feature calculate the average amount of likes depends on the upload time";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            labelTitle.Location = new System.Drawing.Point(162, 31);
+            labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new System.Drawing.Size(1351, 45);
+            labelTitle.TabIndex = 1;
+            labelTitle.Text = "This feature calculate the average amount of likes depends on the upload time";
+            labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelHigh
             // 
-            this.labelHigh.AutoSize = true;
-            this.labelHigh.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.labelHigh.ForeColor = System.Drawing.Color.Green;
-            this.labelHigh.Location = new System.Drawing.Point(530, 108);
-            this.labelHigh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.labelHigh.Name = "labelHigh";
-            this.labelHigh.Size = new System.Drawing.Size(93, 46);
-            this.labelHigh.TabIndex = 2;
-            this.labelHigh.Text = "High";
-            this.labelHigh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelHigh.AutoSize = true;
+            labelHigh.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            labelHigh.ForeColor = System.Drawing.Color.Green;
+            labelHigh.Location = new System.Drawing.Point(530, 108);
+            labelHigh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            labelHigh.Name = "labelHigh";
+            labelHigh.Size = new System.Drawing.Size(93, 46);
+            labelHigh.TabIndex = 2;
+            labelHigh.Text = "High";
+            labelHigh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(862, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 46);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Medium";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            label1.ForeColor = System.Drawing.Color.DarkOrange;
+            label1.Location = new System.Drawing.Point(862, 108);
+            label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(155, 46);
+            label1.TabIndex = 3;
+            label1.Text = "Medium";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(1204, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 46);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Low";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Levenim MT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            label2.ForeColor = System.Drawing.Color.Firebrick;
+            label2.Location = new System.Drawing.Point(1204, 108);
+            label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(84, 46);
+            label2.TabIndex = 4;
+            label2.Text = "Low";
+            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UploadsStats
             // 
-            //this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.ClientSize = new System.Drawing.Size(1739, 1214);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelHigh);
-            this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.StatsTable);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            //this.Name = "UploadsStats";
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            //this.Text = "UploadsStats";
-            //this.StatsTable.ResumeLayout(false);
-           // this.StatsTable.PerformLayout();
-            //this.ResumeLayout(false);
-            //this.PerformLayout();
+            //AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            //AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //ClientSize = new System.Drawing.Size(1739, 1214);
+            Panel f = new Panel();
+            f.Name = "Check";
+            f.Controls.Add(label2);
+            f.Controls.Add(label1);
+            f.Controls.Add(labelHigh);
+            f.Controls.Add(labelTitle);
+            f.Controls.Add(StatsTable);
+            
 
-        }
+            //FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            //Name = "UploadsStats";
+            //StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            //Text = "UploadsStats";
+            //StatsTable.ResumeLayout(false);
+            // StatsTable.PerformLayout();
+            //ResumeLayout(false);
+            //PerformLayout();
 
-        private void InitializeLocationAndSize()
-        {
-            this.Width = StatsTable.Width + 50;
-            this.Height = StatsTable.Height + 200;
-            labelTitle.Left = (this.Width) / 2 - (labelTitle.Width / 2);
+            f.Width = AppSettings.Instance.MainWindowWidth;
+            f.Height = AppSettings.Instance.MainWindowHeight;
+
+            Controls.Add(f);
+
         }
 
         private void setTableInfo()

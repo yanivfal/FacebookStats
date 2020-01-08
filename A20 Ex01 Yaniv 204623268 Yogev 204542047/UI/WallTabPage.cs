@@ -29,7 +29,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
                 WallPhotoComponent photoComponent = new WallPhotoComponent(photo);
                 photoComponent.Top = position;
                 position = photoComponent.Bottom + 30;
-                //photoComponent.Left = (this.Width) / 2 - (photoComponent.Width / 2);
                 this.Controls.Add(photoComponent);
                 m_WallPhotosList.Add(photoComponent);
                 if (++numOfFetchedPhoto >= 3)
@@ -53,19 +52,11 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         private void InitializeComponent()
         {
-            //
-            //this
-            //
             this.AutoScroll = true;
             this.Height = AppSettings.Instance.MainWindowHeight;
             this.Width = AppSettings.Instance.MainWindowWidth;
-
-            // 
-            // m_AlbumsComboBox
-            // 
             this.m_AlbumsComboBox = new ComboBox();
             this.SuspendLayout();
-            
             this.m_AlbumsComboBox.FormattingEnabled = true;
             this.m_AlbumsComboBox.Location = new System.Drawing.Point(0, 0);
             this.m_AlbumsComboBox.Name = "m_AlbumsComboBox";
