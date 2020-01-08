@@ -161,6 +161,9 @@
     <EmbeddedResource Include="UI\WallPhotoComponent.resx">
       <DependentUpon>WallPhotoComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\WallTabPage.resx">
+      <DependentUpon>WallTabPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\A20_Ex01_Yaniv_204623268_Yogev_204542047.Facades.MainFormFacade.datasource" />
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Event.datasource" />
     <None Include="Properties\Settings.settings">
