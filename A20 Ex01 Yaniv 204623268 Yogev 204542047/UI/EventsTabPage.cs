@@ -26,8 +26,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         private void initializeComponent()
         {
-            this.Width = 500;
-            this.Height = 500;
+            this.Height = AppSettings.Instance.MainWindowHeight;
+            this.Width = AppSettings.Instance.MainWindowWidth;
             this.AutoScroll = true;
         }
 
