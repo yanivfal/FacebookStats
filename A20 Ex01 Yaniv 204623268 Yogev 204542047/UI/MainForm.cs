@@ -27,7 +27,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
             tabsNavigator.Invoke(new Action(() => tabsNavigator.Controls.Add(tabPage)));
         }
 
-
         private void fetchUserData()
         {
             mainFormFacadeBindingSource.DataSource = m_Facade;

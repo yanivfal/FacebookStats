@@ -6,7 +6,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
 {
-    class LikesDistributionUtils
+    internal class LikesDistributionUtils
     {
         internal static List<Photo> GetPhotosBetweenDates(DateTime i_DateFrom, DateTime i_DateTo)
         {

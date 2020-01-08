@@ -9,7 +9,6 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         public EventsTabPage(string i_TabText) : base(i_TabText)
         {
-           
             initializeComponent();
             fetchEvents();         
         }
@@ -26,33 +25,33 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047.UI
 
         private void initializeComponent()
         {
-            this.Height = AppSettings.Instance.MainWindowHeight;
             this.Width = AppSettings.Instance.MainWindowWidth;
+            this.Height = AppSettings.Instance.MainWindowHeight;
             this.AutoScroll = true;
         }
 
         private List<EventComponent> getDummyData()
         {
             List<EventComponent> events = new List<EventComponent>(); 
-            int position = 60;
             EventComponent eventComponent1 = new EventComponent();
+            EventComponent eventComponent2 = new EventComponent();
+            EventComponent eventComponent3 = new EventComponent();
+            int position = 60;
+
             createEventDummyData(ref eventComponent1, "2020 celebrations", "IDC", "01/01/20",
                 "00:00", "03:00", position);
             position = eventComponent1.Bottom + 20;
             ControlsUtils.CenteringControl(eventComponent1);
 
-            EventComponent eventComponent2 = new EventComponent();
             createEventDummyData(ref eventComponent2, "Omer Adam Show", "Keisariya", "18/01/20",
                 "20:00", "22:00", position);
             position = eventComponent2.Bottom + 20;
             ControlsUtils.CenteringControl(eventComponent2);
 
-            EventComponent eventComponent3 = new EventComponent();
             createEventDummyData(ref eventComponent3, "Yogev Wedding", "Mikonos", "?/?/?",
                 "20:00", "05:00", position);
             ControlsUtils.CenteringControl(eventComponent3);
-
-
+            
             events.Add(eventComponent1);
             events.Add(eventComponent2);
             events.Add(eventComponent3);

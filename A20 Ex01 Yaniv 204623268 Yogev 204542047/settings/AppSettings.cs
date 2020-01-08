@@ -11,8 +11,8 @@ namespace A20_Ex01_Yaniv_204623268_Yogev_204542047
         public string LastAccessToken { get; set; }
         public int MainWindowWidth { get; set; }
         public int MainWindowHeight { get; set; }
-
         public static AppSettings Instance = new AppSettings();
+
         private AppSettings()
         {          
             RememberUser = false;
